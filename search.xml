@@ -31,11 +31,10 @@
 ]]></content>
       <categories>
         <category>博客</category>
-        <category>hexo</category>
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>bug</tag>
+        <tag>Bug</tag>
       </tags>
   </entry>
   <entry>
@@ -158,6 +157,19 @@
       </tags>
   </entry>
   <entry>
+    <title>更换Hexo博客</title>
+    <url>/archives/852e693a.html</url>
+    <content><![CDATA[<h1 id="浅谈Hexo"><a href="#浅谈Hexo" class="headerlink" title="浅谈Hexo"></a>浅谈Hexo</h1><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>我以前用的是wordpress，但是他的文章不支持Markdown语法，所以就换了一下，以后写博客就更方便了。</p>
+<p>其实我是喜欢写点东西的，所以我花了几天的时间研究了一下Hexo，今天正式更换啦，欢迎大家来访！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java爬取南通大学教务系统信息</title>
     <url>/archives/229e6b0a.html</url>
     <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
@@ -176,23 +188,11 @@
 <p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
 ]]></content>
       <categories>
-        <category>爬虫</category>
+        <category>JAVA</category>
       </categories>
       <tags>
         <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>更换Hexo博客</title>
-    <url>/archives/852e693a.html</url>
-    <content><![CDATA[<h1 id="浅谈Hexo"><a href="#浅谈Hexo" class="headerlink" title="浅谈Hexo"></a>浅谈Hexo</h1><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>我以前用的是wordpress，但是他的文章不支持Markdown语法，所以就换了一下，以后写博客就更方便了。</p>
-<p>其实我是喜欢写点东西的，所以我花了几天的时间研究了一下Hexo，今天正式更换啦，欢迎大家来访！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
