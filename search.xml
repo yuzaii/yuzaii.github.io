@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CLion c++无法使用iostream.h头文件</title>
+    <url>/archives/34f36c24.html</url>
+    <content><![CDATA[<p>​    这两天在学数据结构，总是找不到好用的编译器，前两天发现了jetbrain公司有一共clionb编译器，我就试了一下，因为我经常使用他家的idea写Java，好用pycharm写python，所以界面什么的都比较友好。当我把c++的代码复制过去的时候发现无法调用iostream.h头文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101904834.png" alt="img"></p>
+<p>那我们就要了解一下iostream.h这个头文件是什么</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream.h&gt;非标准输入输出流</span><br><span class="line">#include &lt;iostream&gt;标准输入输出流</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当代码中用<code>&lt;iostream.h&gt;</code>时，输出可直接引用<code>cout&lt;&lt;x</code>;<br>因为<code>&lt;iostream.h&gt;</code>继承C语言的标准库文件，未引入名字空间定义，所以可直接使用。</p>
+<p>C++中为了避免名字定义冲突，特别引入了“名字空间的定义”，即<code>namespace</code>。<br>当代码中引入<code>&lt;iostream&gt;</code>时，输出需要引用命名空间;</p>
+<p>使用<code>&lt;iostream&gt;</code>时，引入<code>std::</code>有以下方法：</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">cout&lt;&lt;x;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101904120.png" alt="img"></p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"></span><br><span class="line">cout&lt;&lt;x;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101905427.png" alt="img"></p>
+<ol start="3">
+<li></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout&lt;&lt;x;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p><strong>iostream是标准的C++库，iostream.h是非标准的C++库。</strong></p>
+<p><strong>如果使用前者，需要引入using namespace XXX 命名空间。</strong></p>
+<p><strong>后者则不需要。</strong></p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C/C++中printf和cout的区别</title>
+    <url>/archives/bd6fcf73.html</url>
+    <content><![CDATA[<p><strong>在写代码的时候，我们经常会用到输出语句，在C&#x2F;C++中，存在两个输出语句，一个是printf，另一个是cout，那么他们有什么区别呢？</strong></p>
+<h3 id="使用语言"><a href="#使用语言" class="headerlink" title="使用语言"></a>使用语言</h3><p>首先在C++中，既可以使用printf( )，也可以使用cout。而在c语言中，只能使用printf来输出打印。这很好理解，因为C++是C语言的继承，C++进一步扩充和完善了C语言。</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;Hello,World!&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是C++中常见的输出格式，先是引用了 iostream(input output stream输入输出流)头文件,是标准的C++头文件，而cout只是iostream中的对象，大概等于cout&#x3D;” Hello,World! “，然后输出流将 cout 在屏幕上显示。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello,World\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是C语言中的输出格式，在C语言中，printf( )函数是一个标准库函数，它的函数原型在头文件”stdio.h”中。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="cout"><a href="#cout" class="headerlink" title="cout"></a>cout</h4><p>使用cout时需要运”&lt;&lt;“符号，它被称为流插入运算符，属于双目运算符的一种。</p>
+<p>一般格式是 cout&lt;&lt;“你要输出的内容”&lt;&lt;endl;</p>
+<p>如果你想要输出一个值为1的int类型的变量a,则需要这么写</p>
+<p>cout&lt;&lt;“a的值是”&lt;&lt;a&lt;&lt;endl;</p>
+<p>控制台将会输出”a的值是1″。</p>
+<p>endl是end line的意思，也就是输出换行的意思。</p>
+<h4 id="printf"><a href="#printf" class="headerlink" title="printf( )"></a>printf( )</h4><p>使用print()输出需要注意他的一般形式是printf(“格式控制字符串”, 输出表列)</p>
+<p>如果你想要输出一个值为1的int类型的变量a，则需要这么写</p>
+<p>printf(“a的值是%d”,a)；</p>
+<p>控制台将会输出”a值是1″。</p>
+<p>%d是格式化符号，通俗理解就相当于是给a占了个位置，这个位置由后面的a的值来填。</p>
+<p>如果有多个格式化符号，后面的输出列表要按顺序排列。</p>
+<p>常见的格式化符号</p>
+<p>%d 输出整形数字</p>
+<p>%f 输出浮点数数字</p>
+<p>%c 输出字符</p>
+<p>%s输出字符串</p>
+<p>%p输出指针地址</p>
+<p>%x（%0x) 输出16进制</p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo不算子统计和live2d冲突</title>
     <url>/archives/776b4b4f.html</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
@@ -56,11 +135,65 @@
 <p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
 ]]></content>
       <categories>
-        <category>JAVA</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>爬虫</tag>
         <tag>JAVA</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDAE开发SSM项目步骤</title>
+    <url>/archives/c9201f7e.html</url>
+    <content><![CDATA[<h2 id="创建maven项目"><a href="#创建maven项目" class="headerlink" title="创建maven项目"></a><a href="/archives/ac31337f.html">创建maven项目</a></h2><h2 id="导入依赖（版本可以自己换）"><a href="#导入依赖（版本可以自己换）" class="headerlink" title="导入依赖（版本可以自己换）"></a>导入依赖（版本可以自己换）</h2><p>模板</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        spring基础包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--        spring-webmvc依赖里面包含了spring的基础包，所以只需要导入这一个就行--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        spring事务管理包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aspects<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        mybatis核心依赖--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        jdbc驱动包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.24<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        spring整合mybatis包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        日志包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        单元测试包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        数据源所需包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-dbcp2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        连接池包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.10.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        JDBC和事务--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>aopalliance<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aopalliance<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.8.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--资源加载问题--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建Spring配置文件applicationContext-xml"><a href="#创建Spring配置文件applicationContext-xml" class="headerlink" title="创建Spring配置文件applicationContext.xml"></a>创建Spring配置文件applicationContext.xml</h2><p>模板</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:aop</span>=<span class="string">&quot;http://www.springframework.org/schema/aop&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tx</span>=<span class="string">&quot;http://www.springframework.org/schema/tx&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans </span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/tx </span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/tx/spring-tx-4.3.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context </span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context/spring-context-4.3.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/aop </span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/aop/spring-aop-4.3.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 读取db.properties --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;classpath:db.properties&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置数据源 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dataSource&quot;</span> </span></span><br><span class="line"><span class="tag">                           <span class="attr">class</span>=<span class="string">&quot;org.apache.commons.dbcp2.BasicDataSource&quot;</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--数据库驱动 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driverClassName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.driver&#125;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--连接数据库的url --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--连接数据库的用户名 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--连接数据库的密码 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--最大连接数 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;maxTotal&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.maxTotal&#125;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--最大空闲连接  --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;maxIdle&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.maxIdle&#125;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--初始化连接数  --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;initialSize&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.initialSize&#125;&quot;</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 事务管理器，依赖于数据源 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;transactionManager&quot;</span> <span class="attr">class</span>=</span></span><br><span class="line"><span class="tag">     <span class="string">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span>	</span><br><span class="line">    <span class="comment">&lt;!-- 开启事务注解 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tx:annotation-driven</span> <span class="attr">transaction-manager</span>=<span class="string">&quot;transactionManager&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置MyBatis工厂SqlSessionFactory --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;sqlSessionFactory&quot;</span> </span></span><br><span class="line"><span class="tag">                           <span class="attr">class</span>=<span class="string">&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--注入数据源 --&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span> /&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--指定核MyBatis心配置文件位置 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;configLocation&quot;</span> <span class="attr">value</span>=<span class="string">&quot;classpath:mybatis-config.xml&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置mapper扫描器 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;basePackage&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.itheima.dao&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 扫描Service --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.itheima.service&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建mybatis配置文件mybatis-config"><a href="#创建mybatis配置文件mybatis-config" class="headerlink" title="创建mybatis配置文件mybatis-config"></a>创建mybatis配置文件mybatis-config</h2><p>模板</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">configuration</span> <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta"><span class="string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 别名定义 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.itheima.po&quot;</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/fageweiketang/article/details/80776883">MyBatis 配置 typeAliases 详解</a></p>
+<h2 id="创建数据源-db-properties"><a href="#创建数据源-db-properties" class="headerlink" title="创建数据源 db.properties"></a>创建数据源 db.properties</h2><p>模板</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">jdbc.driver</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">jdbc.url</span>=<span class="string">jdbc:mysql://localhost:3306/mybatis</span></span><br><span class="line"><span class="attr">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">jdbc.password</span>=<span class="string">root</span></span><br><span class="line"><span class="comment">#最大连接数</span></span><br><span class="line"><span class="attr">jdbc.maxTotal</span>=<span class="string">30 </span></span><br><span class="line"><span class="comment">#最大空闲连接数</span></span><br><span class="line"><span class="attr">jdbc.maxIdle</span>=<span class="string">10</span></span><br><span class="line"><span class="comment">#初始化连接数</span></span><br><span class="line"><span class="attr">jdbc.initialSize</span>=<span class="string">5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建mybatis输出信息配置文件log4j-properties"><a href="#创建mybatis输出信息配置文件log4j-properties" class="headerlink" title="创建mybatis输出信息配置文件log4j.properties"></a>创建mybatis输出信息配置文件log4j.properties</h2><p>模板</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Global logging configuration</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span>=<span class="string">ERROR, stdout</span></span><br><span class="line"><span class="comment"># MyBatis logging configuration...</span></span><br><span class="line"><span class="attr">log4j.logger.com.itheima</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="comment"># Console output...</span></span><br><span class="line"><span class="attr">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="attr">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%5p [%t] - %m%n</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建SpringMVC配置文件springmvc-config-xml"><a href="#创建SpringMVC配置文件springmvc-config-xml" class="headerlink" title="创建SpringMVC配置文件springmvc-config.xml"></a>创建SpringMVC配置文件springmvc-config.xml</h2><p>模板</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:mvc</span>=<span class="string">&quot;http://www.springframework.org/schema/mvc&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:tx</span>=<span class="string">&quot;http://www.springframework.org/schema/tx&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans </span></span></span><br><span class="line"><span class="string"><span class="tag">  http://www.springframework.org/schema/beans/spring-beans-4.3.xsd </span></span></span><br><span class="line"><span class="string"><span class="tag">  http://www.springframework.org/schema/mvc </span></span></span><br><span class="line"><span class="string"><span class="tag">  http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd </span></span></span><br><span class="line"><span class="string"><span class="tag">  http://www.springframework.org/schema/context </span></span></span><br><span class="line"><span class="string"><span class="tag">  http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 配置包扫描器，扫描@Controller注解的类 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.itheima.controller&quot;</span> /&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 加载注解驱动 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mvc:annotation-driven</span> /&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 配置视图解析器 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=</span></span><br><span class="line"><span class="tag">    <span class="string">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;prefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;suffix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;.jsp&quot;</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置web-xml"><a href="#配置web-xml" class="headerlink" title="配置web.xml"></a>配置web.xml</h2><p>模板</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"> 	<span class="comment">&lt;!-- 配置加载Spring文件的监听器--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span></span><br><span class="line">		     org.springframework.web.context.ContextLoaderListener</span><br><span class="line">		<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 编码过滤器 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">filter-class</span>&gt;</span></span><br><span class="line">		     org.springframework.web.filter.CharacterEncodingFilter</span><br><span class="line">		<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.action<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 配置Spring MVC前端核心控制器 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		     org.springframework.web.servlet.DispatcherServlet</span><br><span class="line">		<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:springmvc-config.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 配置服务器启动后立即加载Spring MVC配置文件 --&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--/:拦截所有请求（除了jsp）--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后你就可以愉快的敲代码了！</p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA如何自动导入Spring依赖</title>
+    <url>/archives/abcf8d7e.html</url>
+    <content><![CDATA[<p><strong>在学习Spring开发的时候每次都要手动导入依赖包，很浪费时间，后来发现可以通过pom.xml文件自动导入</strong></p>
+<h3 id="首先打开pom-xml文件"><a href="#首先打开pom-xml文件" class="headerlink" title="首先打开pom.xml文件"></a>首先打开pom.xml文件</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101727920.png" alt="img"></p>
+<h3 id="在代码中间添加以下代码"><a href="#在代码中间添加以下代码" class="headerlink" title="在代码中间添加以下代码"></a>在<dependencies></dependencies>代码中间添加以下代码</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"><a href="#一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包" class="headerlink" title="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"></a>一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101727340.png" alt="img"></p>
+<h2 id="等进度条读取完就导入成功了"><a href="#等进度条读取完就导入成功了" class="headerlink" title="等进度条读取完就导入成功了"></a>等进度条读取完就导入成功了</h2>]]></content>
+      <categories>
+        <category>java</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -183,6 +316,339 @@
       </tags>
   </entry>
   <entry>
+    <title>Python连接数据库操作后一定要记得关闭连接</title>
+    <url>/archives/e76e289b.html</url>
+    <content><![CDATA[<p>今天我们小组用python对数据库进行操作的时候，突然运行全部出问题了。</p>
+<p>最后才发现原来是我们用的是同一个数据库，并且在代码里面只关闭了游标对象，并未关闭连接对象，所以运行结束后并未能及时释放，造成了连接池的拥挤，相当于操作系统里的死锁。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect=pymysql.connect(host=<span class="string">&#x27;localhost&#x27;</span>,port=<span class="number">3306</span>,user=<span class="string">&#x27;root&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>,db=<span class="string">&#x27;student&#x27;</span>)</span><br><span class="line">cursor = connect.cursor() <span class="comment">#创建游标对象</span></span><br><span class="line">cursor.close()<span class="comment">#关闭游标对象</span></span><br><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br></pre></td></tr></table></figure>
+
+<p>后来只能在程序退出的时候关闭连接对象。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br><span class="line">          sys.exit()</span><br></pre></td></tr></table></figure>
+
+<p>所以以后操作完数据库后一定要记得关闭连接！</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring创建对象与传统创建对象的区别</title>
+    <url>/archives/7ad5699f.html</url>
+    <content><![CDATA[<p><strong>这两天学习了Spring的相关知识，一直没有弄懂控制反转（ioc）是什么意思，今天在做测试的时候突然茅塞顿开，以下是我在写代码时候的心得，通俗易懂，详细的解释了Spring创建对象与传统创建对象的区别。</strong></p>
+<ul>
+<li>Spring的<a href="https://so.csdn.net/so/search?q=xml&spm=1001.2101.3001.7020">xml</a>配置文件的含义</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">&lt;!--  告诉spring创建对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    声明bean ，就是告诉spring要创建某个类的对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    id:对象的自定义名称，唯一值。spring通过这个名称找到对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    Class：类的全限定名称 也就是你需要实例化的类（不能是接口，因为spring是反射机制创建对象，必须使用类）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userdao&quot;</span> <span class="attr">class</span>=<span class="string">&quot;spring.Userdaoimpl&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义一个名为Userdao的接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Userdao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dosome</span><span class="params">()</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>再定义一个名为Userdaoimpl的接口实现类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Userdao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dosome</span><span class="params">()</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在测试代码中详细的解释了Spring创建对象与传统创建对象的区别。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//        传统的new对象</span></span><br><span class="line">        Userdao us=<span class="keyword">new</span> <span class="title class_">Userdaoimpl</span>();<span class="comment">//多态 上转型</span></span><br><span class="line">        us.dosome();</span><br><span class="line"> </span><br><span class="line"><span class="comment">//        spring创建对象的过程</span></span><br><span class="line"><span class="comment">//        定义配置文件路径</span></span><br><span class="line">        String xmlpath=<span class="string">&quot;bean.xml&quot;</span>;</span><br><span class="line"><span class="comment">//        初始化spring容器 加载配置文件时</span></span><br><span class="line">        ApplicationContext ac=<span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(xmlpath);</span><br><span class="line"><span class="comment">//        通过容器获取userdao实例（也叫对象）并转换成接口类型</span></span><br><span class="line">        Userdao userdao=(Userdao) ac.getBean(<span class="string">&quot;userdao&quot;</span>);</span><br><span class="line">        <span class="comment">//因为bean创建的对象是object类型的 而且userdaoimpl是实现了接口 所以是接口类型的 要强制转换成接口的类型才可以调用</span></span><br><span class="line">        <span class="comment">//这里的userdao是新建的对象名,Userdao是接口,(Userdao)是强制转换符</span></span><br><span class="line">        <span class="comment">//ac.getBean(&quot;userdao&quot;)是从容器中获取对象 这里的对象是在spring容器中创建的 而不是你自己new出来的</span></span><br><span class="line">        <span class="comment">//ac.getBean(&quot;userdao&quot;) 括号里的userdao就是你在spring的xml文件中创建一个实例名字叫userdao 他的具体实现类是Userdaoimpl</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">//调用实例中的dosome()方法</span></span><br><span class="line">        userdao.dosome();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>结果</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101730451.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea如何创建spring的xml文件</title>
+    <url>/archives/5c7529e8.html</url>
+    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101720895.png" alt="img"></p>
+<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
+<ul>
+<li>点左上角的File，再点Project Structure</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721568.png" alt="img"></p>
+<ul>
+<li><p>先点加号再点java</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721742.png" alt="img"></p>
+</li>
+<li><p>导入spring的基本包</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721566.png" alt="img"></p>
+<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721581.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javaweb项目上传服务器时一定要使用与开发项目相同的JDK!!!</title>
+    <url>/archives/80b2f6fc.html</url>
+    <content><![CDATA[<h2 id="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"><a href="#javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。" class="headerlink" title="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"></a>javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。</h2><p>今天被坑惨了，我将刚刚在本地测试好的javaweb项目部署到linux服务器上，访问时却报404.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101834149.png" alt="img"></p>
+<p>我以为是服务器的问题，我又把项目部署到了Windows服务器上，却能成功访问。</p>
+<p>后来试了好多办法都没用，最后我找到了我服务器和本地主机的相同点——jdk版本都是jdk11。</p>
+<p>我又去linux服务器看了一下，发现jdk版本是jdk1.8。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101834447.png" alt="img"></p>
+<p>我想修改linux服务器的jdk版本，不过很麻烦，无奈我只好将本地机的环境换成的jdk1.8。</p>
+<p>重新编译之后再部署到linux服务器，终于可以成功访问了！</p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python自动生成小学四则运算</title>
+    <url>/archives/b8099ba9.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="built_in">sum</span> = <span class="built_in">input</span>(<span class="string">&quot;请输入需要的题数：&quot;</span>)</span><br><span class="line">number = <span class="built_in">int</span>(<span class="built_in">sum</span>)</span><br><span class="line">jifen = <span class="number">0</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= number:</span><br><span class="line">    number1 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    number2 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="built_in">type</span> = random.randint(<span class="number">1</span>, <span class="number">4</span>)  <span class="comment"># 1-4代表加减乘除</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">1</span>:  <span class="comment"># 加法</span></span><br><span class="line">        RS = number1 + number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;+&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">2</span>:  <span class="comment"># 减法</span></span><br><span class="line">        RS = number1 - number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;-&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">3</span>:  <span class="comment"># 乘法</span></span><br><span class="line">        RS = number1 * number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;×&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">4</span>:  <span class="comment"># 除法</span></span><br><span class="line">        RS = number1 / number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;÷&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------------------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序运行结束,您累计得分:&#x27;</span>+<span class="built_in">str</span>(jifen))</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>课程项目</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql中#与$的区别</title>
+    <url>/archives/40b22f69.html</url>
+    <content><![CDATA[<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><p>（1）#将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是id，则解析成的sql为order by “id”。</p>
+<p>（2）$将传入的数据直接显示生成在sql中。如：order by $user_id$，如果传入的值是id，则解析成的sql为order by id。</p>
+<p>（3）#方式在很大程度上能够防止sql注入。</p>
+<p>（4）$方式无法防止sql注入。</p>
+<p>（5）$方式一般用于传入数据库对象，例如传入表名。（<strong>这里得注意SQL注入问题</strong>）</p>
+<p>（6）一般能用#的就别用$。</p>
+<p>ps:在使用mybatis中还遇到<![CDATA[]]>的用法，在该符号内的语句，将不会被当成字符串来处理，而是直接当成sql语句，比如要执行一个存储过程。</p>
+<p>总结区别：#{} 传入值时，sql解析时，参数是带引号的，而${}穿入值，sql解析时，参数是不带引号的。</p>
+<h3 id="举个例子："><a href="#举个例子：" class="headerlink" title="举个例子："></a>举个例子：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> $&#123;table_Name&#125; <span class="keyword">where</span> name <span class="operator">=</span> #&#123;name&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在这个例子中，如果表名为</p>
+<p>　　 user; delete user; –</p>
+<p>　　则动态解析之后 sql 如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span>; <span class="keyword">delete</span> <span class="keyword">user</span>; <span class="comment">-- where name = ?;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>–之后的语句被注释掉，而原本查询用户的语句变成了查询所有用户信息+删除用户表的语句，会对数据库造成致命损伤。</p>
+<p>但是表名用参数传递进来的时候，只能使用 ${} 。这也提醒在这种用法中要小心sql注入的问题。</p>
+<h3 id="防止SQL注入方法："><a href="#防止SQL注入方法：" class="headerlink" title="防止SQL注入方法："></a>防止SQL注入方法：</h3><p>首先，永远不要相信用户的输入。</p>
+<p>（1）不使用SQL，考虑NoSQL。</p>
+<p>（2）正则表达式，字符串过滤。</p>
+<p>（3）参数绑定PreparedStatement。</p>
+<p>（4）使用正则表达式过滤传入的参数。</p>
+<p>（5）JSP中调用该函数检查是否包函非法字符或JSP页面判断代码。JSP参考<a href="http://www.cnblogs.com/leftshine/p/5539810.html">JSP使用过滤器防止SQL注入</a></p>
+<p><a href="https://www.cnblogs.com/porotin/p/9122398.html">参考链接</a></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>sql</tag>
+        <tag>信息安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用json返回数据的时候不要使用submit</title>
+    <url>/archives/cb8a5bbd.html</url>
+    <content><![CDATA[<h3 id="如题，当使用submit提交后，会直接跳转json值的页面如图"><a href="#如题，当使用submit提交后，会直接跳转json值的页面如图" class="headerlink" title="如题，当使用submit提交后，会直接跳转json值的页面如图"></a>如题，当使用submit提交后，会直接跳转json值的页面如图</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101912602.png" alt="img"></p>
+<p>昨晚因为这个原因，我被困了几个小时，后来把submit改成button就可以了。</p>
+<p>其实也符合逻辑因为我在这里默认返回的就是Map类型的ret</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101913399.png" alt="img"></p>
+<p>所以返回ret，不过使用了button就交给ajax来处理了。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于C语言中scanf(&quot;%c&quot;，&amp;c)直接跳过的问题</title>
+    <url>/archives/518528d0.html</url>
+    <content><![CDATA[<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> b;</span><br><span class="line">	<span class="type">char</span> c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入a的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入b的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入运算符\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;运算结果&quot;</span>);</span><br><span class="line">	yunsuan(a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来是没有问题的，但是在运行的时候，运算符没有让我输入直接跳过了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101809227.png" alt="img"></p>
+<p>这到底怎么回事呢？</p>
+<p>首先我们了解一下scanf()是怎么接受数据的。</p>
+<p>当执行scanf这句的时候，系统并不是等待用户输入，而是判断输入缓冲区有没有符合格式的内容，如果有的话，则直接读取。</p>
+<p>所以scanf(“%c”,&amp;c);并不是没有读到数据，而是读到了我们不知道的数据。</p>
+<p>那么它到底读到了什么了？</p>
+<p>这就要说到行缓存了。</p>
+<p>我们用scanf()的时候都要按下enter键，那enter键按了之后去哪儿了？</p>
+<p>答案是enter键也进入了输入缓存区，我们都知道enter键是换行的，也就是’&#x2F;n’,所以也就是scanf(“%c”,&amp;ch);读到了’\n’;</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>很简单，既然缓存区有东西，那我们就清空它。</p>
+<p>在 scanf(“%c”,&amp;ch); 前面加上setbuf(stdin,NULL);(这个windows和linux下都可以)，</p>
+<p>或者fflush(stdin);(这个只能windows)；</p>
+<p>我们再运行一下程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101810286.png" alt="img"></p>
+<p>这样我们就可以轻松秒杀！</p>
+<p>参考链接：<a href="https://blog.csdn.net/zy799894671/article/details/7757764">https://blog.csdn.net/zy799894671/article/details/7757764</a></p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Mybatis的@Param注解</title>
+    <url>/archives/33a6a717.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天写了一个判断用户用户名密码是否正确的登录功能，在单元测试的时候发现报错，（org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter ‘user_name’ not found. Available parameters are [arg1, arg0, param1, param2]）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848296.png" alt="img"></p>
+<p>原因是没有找到参数user_name的值，可是我明明在mapper.xml文件中传入了呀。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.xueziport.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--根据id查询用户信息 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUserById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_id=#&#123;user_id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    根据账号密码查找用户--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUser&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;String&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_name=#&#123;user_name&#125; and user_password=#&#123;user_password&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>后来查了资料才发现，如果需要传入多个参数需要在接口中加上@Param(values&#x3D;”参数名”)参数（如果只有一个values参数则可以省略）,告诉mybatis你传入的值的参数名称，这样好在mapper文件中调用。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> User <span class="title function_">findUser</span><span class="params">(<span class="meta">@Param(&quot;user_name&quot;)</span> String user_name,<span class="meta">@Param(&quot;user_password&quot;)</span> String user_password)</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848461.png" alt="img"></p>
+<p>最后发现就可以了</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在mapper.xml中只有一个传入参数，可以不用@param;</p>
+<p>如果传入多个的参数，需要使用@Paran注解；</p>
+<p>如果是传入Map的集合，那么key就对应着参数的别名，可以不用加@param。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring MVC POJO类型参数详解</title>
+    <url>/archives/d3533fbe.html</url>
+    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
+<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
+<p>接下来用代码解释一下</p>
+<p>这是po类User</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是jsp中的表单 属性名分别为username和password</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个接收用户注册信息的一个方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的参数User user就是一个pojo类型</p>
+<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
+<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
+<p>运行一下程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101817359.png" alt="image-20220410181751392"></p>
+<p>这样就方便不同类型的参数传递了。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>jsp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用python实现词频统计</title>
+    <url>/archives/5dc3259f.html</url>
+    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
+<ul>
+<li>从文本中读入数据（文件的输入输出）</li>
+<li>不区分大小写,去除特殊字符。</li>
+<li>统计单词 例如：about ：10 并统计总共多少单词</li>
+<li>对单词排序（出现次数 ）</li>
+<li>输出词频最高的10个单词和次数</li>
+<li>把统计结果存入文本</li>
+</ul>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101756049.png" alt="img">运行程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101757307.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>课程项目</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用python实现南通大学校园网自动连接</title>
+    <url>/archives/216f350c.html</url>
+    <content><![CDATA[<p><strong>在学校登录校园网的时候都需要访问登录页面如下图</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101734645.png" alt="img"></p>
+<p>作为一个懒人，我觉得很麻烦，所以我写了一个python脚本，当电脑开机的时候自动登录校园网，这样就不需要我们手动了。 </p>
+<h3 id="设想："><a href="#设想：" class="headerlink" title="设想："></a>设想：</h3><p>通过用<a href="https://so.csdn.net/so/search?q=fiddler&spm=1001.2101.3001.7020">fiddler</a>抓包软件抓取所需的参数信息，然后使用get请求添加抓到的参数就可以实现登录了，最后写一个可执行文件来启动py文件，将需要执行的放在电脑启动项里面。</p>
+<h3 id="话不多说，开始行动"><a href="#话不多说，开始行动" class="headerlink" title="话不多说，开始行动"></a>话不多说，开始行动</h3><p>通过fiddler抓包获取get方法的带参数的url为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://210.29.79.141:801/eportal/?c=Portal&amp;a=login&amp;callback=dr1003&amp;login_method=1&amp;user_account=%2C0%2C账户%40运营商&amp;user_password=密码&amp;wlan_user_ip=ipv4地址&amp;wlan_user_ipv6=&amp;wlan_user_mac=000000000000&amp;wlan_ac_ip=&amp;wlan_ac_name=&amp;jsVersion=3.3.2&amp;v=5891</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注%2C是url编码格式相当于’,’ %40是‘@’.可以参考以下网址</p>
+<p><a href="https://www.bejson.com/enc/urlencode/">在线url网址编码、解码-BeJSON.com</a></p>
+<p>这样们可以知道需要我们填的参数只有账户、密码和自己的ip地址 其他的参数不要管</p>
+<h3 id="将以上信息整合到python里面"><a href="#将以上信息整合到python里面" class="headerlink" title="将以上信息整合到python里面"></a>将以上信息整合到python里面</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url=<span class="string">&quot;http://210.29.79.141:801/eportal/&quot;</span></span><br><span class="line">params=&#123;</span><br><span class="line"><span class="string">&quot;c&quot;</span>: <span class="string">&quot;Portal&quot;</span>,</span><br><span class="line"><span class="string">&quot;a&quot;</span>: <span class="string">&quot;login&quot;</span>,</span><br><span class="line"><span class="string">&quot;callback&quot;</span>: <span class="string">&quot;dr1003&quot;</span>,</span><br><span class="line"><span class="string">&quot;login_method&quot;</span>: <span class="string">&quot;1&quot;</span>,</span><br><span class="line"><span class="string">&quot;user_account&quot;</span>: <span class="string">&quot;,0,账号@运营商&quot;</span>, <span class="comment">#格式,0,账号@运营商 移动是@cmcc 电信是@telecom 联通是@unicom</span></span><br><span class="line"><span class="string">&quot;user_password&quot;</span>: <span class="string">&quot;密码&quot;</span>,           <span class="comment">#此项为登录密码</span></span><br><span class="line"><span class="string">&quot;wlan_user_ip&quot;</span>: <span class="string">&quot;ip&quot;</span>,       <span class="comment">#此项为你的ipv4地址</span></span><br><span class="line"><span class="string">&quot;wlan_user_ipv6&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line"><span class="string">&quot;wlan_user_mac&quot;</span>: <span class="string">&quot;000000000000&quot;</span>,</span><br><span class="line"><span class="string">&quot;wlan_ac_ip&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line"><span class="string">&quot;wlan_ac_name&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line"><span class="string">&quot;jsVersion&quot;</span>: <span class="string">&quot;3.3.2&quot;</span>,</span><br><span class="line"><span class="string">&quot;v&quot;</span>: <span class="string">&quot;v=5891&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line">requests.get(url,params)</span><br></pre></td></tr></table></figure>
+
+<p>按照要求填写信息，在连接校园网没登陆的情况下运行，如果结果返回&lt;Response [200]&gt;说明运行成功，说明已经连上校园网了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101740548.png" alt="img"></p>
+<p><em>注：此处运行和下面的运行都需要电脑安装requests依赖包 安装方法 运行cmd 输入pip install request下载完输入pip list 如果有requsets包的话说明安装成功</em></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101741118.png" alt="img"></p>
+<h3 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h3><p>但是这样我们还是需要运行py文件才可以登录校园网，这样的话比以前还要复杂，所以我们将启动这个py文件写进bat批处理文件，并将它放入开机自启的文件中。</p>
+<h4 id="首先打开运行输入shell-startup-这是电脑自启文件夹"><a href="#首先打开运行输入shell-startup-这是电脑自启文件夹" class="headerlink" title="首先打开运行输入shell:startup 这是电脑自启文件夹"></a>首先打开运行输入shell:startup 这是电脑自启文件夹</h4><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101741535.png" alt="img"></p>
+<h4 id="新建一个文本-输入以下脚本"><a href="#新建一个文本-输入以下脚本" class="headerlink" title="新建一个文本 输入以下脚本"></a>新建一个文本 输入以下脚本</h4><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101742528.png" alt="img"></p>
+<p><strong>一定根据自己的文件的位置进行修改 不然会报错</strong> </p>
+<p><strong>记得将校园网设置为自动连接</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101742271.png" alt="img"></p>
+<p><strong>以上全部完成后 下次电脑开机就会自动登录校园网 无需手动认证</strong></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Mac上安装hexo</title>
     <url>/archives/b3adc85a.html</url>
     <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
@@ -220,16 +686,165 @@
       </tags>
   </entry>
   <entry>
-    <title>更换Hexo博客</title>
-    <url>/archives/852e693a.html</url>
-    <content><![CDATA[<h1 id="浅谈Hexo"><a href="#浅谈Hexo" class="headerlink" title="浅谈Hexo"></a>浅谈Hexo</h1><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>我以前用的是wordpress，但是他的文章不支持Markdown语法，所以就换了一下，以后写博客就更方便了。</p>
-<p>其实我是喜欢写点东西的，所以我花了几天的时间研究了一下Hexo，今天正式更换啦，欢迎大家来访！</p>
+    <title>在idea中实现热部署无需重启Tomcat</title>
+    <url>/archives/5624e937.html</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
+<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>Tricks</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何使用IDEA创建SpringMVC项目</title>
+    <url>/archives/ac31337f.html</url>
+    <content><![CDATA[<h2 id="新建一个maven项目。直接点击next"><a href="#新建一个maven项目。直接点击next" class="headerlink" title="新建一个maven项目。直接点击next"></a>新建一个maven项目。直接点击next</h2><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101813143.png" alt="img"></p>
+<h2 id="输入你的项目名称"><a href="#输入你的项目名称" class="headerlink" title="输入你的项目名称"></a>输入你的项目名称</h2><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814683.png" alt="img"></p>
+<h2 id="点击项目文件底下的pom-xml-并添加依赖"><a href="#点击项目文件底下的pom-xml-并添加依赖" class="headerlink" title="点击项目文件底下的pom.xml,并添加依赖"></a>点击项目文件底下的pom.xml,并添加依赖</h2><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814682.png" alt="img"></p>
+<h3 id="在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。"><a href="#在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。" class="headerlink" title="在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。"></a>在<version>底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zly<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>SpringMVC04<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814129.png" alt="img"></p>
+<h3 id="添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。"><a href="#添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。" class="headerlink" title="添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。"></a>添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="点击导入按钮后，maven就自动引入依赖"><a href="#点击导入按钮后，maven就自动引入依赖" class="headerlink" title="点击导入按钮后，maven就自动引入依赖"></a>点击导入按钮后，maven就自动引入依赖</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814572.png" alt="img"></p>
+<h2 id="在src-x2F-main下新建一个webapp文件夹"><a href="#在src-x2F-main下新建一个webapp文件夹" class="headerlink" title="在src&#x2F;main下新建一个webapp文件夹"></a>在src&#x2F;main下新建一个webapp文件夹</h2><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814107.png" alt="img"></p>
+<h2 id="打开project-structure-添加web-xml"><a href="#打开project-structure-添加web-xml" class="headerlink" title="打开project structure 添加web.xml"></a>打开project structure 添加web.xml</h2><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814805.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814852.png" alt="img">注意路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814541.png" alt="img"></p>
+<p>这样设置后webapp里面就有WEB-INF文件夹和web.xml文件了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101814941.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>带有路径问题的项目从win系统转移到mac系统需要注意</title>
+    <url>/archives/3b9e33e6.html</url>
+    <content><![CDATA[<p>前两天把win系统里面的网站项目源代码转移到mac电脑后发现，上传图片的功能用不了，一直报错，研究了一下才发现，win系统和mac系统的目录路径不同导致的。在win上是”\“，而在mac上确是”&#x2F;“。</p>
+<p>这是win系统上的代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">100</span>&lt;size || !fileType.equals(<span class="string">&quot;jpg&quot;</span>))&#123;</span><br><span class="line"> out.print(<span class="string">&quot;&lt;script language=&#x27;javascript&#x27;&gt;alert(&#x27;上传的图片文件必须小于100KB,且为jpg格式&#x27;);window.location.href=&#x27;javascript:history.go(-1)&#x27;;&lt;/script&gt;&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;\\&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line">    <span class="type">String</span> <span class="variable">ctxpath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;\\&quot;</span>))+<span class="string">&quot;\\touxiang&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>一开始转到mac系统中时，报错。</p>
+<p>将”\“改成”&quot;</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;/&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line"><span class="type">String</span> <span class="variable">ctxipath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;/&quot;</span>))+<span class="string">&quot;/touxiang&quot;</span>;</span><br><span class="line"> <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>测试成功上传文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101715646.png" alt="img"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>更换Hexo博客</title>
+    <url>/archives/852e693a.html</url>
+    <content><![CDATA[<h1 id="更换Hexo框架博客"><a href="#更换Hexo框架博客" class="headerlink" title="更换Hexo框架博客"></a>更换Hexo框架博客</h1><h3 id="我的博客时间轴"><a href="#我的博客时间轴" class="headerlink" title="我的博客时间轴"></a>我的博客时间轴</h3><ul>
+<li><p>2021年8月11日</p>
+<p>在CSDN发表了<a href="https://blog.csdn.net/qq_46538289/article/details/119617560?spm=1001.2014.3001.5501">第一个博客</a></p>
+<p>后来陆陆续续在CSDN共发布了13篇文章</p>
+</li>
+<li><p>2021年10月28日</p>
+</li>
+</ul>
+<p>  我在买的服务器上用wordpress框架搭建了一个自己独立的<a href="http://139.224.231.108/">博客</a></p>
+<p>  后来陆陆续续也发表了十几篇文章</p>
+<ul>
+<li>2022年4月5号</li>
+</ul>
+<p>​    更换Hexo</p>
+<h3 id="更换原因："><a href="#更换原因：" class="headerlink" title="更换原因："></a>更换原因：</h3><ul>
+<li><p>CSDN不够美观</p>
+</li>
+<li><p>wordpress发布文章的程序较繁琐，且需要服务器的支撑，对Markdown语法不太友好。</p>
+</li>
+</ul>
+<p>其实我是喜欢写点东西的，可以是随手写的文章，也可以是深思熟虑后的感想，因为Hexo可以直接部署在github上，就算我服务器到期了，依旧可以访问，它还支持markdown语法，发布文章比较方便，而且不怕数据丢失，每次写完只需要git push一下就可以永久保存呢，并且还有历史记录，所以我花了几天的时间研究了一下Hexo，今天正式更换，欢迎大家来访！</p>
+]]></content>
+      <categories>
+        <category>碎碎念</category>
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实现域名解析到服务器端tomcat根目录</title>
+    <url>/archives/d2715adc.html</url>
+    <content><![CDATA[<p>上个学期学了jspweb开发，用到了tomcat服务器，一直都是在本地测试，所以就想把他上传到服务器，正好自己有一个域名，并且已经解析到服务器的IP了，所以做了一些尝试。<br>  一开始是用的win服务器自家 的IIS(Internet Information Services)，通过在IIS的站点属性中有一个对ISAPI 过滤器的配置来运行*.jsp文件。但无论怎么搞，都以失败告终。<br>  正当我一筹莫展之际，无意间测试了域名(没有域名的用ip代替）加端口来访问服务器端的tomcat，竟然成功了。虽然成功了，但是只能通过域名：8080（tomcat默认端口）访问，无法实现输入www.域名直接访问，这样很麻烦，又因为域名是默认解析到80端口，所以我大胆猜测只要将tomcat服务器的8080端口改成域名解析默认的80端口就可以了，然后将tomcat自带的默认更目录改成自己的项目就行了。</p>
+<h3 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h3><p>因为你要将tomcat改成端口80，所以80端口不能被占用</p>
+<p>win+r 输入cmd 控制台输入netstat -ano</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101654093.png" alt="img"></p>
+<p>如果没有出现80端口，说明端口没有被占用</p>
+<p>如果出现了说明端口已经被占用了，那么我们将占用他的程序停止就可以了，记住后面的pid码，</p>
+<p>我这里是10828，去任务管理器找到pid为10828的进程并将他停止就行了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101654584.png" alt="img"></p>
+<h3 id="将tomcat的默认端口8080改成80"><a href="#将tomcat的默认端口8080改成80" class="headerlink" title="将tomcat的默认端口8080改成80"></a>将tomcat的默认端口8080改成80</h3><p>编辑tomcat目录下conf文件里的server.xml文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655720.png" alt="img"></p>
+<p> 将圈起来的8080改成80就可以了 记得保存（只要该第一个就行，当时对配置还不是很理解）<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655939.png" alt="img"></p>
+<p> 这时候我们测试一下输入www.域名（或ip）如果是tomcat默认页面就说明成功了</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655539.png" alt="img"></p>
+<h3 id="将自己的项目替换掉tomcat默认的根目录root"><a href="#将自己的项目替换掉tomcat默认的根目录root" class="headerlink" title="将自己的项目替换掉tomcat默认的根目录root"></a>将自己的项目替换掉tomcat默认的<a href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020">根目录</a>root</h3><p>教大家应该很简单的方法，只需要将你的项目文件夹名称改成ROOT放到服务器tomcat目录下替换掉默认ROOT文件就行了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101656661.png" alt="img"></p>
+<p>还有一种方法是通过server.xml配置文件来修改默认根目录的位置，比较麻烦，所以在这不推荐使用。</p>
+<p>最后测试一下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101656311.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决数据mysqll数据库删除自增字段后跳号</title>
+    <url>/archives/a66d674d.html</url>
+    <content><![CDATA[<h3 id="命令行输入"><a href="#命令行输入" class="headerlink" title="命令行输入"></a>命令行输入</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table 表名 auto_increment=你想要的id;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用servlet+js防止用户未登录访问主要页面</title>
+    <url>/archives/73696d6.html</url>
+    <content><![CDATA[<p>在做网站主页的时候想起来可以通过主页的地址直接进入，跳过了登录界面，所以用了servlet和js实现了一个过滤器来处理这个漏洞<br>大概的模式就是先在servlet将表单的数据存到session中，然后在主页中写一个js来获取session里的数据，如果获取不到，就说明是非法登录，转到非法登录提示界面就行了。<br>下面是具体步骤。</p>
+<h3 id="使用可以先在servlet获取表单中用户的数据"><a href="#使用可以先在servlet获取表单中用户的数据" class="headerlink" title="使用可以先在servlet获取表单中用户的数据"></a>使用可以先在servlet获取表单中用户的数据</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;password&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="将获取的数据存在session中"><a href="#将获取的数据存在session中" class="headerlink" title="将获取的数据存在session中"></a>将获取的数据存在<a href="https://so.csdn.net/so/search?q=session&spm=1001.2101.3001.7020">session</a>中</h3><p>先创建HttpSession接口对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span>req.getSession();</span><br></pre></td></tr></table></figure>
+
+<p>存到session中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">session.setAttribute(<span class="string">&quot;username&quot;</span>,name);</span><br></pre></td></tr></table></figure>
+
+<h3 id="在主页中写一个js来获取session里的数据"><a href="#在主页中写一个js来获取session里的数据" class="headerlink" title="在主页中写一个js来获取session里的数据"></a>在主页中写一个js来获取session里的数据</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">checkuser</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> user= &lt;%=session.<span class="title function_">getAttribute</span>(<span class="string">&quot;username&quot;</span>)%&gt;;</span><br><span class="line">    <span class="keyword">if</span>(user==<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>=<span class="string">&quot;illegal.html&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这个js一定要在页面加载完成前就开始运行，所以一定要在<body>这里加</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">&quot;checkuser()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>οnlοad&#x3D;”checkuser()”意思就是在body加载的时候执行上面的js</p>
+<p><strong>最后测试运行，如果是直接输入地址来访问主页，就会跳转404界面</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101712044.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>jsp</tag>
+        <tag>servlet</tag>
       </tags>
   </entry>
 </search>
