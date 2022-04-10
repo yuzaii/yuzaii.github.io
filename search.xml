@@ -59,8 +59,58 @@
         <category>JAVA</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
         <tag>爬虫</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Mac上安装hexo</title>
+    <url>/archives/b3adc85a.html</url>
+    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<ul>
+<li>安装node.js</li>
+<li>安装git</li>
+<li>安装hexo</li>
+</ul>
+<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030104476.png" alt="image-20220403030104476" style="zoom:50%;" />
+
+<ul>
+<li>Hexo安装完成后 输入hexo -v 出现问题</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030201321.png" alt="image-20220403030201321" style="zoom:50%;" />
+
+<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>更新文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>就好啦</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030505555.png" alt="image-20220403030505555" style="zoom:50%;" />
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更换Hexo博客</title>
+    <url>/archives/852e693a.html</url>
+    <content><![CDATA[<h1 id="浅谈Hexo"><a href="#浅谈Hexo" class="headerlink" title="浅谈Hexo"></a>浅谈Hexo</h1><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>我以前用的是wordpress，但是他的文章不支持Markdown语法，所以就换了一下，以后写博客就更方便了。</p>
+<p>其实我是喜欢写点东西的，所以我花了几天的时间研究了一下Hexo，今天正式更换啦，欢迎大家来访！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -180,56 +230,6 @@
       </categories>
       <tags>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>更换Hexo博客</title>
-    <url>/archives/852e693a.html</url>
-    <content><![CDATA[<h1 id="浅谈Hexo"><a href="#浅谈Hexo" class="headerlink" title="浅谈Hexo"></a>浅谈Hexo</h1><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>我以前用的是wordpress，但是他的文章不支持Markdown语法，所以就换了一下，以后写博客就更方便了。</p>
-<p>其实我是喜欢写点东西的，所以我花了几天的时间研究了一下Hexo，今天正式更换啦，欢迎大家来访！</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Mac上安装hexo</title>
-    <url>/archives/b3adc85a.html</url>
-    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-<ul>
-<li>安装node.js</li>
-<li>安装git</li>
-<li>安装hexo</li>
-</ul>
-<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030104476.png" alt="image-20220403030104476" style="zoom:50%;" />
-
-<ul>
-<li>Hexo安装完成后 输入hexo -v 出现问题</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030201321.png" alt="image-20220403030201321" style="zoom:50%;" />
-
-<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>更新文件</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>就好啦</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030505555.png" alt="image-20220403030505555" style="zoom:50%;" />
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
