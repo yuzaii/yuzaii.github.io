@@ -336,6 +336,37 @@
       </tags>
   </entry>
   <entry>
+    <title>idea如何创建spring的xml文件</title>
+    <url>/archives/5c7529e8.html</url>
+    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101720895.png" alt="img"></p>
+<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
+<ul>
+<li>点左上角的File，再点Project Structure</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721568.png" alt="img"></p>
+<ul>
+<li><p>先点加号再点java</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721742.png" alt="img"></p>
+</li>
+<li><p>导入spring的基本包</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721566.png" alt="img"></p>
+<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721581.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring创建对象与传统创建对象的区别</title>
     <url>/archives/7ad5699f.html</url>
     <content><![CDATA[<p><strong>这两天学习了Spring的相关知识，一直没有弄懂控制反转（ioc）是什么意思，今天在做测试的时候突然茅塞顿开，以下是我在写代码时候的心得，通俗易懂，详细的解释了Spring创建对象与传统创建对象的区别。</strong></p>
@@ -369,37 +400,6 @@
       </categories>
       <tags>
         <tag>spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>idea如何创建spring的xml文件</title>
-    <url>/archives/5c7529e8.html</url>
-    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101720895.png" alt="img"></p>
-<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
-<ul>
-<li>点左上角的File，再点Project Structure</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721568.png" alt="img"></p>
-<ul>
-<li><p>先点加号再点java</p>
-</li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721742.png" alt="img"></p>
-</li>
-<li><p>导入spring的基本包</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721566.png" alt="img"></p>
-<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721581.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>java</category>
-        <category>idea</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -492,6 +492,36 @@
       <tags>
         <tag>spring</tag>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于C语言中scanf(&quot;%c&quot;，&amp;c)直接跳过的问题</title>
+    <url>/archives/518528d0.html</url>
+    <content><![CDATA[<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> b;</span><br><span class="line">	<span class="type">char</span> c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入a的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入b的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入运算符\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;运算结果&quot;</span>);</span><br><span class="line">	yunsuan(a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来是没有问题的，但是在运行的时候，运算符没有让我输入直接跳过了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101809227.png" alt="img"></p>
+<p>这到底怎么回事呢？</p>
+<p>首先我们了解一下scanf()是怎么接受数据的。</p>
+<p>当执行scanf这句的时候，系统并不是等待用户输入，而是判断输入缓冲区有没有符合格式的内容，如果有的话，则直接读取。</p>
+<p>所以scanf(“%c”,&amp;c);并不是没有读到数据，而是读到了我们不知道的数据。</p>
+<p>那么它到底读到了什么了？</p>
+<p>这就要说到行缓存了。</p>
+<p>我们用scanf()的时候都要按下enter键，那enter键按了之后去哪儿了？</p>
+<p>答案是enter键也进入了输入缓存区，我们都知道enter键是换行的，也就是’&#x2F;n’,所以也就是scanf(“%c”,&amp;ch);读到了’\n’;</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>很简单，既然缓存区有东西，那我们就清空它。</p>
+<p>在 scanf(“%c”,&amp;ch); 前面加上setbuf(stdin,NULL);(这个windows和linux下都可以)，</p>
+<p>或者fflush(stdin);(这个只能windows)；</p>
+<p>我们再运行一下程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101810286.png" alt="img"></p>
+<p>这样我们就可以轻松秒杀！</p>
+<p>参考链接：<a href="https://blog.csdn.net/zy799894671/article/details/7757764">https://blog.csdn.net/zy799894671/article/details/7757764</a></p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
       </tags>
   </entry>
   <entry>
@@ -619,6 +649,21 @@
       </tags>
   </entry>
   <entry>
+    <title>在idea中实现热部署无需重启Tomcat</title>
+    <url>/archives/5624e937.html</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
+<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
+]]></content>
+      <categories>
+        <category>Tricks</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Mac上安装hexo</title>
     <url>/archives/b3adc85a.html</url>
     <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
@@ -653,21 +698,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在idea中实现热部署无需重启Tomcat</title>
-    <url>/archives/5624e937.html</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
-<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
-]]></content>
-      <categories>
-        <category>Tricks</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
-        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -725,36 +755,6 @@
       </categories>
       <tags>
         <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于C语言中scanf(&quot;%c&quot;，&amp;c)直接跳过的问题</title>
-    <url>/archives/518528d0.html</url>
-    <content><![CDATA[<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> b;</span><br><span class="line">	<span class="type">char</span> c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入a的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入b的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入运算符\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;运算结果&quot;</span>);</span><br><span class="line">	yunsuan(a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看起来是没有问题的，但是在运行的时候，运算符没有让我输入直接跳过了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101809227.png" alt="img"></p>
-<p>这到底怎么回事呢？</p>
-<p>首先我们了解一下scanf()是怎么接受数据的。</p>
-<p>当执行scanf这句的时候，系统并不是等待用户输入，而是判断输入缓冲区有没有符合格式的内容，如果有的话，则直接读取。</p>
-<p>所以scanf(“%c”,&amp;c);并不是没有读到数据，而是读到了我们不知道的数据。</p>
-<p>那么它到底读到了什么了？</p>
-<p>这就要说到行缓存了。</p>
-<p>我们用scanf()的时候都要按下enter键，那enter键按了之后去哪儿了？</p>
-<p>答案是enter键也进入了输入缓存区，我们都知道enter键是换行的，也就是’&#x2F;n’,所以也就是scanf(“%c”,&amp;ch);读到了’\n’;</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>很简单，既然缓存区有东西，那我们就清空它。</p>
-<p>在 scanf(“%c”,&amp;ch); 前面加上setbuf(stdin,NULL);(这个windows和linux下都可以)，</p>
-<p>或者fflush(stdin);(这个只能windows)；</p>
-<p>我们再运行一下程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101810286.png" alt="img"></p>
-<p>这样我们就可以轻松秒杀！</p>
-<p>参考链接：<a href="https://blog.csdn.net/zy799894671/article/details/7757764">https://blog.csdn.net/zy799894671/article/details/7757764</a></p>
-]]></content>
-      <categories>
-        <category>c/c++</category>
-      </categories>
-      <tags>
-        <tag>c/c++</tag>
       </tags>
   </entry>
   <entry>
