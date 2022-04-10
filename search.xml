@@ -336,37 +336,6 @@
       </tags>
   </entry>
   <entry>
-    <title>idea如何创建spring的xml文件</title>
-    <url>/archives/5c7529e8.html</url>
-    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101720895.png" alt="img"></p>
-<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
-<ul>
-<li>点左上角的File，再点Project Structure</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721568.png" alt="img"></p>
-<ul>
-<li><p>先点加号再点java</p>
-</li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721742.png" alt="img"></p>
-</li>
-<li><p>导入spring的基本包</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721566.png" alt="img"></p>
-<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721581.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>java</category>
-        <category>idea</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spring创建对象与传统创建对象的区别</title>
     <url>/archives/7ad5699f.html</url>
     <content><![CDATA[<p><strong>这两天学习了Spring的相关知识，一直没有弄懂控制反转（ioc）是什么意思，今天在做测试的时候突然茅塞顿开，以下是我在写代码时候的心得，通俗易懂，详细的解释了Spring创建对象与传统创建对象的区别。</strong></p>
@@ -400,6 +369,37 @@
       </categories>
       <tags>
         <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea如何创建spring的xml文件</title>
+    <url>/archives/5c7529e8.html</url>
+    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101720895.png" alt="img"></p>
+<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
+<ul>
+<li>点左上角的File，再点Project Structure</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721568.png" alt="img"></p>
+<ul>
+<li><p>先点加号再点java</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721742.png" alt="img"></p>
+</li>
+<li><p>导入spring的基本包</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721566.png" alt="img"></p>
+<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101721581.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -649,21 +649,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在idea中实现热部署无需重启Tomcat</title>
-    <url>/archives/5624e937.html</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
-<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
-]]></content>
-      <categories>
-        <category>Tricks</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
-        <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在Mac上安装hexo</title>
     <url>/archives/b3adc85a.html</url>
     <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
@@ -698,6 +683,21 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在idea中实现热部署无需重启Tomcat</title>
+    <url>/archives/5624e937.html</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
+<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
+]]></content>
+      <categories>
+        <category>Tricks</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
