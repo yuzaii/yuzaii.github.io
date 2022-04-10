@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Java爬取南通大学教务系统信息</title>
+    <url>/archives/229e6b0a.html</url>
+    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
+<p>1、通过抓包获取学校的认证登录链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
+<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo不算子统计和live2d冲突</title>
+    <url>/archives/776b4b4f.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146980.png" alt="image-20220408011834700" style="zoom:50%;" />
+
+<p>我是一个有强迫症的人，必须跟他死磕。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
+<ul>
+<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
+<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
+<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
+<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
+</ul>
+<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146438.png" alt="image-20220408013918659" style="zoom: 80%;" />
+
+<p>修改第三行的代码为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后执行三部曲</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
+
+<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080150900.png" alt="image-20220408015006497" style="zoom:67%;" />
+
+<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Mac上安装hexo</title>
+    <url>/archives/b3adc85a.html</url>
+    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<ul>
+<li>安装node.js</li>
+<li>安装git</li>
+<li>安装hexo</li>
+</ul>
+<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030104476.png" alt="image-20220403030104476" style="zoom:50%;" />
+
+<ul>
+<li>Hexo安装完成后 输入hexo -v 出现问题</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030201321.png" alt="image-20220403030201321" style="zoom:50%;" />
+
+<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>更新文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>就好啦</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030505555.png" alt="image-20220403030505555" style="zoom:50%;" />
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown语法</title>
+    <url>/archives/3c50d03d.html</url>
+    <content><![CDATA[<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><h3 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks:"></a>Tricks:</h3><ol>
+<li>编辑时，<em><strong>Enter</strong></em>会空一行，<em><strong>Shift+Enter</strong></em>不空行 </li>
+<li>Markdown可以利用***反斜杠\***来插入一些在语法中有其它意义的符号。<br>例如：如果你想要用星号加在文字旁边的方式来做出强调效果，你可以在星号的前面加上反斜杠。</li>
+</ol>
+<ul>
+<li><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h3></li>
+</ul>
+<p>用”#”加空格。<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。</p>
+<p>例：</p>
+<h3 id="我是标题"><a href="#我是标题" class="headerlink" title="我是标题"></a>我是标题</h3><ul>
+<li><h3 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h3></li>
+</ul>
+<p>**这是加粗的文字**<br>*这是倾斜的文字*<br>***这是斜体加粗的文字***<br>~~这是加删除线的文字~~</p>
+<p>注：</p>
+<p>例：</p>
+<p><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em><br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
+<ul>
+<li><h3 id="3-区块引用"><a href="#3-区块引用" class="headerlink" title="3.区块引用"></a>3.区块引用</h3></li>
+</ul>
+<p>在段落的第一行最前面加”&gt;”</p>
+<p>例：</p>
+<blockquote>
+<p> 我是段落</p>
+</blockquote>
+<p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ，</p>
+<p>区块内也可以套用其他的 Markdown 语法，包括加粗、列表、代码区块等。</p>
+<p>例：</p>
+<blockquote>
+<h3 id="我是第一层"><a href="#我是第一层" class="headerlink" title="我是第一层"></a>我是第一层</h3><blockquote>
+<p>我是第二层</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><h3 id="3-列表"><a href="#3-列表" class="headerlink" title="3.列表"></a>3.列表</h3></li>
+</ul>
+<p>无序列表使用星号*、加号-或是减号+加空格作为列表标记，效果一样：</p>
+<p>例：</p>
+<ul>
+<li>第一步</li>
+<li>第二步</li>
+<li>第三步</li>
+</ul>
+<p>有序列表则使用数字接着一个英文句点加空格：</p>
+<ol>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ol>
+<ul>
+<li><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3></li>
+</ul>
+<p>三个或者三个以上的 - 或者 * 都可以。</p>
+<p>例：</p>
+<hr>
+<hr>
+<ul>
+<li><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line"><span class="bullet">-</span> 有一个就行，为了对齐，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">-两边加：表示文字居中</span><br><span class="line">-右边加：表示文字居右</span><br><span class="line">注：原生的语法两边都要用 | 包起来。此处省略</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th align="center">技能</th>
+<th align="right">排行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刘备</td>
+<td align="center">哭</td>
+<td align="right">大哥</td>
+</tr>
+<tr>
+<td>关羽</td>
+<td align="center">打</td>
+<td align="right">二哥</td>
+</tr>
+<tr>
+<td>张飞</td>
+<td align="center">骂</td>
+<td align="right">三弟</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`单行代码内容`</span></span><br><span class="line"><span class="code">```代码块```</span>左下角可以选择语言</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<ol>
+<li><p>单行代码<br><code>print(&quot;helloworld!&quot;)</code></p>
+</li>
+<li><p>代码块</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">超链接名</span>](<span class="link">超链接地址 &quot;超链接title&quot;</span>)</span><br><span class="line">title可加可不加</span><br></pre></td></tr></table></figure>
+
+<p>例：<br><a href="http://jianshu.com/" title="jianshu">简书</a><br><a href="http://baidu.com/" title="baidu">百度</a></p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>更换Hexo博客</title>
+    <url>/archives/852e693a.html</url>
+    <content><![CDATA[<h1 id="浅谈Hexo"><a href="#浅谈Hexo" class="headerlink" title="浅谈Hexo"></a>浅谈Hexo</h1><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>我以前用的是wordpress，但是他的文章不支持Markdown语法，所以就换了一下，以后写博客就更方便了。</p>
+<p>其实我是喜欢写点东西的，所以我花了几天的时间研究了一下Hexo，今天正式更换啦，欢迎大家来访！</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
