@@ -171,6 +171,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Java爬取南通大学教务系统信息</title>
+    <url>/archives/229e6b0a.html</url>
+    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
+<p>1、通过抓包获取学校的认证登录链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
+<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown语法</title>
     <url>/archives/3c50d03d.html</url>
     <content><![CDATA[<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><h3 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks:"></a>Tricks:</h3><ol>
@@ -287,32 +313,6 @@
       </categories>
       <tags>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java爬取南通大学教务系统信息</title>
-    <url>/archives/229e6b0a.html</url>
-    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
-<p>1、通过抓包获取学校的认证登录链接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
-<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
