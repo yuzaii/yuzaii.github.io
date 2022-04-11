@@ -1,81 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C/C++中printf和cout的区别</title>
-    <url>/archives/bd6fcf73.html</url>
-    <content><![CDATA[<p><strong>在写代码的时候，我们经常会用到输出语句，在C&#x2F;C++中，存在两个输出语句，一个是printf，另一个是cout，那么他们有什么区别呢？</strong></p>
-<h3 id="使用语言"><a href="#使用语言" class="headerlink" title="使用语言"></a>使用语言</h3><p>首先在C++中，既可以使用printf( )，也可以使用cout。而在c语言中，只能使用printf来输出打印。这很好理解，因为C++是C语言的继承，C++进一步扩充和完善了C语言。</p>
-<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;Hello,World!&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面是C++中常见的输出格式，先是引用了 iostream(input output stream输入输出流)头文件,是标准的C++头文件，而cout只是iostream中的对象，大概等于cout&#x3D;” Hello,World! “，然后输出流将 cout 在屏幕上显示。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello,World\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这是C语言中的输出格式，在C语言中，printf( )函数是一个标准库函数，它的函数原型在头文件”stdio.h”中。</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="cout"><a href="#cout" class="headerlink" title="cout"></a>cout</h4><p>使用cout时需要运”&lt;&lt;“符号，它被称为流插入运算符，属于双目运算符的一种。</p>
-<p>一般格式是 cout&lt;&lt;“你要输出的内容”&lt;&lt;endl;</p>
-<p>如果你想要输出一个值为1的int类型的变量a,则需要这么写</p>
-<p>cout&lt;&lt;“a的值是”&lt;&lt;a&lt;&lt;endl;</p>
-<p>控制台将会输出”a的值是1″。</p>
-<p>endl是end line的意思，也就是输出换行的意思。</p>
-<h4 id="printf"><a href="#printf" class="headerlink" title="printf( )"></a>printf( )</h4><p>使用print()输出需要注意他的一般形式是printf(“格式控制字符串”, 输出表列)</p>
-<p>如果你想要输出一个值为1的int类型的变量a，则需要这么写</p>
-<p>printf(“a的值是%d”,a)；</p>
-<p>控制台将会输出”a值是1″。</p>
-<p>%d是格式化符号，通俗理解就相当于是给a占了个位置，这个位置由后面的a的值来填。</p>
-<p>如果有多个格式化符号，后面的输出列表要按顺序排列。</p>
-<p>常见的格式化符号</p>
-<p>%d 输出整形数字</p>
-<p>%f 输出浮点数数字</p>
-<p>%c 输出字符</p>
-<p>%s输出字符串</p>
-<p>%p输出指针地址</p>
-<p>%x（%0x) 输出16进制</p>
-]]></content>
-      <categories>
-        <category>c/c++</category>
-      </categories>
-      <tags>
-        <tag>c/c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo不算子统计和live2d冲突</title>
-    <url>/archives/776b4b4f.html</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146980.png" alt="image-20220408011834700" style="zoom:50%;" />
-
-<p>我是一个有强迫症的人，必须跟他死磕。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
-<ul>
-<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
-<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
-<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
-<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
-</ul>
-<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146438.png" alt="image-20220408013918659" style="zoom: 80%;" />
-
-<p>修改第三行的代码为</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>最后执行三部曲</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
-
-<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080150900.png" alt="image-20220408015006497" style="zoom:67%;" />
-
-<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CLion c++无法使用iostream.h头文件</title>
     <url>/archives/34f36c24.html</url>
     <content><![CDATA[<p>​    这两天在学数据结构，总是找不到好用的编译器，前两天发现了jetbrain公司有一共clionb编译器，我就试了一下，因为我经常使用他家的idea写Java，好用pycharm写python，所以界面什么的都比较友好。当我把c++的代码复制过去的时候发现无法调用iostream.h头文件</p>
@@ -117,6 +42,62 @@
       </tags>
   </entry>
   <entry>
+    <title>C/C++中printf和cout的区别</title>
+    <url>/archives/bd6fcf73.html</url>
+    <content><![CDATA[<p><strong>在写代码的时候，我们经常会用到输出语句，在C&#x2F;C++中，存在两个输出语句，一个是printf，另一个是cout，那么他们有什么区别呢？</strong></p>
+<h3 id="使用语言"><a href="#使用语言" class="headerlink" title="使用语言"></a>使用语言</h3><p>首先在C++中，既可以使用printf( )，也可以使用cout。而在c语言中，只能使用printf来输出打印。这很好理解，因为C++是C语言的继承，C++进一步扩充和完善了C语言。</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;Hello,World!&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面是C++中常见的输出格式，先是引用了 iostream(input output stream输入输出流)头文件,是标准的C++头文件，而cout只是iostream中的对象，大概等于cout&#x3D;” Hello,World! “，然后输出流将 cout 在屏幕上显示。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello,World\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是C语言中的输出格式，在C语言中，printf( )函数是一个标准库函数，它的函数原型在头文件”stdio.h”中。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="cout"><a href="#cout" class="headerlink" title="cout"></a>cout</h4><p>使用cout时需要运”&lt;&lt;“符号，它被称为流插入运算符，属于双目运算符的一种。</p>
+<p>一般格式是 cout&lt;&lt;“你要输出的内容”&lt;&lt;endl;</p>
+<p>如果你想要输出一个值为1的int类型的变量a,则需要这么写</p>
+<p>cout&lt;&lt;“a的值是”&lt;&lt;a&lt;&lt;endl;</p>
+<p>控制台将会输出”a的值是1″。</p>
+<p>endl是end line的意思，也就是输出换行的意思。</p>
+<h4 id="printf"><a href="#printf" class="headerlink" title="printf( )"></a>printf( )</h4><p>使用print()输出需要注意他的一般形式是printf(“格式控制字符串”, 输出表列)</p>
+<p>如果你想要输出一个值为1的int类型的变量a，则需要这么写</p>
+<p>printf(“a的值是%d”,a)；</p>
+<p>控制台将会输出”a值是1″。</p>
+<p>%d是格式化符号，通俗理解就相当于是给a占了个位置，这个位置由后面的a的值来填。</p>
+<p>如果有多个格式化符号，后面的输出列表要按顺序排列。</p>
+<p>常见的格式化符号</p>
+<p>%d 输出整形数字</p>
+<p>%f 输出浮点数数字</p>
+<p>%c 输出字符</p>
+<p>%s输出字符串</p>
+<p>%p输出指针地址</p>
+<p>%x（%0x) 输出16进制</p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA如何自动导入Spring依赖</title>
+    <url>/archives/abcf8d7e.html</url>
+    <content><![CDATA[<p><strong>在学习Spring开发的时候每次都要手动导入依赖包，很浪费时间，后来发现可以通过pom.xml文件自动导入</strong></p>
+<h3 id="首先打开pom-xml文件"><a href="#首先打开pom-xml文件" class="headerlink" title="首先打开pom.xml文件"></a>首先打开pom.xml文件</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101727920.png" alt="img"></p>
+<h3 id="在代码中间添加以下代码"><a href="#在代码中间添加以下代码" class="headerlink" title="在代码中间添加以下代码"></a>在<dependencies></dependencies>代码中间添加以下代码</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"><a href="#一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包" class="headerlink" title="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"></a>一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101727340.png" alt="img"></p>
+<h2 id="等进度条读取完就导入成功了"><a href="#等进度条读取完就导入成功了" class="headerlink" title="等进度条读取完就导入成功了"></a>等进度条读取完就导入成功了</h2>]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IDAE开发SSM项目步骤</title>
     <url>/archives/c9201f7e.html</url>
     <content><![CDATA[<h2 id="创建maven项目"><a href="#创建maven项目" class="headerlink" title="创建maven项目"></a><a href="/archives/ac31337f.html">创建maven项目</a></h2><h2 id="导入依赖（版本可以自己换）"><a href="#导入依赖（版本可以自己换）" class="headerlink" title="导入依赖（版本可以自己换）"></a>导入依赖（版本可以自己换）</h2><p>模板</p>
@@ -153,21 +134,66 @@
       </tags>
   </entry>
   <entry>
-    <title>IDEA如何自动导入Spring依赖</title>
-    <url>/archives/abcf8d7e.html</url>
-    <content><![CDATA[<p><strong>在学习Spring开发的时候每次都要手动导入依赖包，很浪费时间，后来发现可以通过pom.xml文件自动导入</strong></p>
-<h3 id="首先打开pom-xml文件"><a href="#首先打开pom-xml文件" class="headerlink" title="首先打开pom.xml文件"></a>首先打开pom.xml文件</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101727920.png" alt="img"></p>
-<h3 id="在代码中间添加以下代码"><a href="#在代码中间添加以下代码" class="headerlink" title="在代码中间添加以下代码"></a>在<dependencies></dependencies>代码中间添加以下代码</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Java爬取南通大学教务系统信息</title>
+    <url>/archives/229e6b0a.html</url>
+    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
+<p>1、通过抓包获取学校的认证登录链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
 
-<h3 id="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"><a href="#一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包" class="headerlink" title="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"></a>一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101727340.png" alt="img"></p>
-<h2 id="等进度条读取完就导入成功了"><a href="#等进度条读取完就导入成功了" class="headerlink" title="等进度条读取完就导入成功了"></a>等进度条读取完就导入成功了</h2>]]></content>
+<span id="more"></span>
+
+<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
+<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
+]]></content>
       <categories>
         <category>JAVA</category>
-        <category>idea</category>
       </categories>
       <tags>
-        <tag>spring</tag>
-        <tag>idea</tag>
+        <tag>爬虫</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo不算子统计和live2d冲突</title>
+    <url>/archives/776b4b4f.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146980.png" alt="image-20220408011834700" style="zoom:50%;" />
+
+<p>我是一个有强迫症的人，必须跟他死磕。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
+<ul>
+<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
+<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
+<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
+<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
+</ul>
+<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146438.png" alt="image-20220408013918659" style="zoom: 80%;" />
+
+<p>修改第三行的代码为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后执行三部曲</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
+
+<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080150900.png" alt="image-20220408015006497" style="zoom:67%;" />
+
+<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Bug</tag>
       </tags>
   </entry>
   <entry>
@@ -425,72 +451,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java爬取南通大学教务系统信息</title>
-    <url>/archives/229e6b0a.html</url>
-    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
-<p>1、通过抓包获取学校的认证登录链接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
-<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sql中#与$的区别</title>
-    <url>/archives/40b22f69.html</url>
-    <content><![CDATA[<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><p>（1）#将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是id，则解析成的sql为order by “id”。</p>
-<p>（2）$将传入的数据直接显示生成在sql中。如：order by $user_id$，如果传入的值是id，则解析成的sql为order by id。</p>
-<p>（3）#方式在很大程度上能够防止sql注入。</p>
-<p>（4）$方式无法防止sql注入。</p>
-<p>（5）$方式一般用于传入数据库对象，例如传入表名。（<strong>这里得注意SQL注入问题</strong>）</p>
-<p>（6）一般能用#的就别用$。</p>
-<p>ps:在使用mybatis中还遇到<![CDATA[]]>的用法，在该符号内的语句，将不会被当成字符串来处理，而是直接当成sql语句，比如要执行一个存储过程。</p>
-<p>总结区别：#{} 传入值时，sql解析时，参数是带引号的，而${}穿入值，sql解析时，参数是不带引号的。</p>
-<h3 id="举个例子："><a href="#举个例子：" class="headerlink" title="举个例子："></a>举个例子：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> $&#123;table_Name&#125; <span class="keyword">where</span> name <span class="operator">=</span> #&#123;name&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>在这个例子中，如果表名为</p>
-<p>　　 user; delete user; –</p>
-<p>　　则动态解析之后 sql 如下：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span>; <span class="keyword">delete</span> <span class="keyword">user</span>; <span class="comment">-- where name = ?;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>–之后的语句被注释掉，而原本查询用户的语句变成了查询所有用户信息+删除用户表的语句，会对数据库造成致命损伤。</p>
-<p>但是表名用参数传递进来的时候，只能使用 ${} 。这也提醒在这种用法中要小心sql注入的问题。</p>
-<h3 id="防止SQL注入方法："><a href="#防止SQL注入方法：" class="headerlink" title="防止SQL注入方法："></a>防止SQL注入方法：</h3><p>首先，永远不要相信用户的输入。</p>
-<p>（1）不使用SQL，考虑NoSQL。</p>
-<p>（2）正则表达式，字符串过滤。</p>
-<p>（3）参数绑定PreparedStatement。</p>
-<p>（4）使用正则表达式过滤传入的参数。</p>
-<p>（5）JSP中调用该函数检查是否包函非法字符或JSP页面判断代码。JSP参考<a href="http://www.cnblogs.com/leftshine/p/5539810.html">JSP使用过滤器防止SQL注入</a></p>
-<p><a href="https://www.cnblogs.com/porotin/p/9122398.html">参考链接</a></p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>sql</tag>
-        <tag>信息安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用json返回数据的时候不要使用submit</title>
     <url>/archives/cb8a5bbd.html</url>
     <content><![CDATA[<h3 id="如题，当使用submit提交后，会直接跳转json值的页面如图"><a href="#如题，当使用submit提交后，会直接跳转json值的页面如图" class="headerlink" title="如题，当使用submit提交后，会直接跳转json值的页面如图"></a>如题，当使用submit提交后，会直接跳转json值的页面如图</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101912602.png" alt="img"></p>
@@ -539,33 +499,29 @@
       </tags>
   </entry>
   <entry>
-    <title>关于Spring MVC POJO类型参数详解</title>
-    <url>/archives/d3533fbe.html</url>
-    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
-<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
-<p>接下来用代码解释一下</p>
-<p>这是po类User</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>关于Mybatis的@Param注解</title>
+    <url>/archives/33a6a717.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天写了一个判断用户用户名密码是否正确的登录功能，在单元测试的时候发现报错，（org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter ‘user_name’ not found. Available parameters are [arg1, arg0, param1, param2]）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848296.png" alt="img"></p>
+<p>原因是没有找到参数user_name的值，可是我明明在mapper.xml文件中传入了呀。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.xueziport.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--根据id查询用户信息 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUserById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_id=#&#123;user_id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    根据账号密码查找用户--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUser&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;String&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_name=#&#123;user_name&#125; and user_password=#&#123;user_password&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这是jsp中的表单 属性名分别为username和password</p>
-<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>后来查了资料才发现，如果需要传入多个参数需要在接口中加上@Param(values&#x3D;”参数名”)参数（如果只有一个values参数则可以省略）,告诉mybatis你传入的值的参数名称，这样好在mapper文件中调用。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> User <span class="title function_">findUser</span><span class="params">(<span class="meta">@Param(&quot;user_name&quot;)</span> String user_name,<span class="meta">@Param(&quot;user_password&quot;)</span> String user_password)</span>;</span><br></pre></td></tr></table></figure>
 
-<p>这是一个接收用户注册信息的一个方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的参数User user就是一个pojo类型</p>
-<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
-<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
-<p>运行一下程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101817359.png" alt="image-20220410181751392"></p>
-<p>这样就方便不同类型的参数传递了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848461.png" alt="img"></p>
+<p>最后发现就可以了</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在mapper.xml中只有一个传入参数，可以不用@param;</p>
+<p>如果传入多个的参数，需要使用@Paran注解；</p>
+<p>如果是传入Map的集合，那么key就对应着参数的别名，可以不用加@param。</p>
 ]]></content>
       <categories>
-        <category>JAVA</category>
+        <category>java</category>
       </categories>
       <tags>
         <tag>spring</tag>
         <tag>JAVA</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -603,6 +559,146 @@
       <tags>
         <tag>爬虫</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql中#与$的区别</title>
+    <url>/archives/40b22f69.html</url>
+    <content><![CDATA[<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><p>（1）#将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是id，则解析成的sql为order by “id”。</p>
+<p>（2）$将传入的数据直接显示生成在sql中。如：order by $user_id$，如果传入的值是id，则解析成的sql为order by id。</p>
+<p>（3）#方式在很大程度上能够防止sql注入。</p>
+<p>（4）$方式无法防止sql注入。</p>
+<p>（5）$方式一般用于传入数据库对象，例如传入表名。（<strong>这里得注意SQL注入问题</strong>）</p>
+<p>（6）一般能用#的就别用$。</p>
+<p>ps:在使用mybatis中还遇到<![CDATA[]]>的用法，在该符号内的语句，将不会被当成字符串来处理，而是直接当成sql语句，比如要执行一个存储过程。</p>
+<p>总结区别：#{} 传入值时，sql解析时，参数是带引号的，而${}穿入值，sql解析时，参数是不带引号的。</p>
+<h3 id="举个例子："><a href="#举个例子：" class="headerlink" title="举个例子："></a>举个例子：</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> $&#123;table_Name&#125; <span class="keyword">where</span> name <span class="operator">=</span> #&#123;name&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在这个例子中，如果表名为</p>
+<p>　　 user; delete user; –</p>
+<p>　　则动态解析之后 sql 如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span>; <span class="keyword">delete</span> <span class="keyword">user</span>; <span class="comment">-- where name = ?;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>–之后的语句被注释掉，而原本查询用户的语句变成了查询所有用户信息+删除用户表的语句，会对数据库造成致命损伤。</p>
+<p>但是表名用参数传递进来的时候，只能使用 ${} 。这也提醒在这种用法中要小心sql注入的问题。</p>
+<h3 id="防止SQL注入方法："><a href="#防止SQL注入方法：" class="headerlink" title="防止SQL注入方法："></a>防止SQL注入方法：</h3><p>首先，永远不要相信用户的输入。</p>
+<p>（1）不使用SQL，考虑NoSQL。</p>
+<p>（2）正则表达式，字符串过滤。</p>
+<p>（3）参数绑定PreparedStatement。</p>
+<p>（4）使用正则表达式过滤传入的参数。</p>
+<p>（5）JSP中调用该函数检查是否包函非法字符或JSP页面判断代码。JSP参考<a href="http://www.cnblogs.com/leftshine/p/5539810.html">JSP使用过滤器防止SQL注入</a></p>
+<p><a href="https://www.cnblogs.com/porotin/p/9122398.html">参考链接</a></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>sql</tag>
+        <tag>信息安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Mac上安装hexo</title>
+    <url>/archives/b3adc85a.html</url>
+    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<ul>
+<li>安装node.js</li>
+<li>安装git</li>
+<li>安装hexo</li>
+</ul>
+<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030104476.png" alt="image-20220403030104476" style="zoom:50%;" />
+
+<ul>
+<li>Hexo安装完成后 输入hexo -v 出现问题</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030201321.png" alt="image-20220403030201321" style="zoom:50%;" />
+
+<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>更新文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>就好啦</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030505555.png" alt="image-20220403030505555" style="zoom:50%;" />
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用python实现词频统计</title>
+    <url>/archives/5dc3259f.html</url>
+    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
+<ul>
+<li>从文本中读入数据（文件的输入输出）</li>
+<li>不区分大小写,去除特殊字符。</li>
+<li>统计单词 例如：about ：10 并统计总共多少单词</li>
+<li>对单词排序（出现次数 ）</li>
+<li>输出词频最高的10个单词和次数</li>
+<li>把统计结果存入文本</li>
+</ul>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101756049.png" alt="img">运行程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101757307.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>课程项目</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring MVC POJO类型参数详解</title>
+    <url>/archives/d3533fbe.html</url>
+    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
+<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
+<p>接下来用代码解释一下</p>
+<p>这是po类User</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是jsp中的表单 属性名分别为username和password</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个接收用户注册信息的一个方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的参数User user就是一个pojo类型</p>
+<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
+<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
+<p>运行一下程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101817359.png" alt="image-20220410181751392"></p>
+<p>这样就方便不同类型的参数传递了。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -663,35 +759,18 @@
       </tags>
   </entry>
   <entry>
-    <title>利用python实现词频统计</title>
-    <url>/archives/5dc3259f.html</url>
-    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
-<ul>
-<li>从文本中读入数据（文件的输入输出）</li>
-<li>不区分大小写,去除特殊字符。</li>
-<li>统计单词 例如：about ：10 并统计总共多少单词</li>
-<li>对单词排序（出现次数 ）</li>
-<li>输出词频最高的10个单词和次数</li>
-<li>把统计结果存入文本</li>
-</ul>
-<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101756049.png" alt="img">运行程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101757307.png" alt="img"></p>
+    <title>在idea中实现热部署无需重启Tomcat</title>
+    <url>/archives/5624e937.html</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
+<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
 ]]></content>
       <categories>
-        <category>python</category>
-        <category>课程项目</category>
+        <category>Tricks</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>idea</tag>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -709,44 +788,6 @@
 <p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101715646.png" alt="img"></p>
 ]]></content>
       <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Mac上安装hexo</title>
-    <url>/archives/b3adc85a.html</url>
-    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-<ul>
-<li>安装node.js</li>
-<li>安装git</li>
-<li>安装hexo</li>
-</ul>
-<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030104476.png" alt="image-20220403030104476" style="zoom:50%;" />
-
-<ul>
-<li>Hexo安装完成后 输入hexo -v 出现问题</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030201321.png" alt="image-20220403030201321" style="zoom:50%;" />
-
-<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>更新文件</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>就好啦</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/image-20220403030505555.png" alt="image-20220403030505555" style="zoom:50%;" />
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
         <tag>Mac</tag>
       </tags>
   </entry>
@@ -810,47 +851,6 @@
         <tag>JAVA</tag>
         <tag>servlet</tag>
         <tag>jsp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Mybatis的@Param注解</title>
-    <url>/archives/33a6a717.html</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天写了一个判断用户用户名密码是否正确的登录功能，在单元测试的时候发现报错，（org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter ‘user_name’ not found. Available parameters are [arg1, arg0, param1, param2]）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848296.png" alt="img"></p>
-<p>原因是没有找到参数user_name的值，可是我明明在mapper.xml文件中传入了呀。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.xueziport.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--根据id查询用户信息 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUserById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_id=#&#123;user_id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    根据账号密码查找用户--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUser&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;String&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_name=#&#123;user_name&#125; and user_password=#&#123;user_password&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>后来查了资料才发现，如果需要传入多个参数需要在接口中加上@Param(values&#x3D;”参数名”)参数（如果只有一个values参数则可以省略）,告诉mybatis你传入的值的参数名称，这样好在mapper文件中调用。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> User <span class="title function_">findUser</span><span class="params">(<span class="meta">@Param(&quot;user_name&quot;)</span> String user_name,<span class="meta">@Param(&quot;user_password&quot;)</span> String user_password)</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848461.png" alt="img"></p>
-<p>最后发现就可以了</p>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在mapper.xml中只有一个传入参数，可以不用@param;</p>
-<p>如果传入多个的参数，需要使用@Paran注解；</p>
-<p>如果是传入Map的集合，那么key就对应着参数的别名，可以不用加@param。</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>JAVA</tag>
-        <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在idea中实现热部署无需重启Tomcat</title>
-    <url>/archives/5624e937.html</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
-<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
-]]></content>
-      <categories>
-        <category>Tricks</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
-        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
