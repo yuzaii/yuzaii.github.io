@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yuzaii.github.io/about/index.html</loc>
+    <loc>https://yuzaii.github.io/link/index.html</loc>
     
     <lastmod>2022-04-11</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/link/index.html</loc>
+    <loc>https://yuzaii.github.io/about/index.html</loc>
     
     <lastmod>2022-04-11</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/archives/518528d0.html</loc>
+    <loc>https://yuzaii.github.io/archives/216f350c.html</loc>
     
     <lastmod>2022-04-10</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/archives/216f350c.html</loc>
+    <loc>https://yuzaii.github.io/archives/518528d0.html</loc>
     
     <lastmod>2022-04-10</lastmod>
     
@@ -331,14 +331,14 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/hexo/</loc>
+    <loc>https://yuzaii.github.io/tags/python/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/Bug/</loc>
+    <loc>https://yuzaii.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -366,21 +366,14 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/Markdown/</loc>
+    <loc>https://yuzaii.github.io/tags/hexo/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/python/</loc>
-    <lastmod>2022-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuzaii.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://yuzaii.github.io/tags/Bug/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -415,7 +408,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/Mac/</loc>
+    <loc>https://yuzaii.github.io/tags/Markdown/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -429,14 +422,21 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <loc>https://yuzaii.github.io/tags/mysql/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/tags/mysql/</loc>
+    <loc>https://yuzaii.github.io/tags/Mac/</loc>
+    <lastmod>2022-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuzaii.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -466,7 +466,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://yuzaii.github.io/categories/python/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -480,28 +480,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/categories/Markdown/</loc>
-    <lastmod>2022-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuzaii.github.io/categories/python/</loc>
-    <lastmod>2022-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuzaii.github.io/categories/JAVA/idea/</loc>
-    <lastmod>2022-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuzaii.github.io/categories/JAVA/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>https://yuzaii.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -515,7 +494,14 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/categories/JAVA/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://yuzaii.github.io/categories/python/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2022-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuzaii.github.io/categories/JAVA/idea/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -529,14 +515,7 @@
   </url>
   
   <url>
-    <loc>https://yuzaii.github.io/categories/python/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2022-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuzaii.github.io/categories/Tricks/</loc>
+    <loc>https://yuzaii.github.io/categories/Markdown/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -544,6 +523,27 @@
   
   <url>
     <loc>https://yuzaii.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2022-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuzaii.github.io/categories/JAVA/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2022-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuzaii.github.io/categories/JAVA/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuzaii.github.io/categories/Tricks/</loc>
     <lastmod>2022-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
