@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/archives/518528d0.html</loc>
+    <loc>https://www.yuzai.xyz/archives/5624e937.html</loc>
     
     <lastmod>2022-04-10</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/archives/5624e937.html</loc>
+    <loc>https://www.yuzai.xyz/archives/518528d0.html</loc>
     
     <lastmod>2022-04-10</lastmod>
     
@@ -340,20 +340,6 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/hexo/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yuzai.xyz/tags/Bug/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.yuzai.xyz/tags/spring/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -368,7 +354,14 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/JAVA/</loc>
+    <loc>https://www.yuzai.xyz/tags/hexo/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuzai.xyz/tags/Bug/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -389,14 +382,14 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/Markdown/</loc>
+    <loc>https://www.yuzai.xyz/tags/JAVA/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://www.yuzai.xyz/tags/Markdown/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -417,14 +410,14 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/mybatis/</loc>
+    <loc>https://www.yuzai.xyz/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/Mac/</loc>
+    <loc>https://www.yuzai.xyz/tags/mybatis/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -438,7 +431,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/tags/mysql/</loc>
+    <loc>https://www.yuzai.xyz/tags/Mac/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -446,6 +439,13 @@
   
   <url>
     <loc>https://www.yuzai.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuzai.xyz/tags/mysql/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -475,14 +475,14 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://www.yuzai.xyz/categories/JAVA/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/categories/JAVA/</loc>
+    <loc>https://www.yuzai.xyz/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -496,6 +496,13 @@
   </url>
   
   <url>
+    <loc>https://www.yuzai.xyz/categories/JAVA/idea/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yuzai.xyz/categories/Markdown/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -503,7 +510,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/categories/JAVA/idea/</loc>
+    <loc>https://www.yuzai.xyz/categories/JAVA/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -517,7 +524,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuzai.xyz/categories/python/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://www.yuzai.xyz/categories/JAVA/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -538,21 +545,14 @@
   </url>
   
   <url>
+    <loc>https://www.yuzai.xyz/categories/python/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yuzai.xyz/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yuzai.xyz/categories/JAVA/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yuzai.xyz/categories/JAVA/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
