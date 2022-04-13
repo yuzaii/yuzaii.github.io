@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo不算子统计和live2d冲突</title>
+    <url>/archives/776b4b4f.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146980.png" alt="image-20220408011834700" style="zoom:50%;" />
+
+<p>我是一个有强迫症的人，必须跟他死磕。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
+<ul>
+<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
+<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
+<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
+<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
+</ul>
+<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146438.png" alt="image-20220408013918659" style="zoom: 80%;" />
+
+<p>修改第三行的代码为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后执行三部曲</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
+
+<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
+<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080150900.png" alt="image-20220408015006497" style="zoom:67%;" />
+
+<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C/C++中printf和cout的区别</title>
     <url>/archives/bd6fcf73.html</url>
     <content><![CDATA[<p><strong>在写代码的时候，我们经常会用到输出语句，在C&#x2F;C++中，存在两个输出语句，一个是printf，另一个是cout，那么他们有什么区别呢？</strong></p>
@@ -98,43 +135,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo不算子统计和live2d冲突</title>
-    <url>/archives/776b4b4f.html</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146980.png" alt="image-20220408011834700" style="zoom:50%;" />
-
-<p>我是一个有强迫症的人，必须跟他死磕。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
-<ul>
-<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
-<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
-<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
-<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
-</ul>
-<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080146438.png" alt="image-20220408013918659" style="zoom: 80%;" />
-
-<p>修改第三行的代码为</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>最后执行三部曲</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
-
-<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
-<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204080150900.png" alt="image-20220408015006497" style="zoom:67%;" />
-
-<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDAE开发SSM项目步骤</title>
     <url>/archives/c9201f7e.html</url>
     <content><![CDATA[<h2 id="创建maven项目"><a href="#创建maven项目" class="headerlink" title="创建maven项目"></a><a href="/archives/ac31337f.html">创建maven项目</a></h2><h2 id="导入依赖（版本可以自己换）"><a href="#导入依赖（版本可以自己换）" class="headerlink" title="导入依赖（版本可以自己换）"></a>导入依赖（版本可以自己换）</h2><p>模板</p>
@@ -194,6 +194,26 @@
       <tags>
         <tag>JAVA</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python连接数据库操作后一定要记得关闭连接</title>
+    <url>/archives/e76e289b.html</url>
+    <content><![CDATA[<p>今天我们小组用python对数据库进行操作的时候，突然运行全部出问题了。</p>
+<p>最后才发现原来是我们用的是同一个数据库，并且在代码里面只关闭了游标对象，并未关闭连接对象，所以运行结束后并未能及时释放，造成了连接池的拥挤，相当于操作系统里的死锁。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect=pymysql.connect(host=<span class="string">&#x27;localhost&#x27;</span>,port=<span class="number">3306</span>,user=<span class="string">&#x27;root&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>,db=<span class="string">&#x27;student&#x27;</span>)</span><br><span class="line">cursor = connect.cursor() <span class="comment">#创建游标对象</span></span><br><span class="line">cursor.close()<span class="comment">#关闭游标对象</span></span><br><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br></pre></td></tr></table></figure>
+
+<p>后来只能在程序退出的时候关闭连接对象。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br><span class="line">          sys.exit()</span><br></pre></td></tr></table></figure>
+
+<p>所以以后操作完数据库后一定要记得关闭连接！</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -353,23 +373,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Python连接数据库操作后一定要记得关闭连接</title>
-    <url>/archives/e76e289b.html</url>
-    <content><![CDATA[<p>今天我们小组用python对数据库进行操作的时候，突然运行全部出问题了。</p>
-<p>最后才发现原来是我们用的是同一个数据库，并且在代码里面只关闭了游标对象，并未关闭连接对象，所以运行结束后并未能及时释放，造成了连接池的拥挤，相当于操作系统里的死锁。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect=pymysql.connect(host=<span class="string">&#x27;localhost&#x27;</span>,port=<span class="number">3306</span>,user=<span class="string">&#x27;root&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>,db=<span class="string">&#x27;student&#x27;</span>)</span><br><span class="line">cursor = connect.cursor() <span class="comment">#创建游标对象</span></span><br><span class="line">cursor.close()<span class="comment">#关闭游标对象</span></span><br><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br></pre></td></tr></table></figure>
-
-<p>后来只能在程序退出的时候关闭连接对象。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br><span class="line">          sys.exit()</span><br></pre></td></tr></table></figure>
-
-<p>所以以后操作完数据库后一定要记得关闭连接！</p>
+    <title>javaweb项目上传服务器时一定要使用与开发项目相同的JDK!!!</title>
+    <url>/archives/80b2f6fc.html</url>
+    <content><![CDATA[<h2 id="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"><a href="#javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。" class="headerlink" title="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"></a>javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。</h2><p>今天被坑惨了，我将刚刚在本地测试好的javaweb项目部署到linux服务器上，访问时却报404.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101834149.png" alt="img"></p>
+<p>我以为是服务器的问题，我又把项目部署到了Windows服务器上，却能成功访问。</p>
+<p>后来试了好多办法都没用，最后我找到了我服务器和本地主机的相同点——jdk版本都是jdk11。</p>
+<p>我又去linux服务器看了一下，发现jdk版本是jdk1.8。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101834447.png" alt="img"></p>
+<p>我想修改linux服务器的jdk版本，不过很麻烦，无奈我只好将本地机的环境换成的jdk1.8。</p>
+<p>重新编译之后再部署到linux服务器，终于可以成功访问了！</p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>JAVA</category>
+        <category>服务器</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>数据库</tag>
+        <tag>spring</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -416,24 +437,35 @@
       </tags>
   </entry>
   <entry>
-    <title>javaweb项目上传服务器时一定要使用与开发项目相同的JDK!!!</title>
-    <url>/archives/80b2f6fc.html</url>
-    <content><![CDATA[<h2 id="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"><a href="#javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。" class="headerlink" title="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"></a>javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。</h2><p>今天被坑惨了，我将刚刚在本地测试好的javaweb项目部署到linux服务器上，访问时却报404.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101834149.png" alt="img"></p>
-<p>我以为是服务器的问题，我又把项目部署到了Windows服务器上，却能成功访问。</p>
-<p>后来试了好多办法都没用，最后我找到了我服务器和本地主机的相同点——jdk版本都是jdk11。</p>
-<p>我又去linux服务器看了一下，发现jdk版本是jdk1.8。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101834447.png" alt="img"></p>
-<p>我想修改linux服务器的jdk版本，不过很麻烦，无奈我只好将本地机的环境换成的jdk1.8。</p>
-<p>重新编译之后再部署到linux服务器，终于可以成功访问了！</p>
+    <title>使用json返回数据的时候不要使用submit</title>
+    <url>/archives/cb8a5bbd.html</url>
+    <content><![CDATA[<h3 id="如题，当使用submit提交后，会直接跳转json值的页面如图"><a href="#如题，当使用submit提交后，会直接跳转json值的页面如图" class="headerlink" title="如题，当使用submit提交后，会直接跳转json值的页面如图"></a>如题，当使用submit提交后，会直接跳转json值的页面如图</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101912602.png" alt="img"></p>
+<p>昨晚因为这个原因，我被困了几个小时，后来把submit改成button就可以了。</p>
+<p>其实也符合逻辑因为我在这里默认返回的就是Map类型的ret</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101913399.png" alt="img"></p>
+<p>所以返回ret，不过使用了button就交给ajax来处理了。</p>
 ]]></content>
       <categories>
         <category>JAVA</category>
-        <category>服务器</category>
+        <category>前端</category>
       </categories>
       <tags>
         <tag>spring</tag>
-        <tag>JAVA</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python自动生成小学四则运算</title>
+    <url>/archives/b8099ba9.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="built_in">sum</span> = <span class="built_in">input</span>(<span class="string">&quot;请输入需要的题数：&quot;</span>)</span><br><span class="line">number = <span class="built_in">int</span>(<span class="built_in">sum</span>)</span><br><span class="line">jifen = <span class="number">0</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= number:</span><br><span class="line">    number1 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    number2 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="built_in">type</span> = random.randint(<span class="number">1</span>, <span class="number">4</span>)  <span class="comment"># 1-4代表加减乘除</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">1</span>:  <span class="comment"># 加法</span></span><br><span class="line">        RS = number1 + number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;+&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">2</span>:  <span class="comment"># 减法</span></span><br><span class="line">        RS = number1 - number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;-&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">3</span>:  <span class="comment"># 乘法</span></span><br><span class="line">        RS = number1 * number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;×&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">4</span>:  <span class="comment"># 除法</span></span><br><span class="line">        RS = number1 / number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;÷&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------------------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序运行结束,您累计得分:&#x27;</span>+<span class="built_in">str</span>(jifen))</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>课程项目</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -477,64 +509,6 @@
       </tags>
   </entry>
   <entry>
-    <title>python自动生成小学四则运算</title>
-    <url>/archives/b8099ba9.html</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="built_in">sum</span> = <span class="built_in">input</span>(<span class="string">&quot;请输入需要的题数：&quot;</span>)</span><br><span class="line">number = <span class="built_in">int</span>(<span class="built_in">sum</span>)</span><br><span class="line">jifen = <span class="number">0</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= number:</span><br><span class="line">    number1 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    number2 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="built_in">type</span> = random.randint(<span class="number">1</span>, <span class="number">4</span>)  <span class="comment"># 1-4代表加减乘除</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">1</span>:  <span class="comment"># 加法</span></span><br><span class="line">        RS = number1 + number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;+&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">2</span>:  <span class="comment"># 减法</span></span><br><span class="line">        RS = number1 - number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;-&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">3</span>:  <span class="comment"># 乘法</span></span><br><span class="line">        RS = number1 * number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;×&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">4</span>:  <span class="comment"># 除法</span></span><br><span class="line">        RS = number1 / number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;÷&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------------------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序运行结束,您累计得分:&#x27;</span>+<span class="built_in">str</span>(jifen))</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>python</category>
-        <category>课程项目</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用json返回数据的时候不要使用submit</title>
-    <url>/archives/cb8a5bbd.html</url>
-    <content><![CDATA[<h3 id="如题，当使用submit提交后，会直接跳转json值的页面如图"><a href="#如题，当使用submit提交后，会直接跳转json值的页面如图" class="headerlink" title="如题，当使用submit提交后，会直接跳转json值的页面如图"></a>如题，当使用submit提交后，会直接跳转json值的页面如图</h3><p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101912602.png" alt="img"></p>
-<p>昨晚因为这个原因，我被困了几个小时，后来把submit改成button就可以了。</p>
-<p>其实也符合逻辑因为我在这里默认返回的就是Map类型的ret</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101913399.png" alt="img"></p>
-<p>所以返回ret，不过使用了button就交给ajax来处理了。</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Mybatis的@Param注解</title>
-    <url>/archives/33a6a717.html</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天写了一个判断用户用户名密码是否正确的登录功能，在单元测试的时候发现报错，（org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter ‘user_name’ not found. Available parameters are [arg1, arg0, param1, param2]）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848296.png" alt="img"></p>
-<p>原因是没有找到参数user_name的值，可是我明明在mapper.xml文件中传入了呀。</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.xueziport.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--根据id查询用户信息 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUserById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_id=#&#123;user_id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    根据账号密码查找用户--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUser&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;String&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_name=#&#123;user_name&#125; and user_password=#&#123;user_password&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>后来查了资料才发现，如果需要传入多个参数需要在接口中加上@Param(values&#x3D;”参数名”)参数（如果只有一个values参数则可以省略）,告诉mybatis你传入的值的参数名称，这样好在mapper文件中调用。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> User <span class="title function_">findUser</span><span class="params">(<span class="meta">@Param(&quot;user_name&quot;)</span> String user_name,<span class="meta">@Param(&quot;user_password&quot;)</span> String user_password)</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848461.png" alt="img"></p>
-<p>最后发现就可以了</p>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在mapper.xml中只有一个传入参数，可以不用@param;</p>
-<p>如果传入多个的参数，需要使用@Paran注解；</p>
-<p>如果是传入Map的集合，那么key就对应着参数的别名，可以不用加@param。</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>JAVA</tag>
-        <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于C语言中scanf(&quot;%c&quot;，&amp;c)直接跳过的问题</title>
     <url>/archives/518528d0.html</url>
     <content><![CDATA[<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> b;</span><br><span class="line">	<span class="type">char</span> c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入a的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入b的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入运算符\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;运算结果&quot;</span>);</span><br><span class="line">	yunsuan(a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -565,33 +539,29 @@
       </tags>
   </entry>
   <entry>
-    <title>关于Spring MVC POJO类型参数详解</title>
-    <url>/archives/d3533fbe.html</url>
-    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
-<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
-<p>接下来用代码解释一下</p>
-<p>这是po类User</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>关于Mybatis的@Param注解</title>
+    <url>/archives/33a6a717.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天写了一个判断用户用户名密码是否正确的登录功能，在单元测试的时候发现报错，（org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter ‘user_name’ not found. Available parameters are [arg1, arg0, param1, param2]）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848296.png" alt="img"></p>
+<p>原因是没有找到参数user_name的值，可是我明明在mapper.xml文件中传入了呀。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.xueziport.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--根据id查询用户信息 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUserById&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;Integer&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_id=#&#123;user_id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    根据账号密码查找用户--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findUser&quot;</span> <span class="attr">parameterType</span>=<span class="string">&quot;String&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;User&quot;</span>&gt;</span></span><br><span class="line">        select * from user where user_name=#&#123;user_name&#125; and user_password=#&#123;user_password&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这是jsp中的表单 属性名分别为username和password</p>
-<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>后来查了资料才发现，如果需要传入多个参数需要在接口中加上@Param(values&#x3D;”参数名”)参数（如果只有一个values参数则可以省略）,告诉mybatis你传入的值的参数名称，这样好在mapper文件中调用。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> User <span class="title function_">findUser</span><span class="params">(<span class="meta">@Param(&quot;user_name&quot;)</span> String user_name,<span class="meta">@Param(&quot;user_password&quot;)</span> String user_password)</span>;</span><br></pre></td></tr></table></figure>
 
-<p>这是一个接收用户注册信息的一个方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的参数User user就是一个pojo类型</p>
-<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
-<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
-<p>运行一下程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101817359.png" alt="image-20220410181751392"></p>
-<p>这样就方便不同类型的参数传递了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101848461.png" alt="img"></p>
+<p>最后发现就可以了</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>在mapper.xml中只有一个传入参数，可以不用@param;</p>
+<p>如果传入多个的参数，需要使用@Paran注解；</p>
+<p>如果是传入Map的集合，那么key就对应着参数的别名，可以不用加@param。</p>
 ]]></content>
       <categories>
-        <category>JAVA</category>
+        <category>java</category>
       </categories>
       <tags>
         <tag>spring</tag>
         <tag>JAVA</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -632,18 +602,65 @@
       </tags>
   </entry>
   <entry>
-    <title>在idea中实现热部署无需重启Tomcat</title>
-    <url>/archives/5624e937.html</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
-<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
+    <title>关于Spring MVC POJO类型参数详解</title>
+    <url>/archives/d3533fbe.html</url>
+    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
+<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
+<p>接下来用代码解释一下</p>
+<p>这是po类User</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是jsp中的表单 属性名分别为username和password</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个接收用户注册信息的一个方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的参数User user就是一个pojo类型</p>
+<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
+<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
+<p>运行一下程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101817359.png" alt="image-20220410181751392"></p>
+<p>这样就方便不同类型的参数传递了。</p>
 ]]></content>
       <categories>
-        <category>Tricks</category>
+        <category>JAVA</category>
       </categories>
       <tags>
-        <tag>idea</tag>
-        <tag>tomcat</tag>
+        <tag>spring</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用python实现词频统计</title>
+    <url>/archives/5dc3259f.html</url>
+    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
+<ul>
+<li>从文本中读入数据（文件的输入输出）</li>
+<li>不区分大小写,去除特殊字符。</li>
+<li>统计单词 例如：about ：10 并统计总共多少单词</li>
+<li>对单词排序（出现次数 ）</li>
+<li>输出词频最高的10个单词和次数</li>
+<li>把统计结果存入文本</li>
+</ul>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101756049.png" alt="img">运行程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101757307.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>课程项目</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -685,35 +702,21 @@
       </tags>
   </entry>
   <entry>
-    <title>利用python实现词频统计</title>
-    <url>/archives/5dc3259f.html</url>
-    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
-<ul>
-<li>从文本中读入数据（文件的输入输出）</li>
-<li>不区分大小写,去除特殊字符。</li>
-<li>统计单词 例如：about ：10 并统计总共多少单词</li>
-<li>对单词排序（出现次数 ）</li>
-<li>输出词频最高的10个单词和次数</li>
-<li>把统计结果存入文本</li>
-</ul>
-<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+    <title>带有路径问题的项目从win系统转移到mac系统需要注意</title>
+    <url>/archives/3b9e33e6.html</url>
+    <content><![CDATA[<p>前两天把win系统里面的网站项目源代码转移到mac电脑后发现，上传图片的功能用不了，一直报错，研究了一下才发现，win系统和mac系统的目录路径不同导致的。在win上是”\“，而在mac上确是”&#x2F;“。</p>
+<p>这是win系统上的代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">100</span>&lt;size || !fileType.equals(<span class="string">&quot;jpg&quot;</span>))&#123;</span><br><span class="line"> out.print(<span class="string">&quot;&lt;script language=&#x27;javascript&#x27;&gt;alert(&#x27;上传的图片文件必须小于100KB,且为jpg格式&#x27;);window.location.href=&#x27;javascript:history.go(-1)&#x27;;&lt;/script&gt;&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;\\&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line">    <span class="type">String</span> <span class="variable">ctxpath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;\\&quot;</span>))+<span class="string">&quot;\\touxiang&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
+<p>一开始转到mac系统中时，报错。</p>
+<p>将”\“改成”&quot;</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;/&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line"><span class="type">String</span> <span class="variable">ctxipath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;/&quot;</span>))+<span class="string">&quot;/touxiang&quot;</span>;</span><br><span class="line"> <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101756049.png" alt="img">运行程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101757307.png" alt="img"></p>
+<p>测试成功上传文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101715646.png" alt="img"></p>
 ]]></content>
-      <categories>
-        <category>python</category>
-        <category>课程项目</category>
-      </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -742,53 +745,6 @@
       <tags>
         <tag>spring</tag>
         <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实现域名解析到服务器端tomcat根目录</title>
-    <url>/archives/d2715adc.html</url>
-    <content><![CDATA[<p>上个学期学了jspweb开发，用到了tomcat服务器，一直都是在本地测试，所以就想把他上传到服务器，正好自己有一个域名，并且已经解析到服务器的IP了，所以做了一些尝试。<br>  一开始是用的win服务器自家 的IIS(Internet Information Services)，通过在IIS的站点属性中有一个对ISAPI 过滤器的配置来运行*.jsp文件。但无论怎么搞，都以失败告终。<br>  正当我一筹莫展之际，无意间测试了域名(没有域名的用ip代替）加端口来访问服务器端的tomcat，竟然成功了。虽然成功了，但是只能通过域名：8080（tomcat默认端口）访问，无法实现输入www.域名直接访问，这样很麻烦，又因为域名是默认解析到80端口，所以我大胆猜测只要将tomcat服务器的8080端口改成域名解析默认的80端口就可以了，然后将tomcat自带的默认更目录改成自己的项目就行了。</p>
-<h3 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h3><p>因为你要将tomcat改成端口80，所以80端口不能被占用</p>
-<p>win+r 输入cmd 控制台输入netstat -ano</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101654093.png" alt="img"></p>
-<p>如果没有出现80端口，说明端口没有被占用</p>
-<p>如果出现了说明端口已经被占用了，那么我们将占用他的程序停止就可以了，记住后面的pid码，</p>
-<p>我这里是10828，去任务管理器找到pid为10828的进程并将他停止就行了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101654584.png" alt="img"></p>
-<h3 id="将tomcat的默认端口8080改成80"><a href="#将tomcat的默认端口8080改成80" class="headerlink" title="将tomcat的默认端口8080改成80"></a>将tomcat的默认端口8080改成80</h3><p>编辑tomcat目录下conf文件里的server.xml文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655720.png" alt="img"></p>
-<p> 将圈起来的8080改成80就可以了 记得保存（只要该第一个就行，当时对配置还不是很理解）<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655939.png" alt="img"></p>
-<p> 这时候我们测试一下输入www.域名（或ip）如果是tomcat默认页面就说明成功了</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655539.png" alt="img"></p>
-<h3 id="将自己的项目替换掉tomcat默认的根目录root"><a href="#将自己的项目替换掉tomcat默认的根目录root" class="headerlink" title="将自己的项目替换掉tomcat默认的根目录root"></a>将自己的项目替换掉tomcat默认的<a href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020">根目录</a>root</h3><p>教大家应该很简单的方法，只需要将你的项目文件夹名称改成ROOT放到服务器tomcat目录下替换掉默认ROOT文件就行了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101656661.png" alt="img"></p>
-<p>还有一种方法是通过server.xml配置文件来修改默认根目录的位置，比较麻烦，所以在这不推荐使用。</p>
-<p>最后测试一下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101656311.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>带有路径问题的项目从win系统转移到mac系统需要注意</title>
-    <url>/archives/3b9e33e6.html</url>
-    <content><![CDATA[<p>前两天把win系统里面的网站项目源代码转移到mac电脑后发现，上传图片的功能用不了，一直报错，研究了一下才发现，win系统和mac系统的目录路径不同导致的。在win上是”\“，而在mac上确是”&#x2F;“。</p>
-<p>这是win系统上的代码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">100</span>&lt;size || !fileType.equals(<span class="string">&quot;jpg&quot;</span>))&#123;</span><br><span class="line"> out.print(<span class="string">&quot;&lt;script language=&#x27;javascript&#x27;&gt;alert(&#x27;上传的图片文件必须小于100KB,且为jpg格式&#x27;);window.location.href=&#x27;javascript:history.go(-1)&#x27;;&lt;/script&gt;&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;\\&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line">    <span class="type">String</span> <span class="variable">ctxpath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;\\&quot;</span>))+<span class="string">&quot;\\touxiang&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>一开始转到mac系统中时，报错。</p>
-<p>将”\“改成”&quot;</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;/&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line"><span class="type">String</span> <span class="variable">ctxipath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;/&quot;</span>))+<span class="string">&quot;/touxiang&quot;</span>;</span><br><span class="line"> <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>测试成功上传文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101715646.png" alt="img"></p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -821,6 +777,50 @@
       <tags>
         <tag>hexo</tag>
         <tag>碎碎念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实现域名解析到服务器端tomcat根目录</title>
+    <url>/archives/d2715adc.html</url>
+    <content><![CDATA[<p>上个学期学了jspweb开发，用到了tomcat服务器，一直都是在本地测试，所以就想把他上传到服务器，正好自己有一个域名，并且已经解析到服务器的IP了，所以做了一些尝试。<br>  一开始是用的win服务器自家 的IIS(Internet Information Services)，通过在IIS的站点属性中有一个对ISAPI 过滤器的配置来运行*.jsp文件。但无论怎么搞，都以失败告终。<br>  正当我一筹莫展之际，无意间测试了域名(没有域名的用ip代替）加端口来访问服务器端的tomcat，竟然成功了。虽然成功了，但是只能通过域名：8080（tomcat默认端口）访问，无法实现输入www.域名直接访问，这样很麻烦，又因为域名是默认解析到80端口，所以我大胆猜测只要将tomcat服务器的8080端口改成域名解析默认的80端口就可以了，然后将tomcat自带的默认更目录改成自己的项目就行了。</p>
+<h3 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h3><p>因为你要将tomcat改成端口80，所以80端口不能被占用</p>
+<p>win+r 输入cmd 控制台输入netstat -ano</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101654093.png" alt="img"></p>
+<p>如果没有出现80端口，说明端口没有被占用</p>
+<p>如果出现了说明端口已经被占用了，那么我们将占用他的程序停止就可以了，记住后面的pid码，</p>
+<p>我这里是10828，去任务管理器找到pid为10828的进程并将他停止就行了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101654584.png" alt="img"></p>
+<h3 id="将tomcat的默认端口8080改成80"><a href="#将tomcat的默认端口8080改成80" class="headerlink" title="将tomcat的默认端口8080改成80"></a>将tomcat的默认端口8080改成80</h3><p>编辑tomcat目录下conf文件里的server.xml文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655720.png" alt="img"></p>
+<p> 将圈起来的8080改成80就可以了 记得保存（只要该第一个就行，当时对配置还不是很理解）<img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655939.png" alt="img"></p>
+<p> 这时候我们测试一下输入www.域名（或ip）如果是tomcat默认页面就说明成功了</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101655539.png" alt="img"></p>
+<h3 id="将自己的项目替换掉tomcat默认的根目录root"><a href="#将自己的项目替换掉tomcat默认的根目录root" class="headerlink" title="将自己的项目替换掉tomcat默认的根目录root"></a>将自己的项目替换掉tomcat默认的<a href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020">根目录</a>root</h3><p>教大家应该很简单的方法，只需要将你的项目文件夹名称改成ROOT放到服务器tomcat目录下替换掉默认ROOT文件就行了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101656661.png" alt="img"></p>
+<p>还有一种方法是通过server.xml配置文件来修改默认根目录的位置，比较麻烦，所以在这不推荐使用。</p>
+<p>最后测试一下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101656311.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在idea中实现热部署无需重启Tomcat</title>
+    <url>/archives/5624e937.html</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101704293.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yuzaii/PicGo/img/202204101705265.png" alt="img"></p>
+<p><strong>使用debug来测试项目 修改之后会有提示 不需要重新启动tomcat</strong></p>
+]]></content>
+      <categories>
+        <category>Tricks</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
