@@ -1814,18 +1814,18 @@
 /*---alert 809---*/
 .c-pop{ min-width:324px; overflow:hidden; }
 .c-pop-box{ background-color: white; border: 1px solid #b5b5b5;
-box-shadow: 2.5px 5px 12px 0px rgba(0,1,1,.5);
-border-radius: 5px;}
+	box-shadow: 2.5px 5px 12px 0px rgba(0,1,1,.5);
+	border-radius: 5px;}
 
 /*---confirm---*/
 .c-confirm .con{ padding: 0 20px; min-height:92px; line-height:92px; font-size: 16px; text-align:center;}
-.c-pop .btn-wrap{ height: 55px; position:relative; clear:both; padding:10px; border-top:1px solid #eaede5; font-size:12px; text-align:right; background-color:#fbfbfa;/* 为什么删除这个颜色？ */}
+.c-pop .btn-wrap{ height: 55px; position:relative; clear:both; padding:10px; border-top:1px solid #eaede5; font-size:12px; text-align:right; background-color:#fbfbfa;/* ä¸ºä»ä¹å é¤è¿ä¸ªé¢è²ï¼ */}
 .c-pop .btn-wrap input{ margin-top:0px; margin-left:10px; margin-right:5px; vertical-align: middle;}
 .c-pop .btn-wrap a{ margin-left:10px;}
 .c-pop .btn-delete{ display:inline-block; width:58px; height:24px; font:12px/2 SimSun; color:#ffffff; text-decoration:none; text-align:center; background:url(../img/index/btn-delete.png) no-repeat 0 0;}
 .c-pop .btn-confirm{ display:inline-block; width:58px; height:24px; font:12px/2 SimSun; color:#ffffff; text-decoration:none; text-align:center; background:url(../img/index/btn-confirm.png) no-repeat 0 0;}
 .c-pop .btn-confirm:hover{ background:url(../img/index/btn-confirm-hover.png) no-repeat 0 0;}
-.c-pop .all_reader_btn{ float:left; width:70px;height:20px;font:12px/1.5 Helvetica,�?Arial,�?宋体b8b\4f53, sans-serif; border:1px solid #738256; color:#738256; text-align:center; line-height:20px; text-decoration:none;}
+.c-pop .all_reader_btn{ float:left; width:70px;height:20px;font:12px/1.5 Helvetica,â?Arial,â?å®ä½b8b\4f53, sans-serif; border:1px solid #738256; color:#738256; text-align:center; line-height:20px; text-decoration:none;}
 .c-pop .all_reader_btn:hover{ background-color:#738256; color:#e3cd86;}
 .c-pop .btn-cancel{ display:inline-block; width:58px; height:24px; font:12px/2 SimSun; color:#666666; text-decoration:none; text-align:center; background:url(../img/index/btn-cancel.png) no-repeat 0 0;}
 .c-pop .btn-app{ display:inline-block; width:78px; height:24px; font:12px/2 SimSun; color:#ffffff; text-decoration:none; text-align:center; background:url(../img/index/btn-app.png) no-repeat 0 0;}
@@ -1833,8 +1833,8 @@ border-radius: 5px;}
 /* CSS Document */
 .boxy-wrapper{position:absolute;}
 .boxy-wrapper.fixed{position:fixed;}
-/* Modal */ 
-.boxy-modal-blackout{position:absolute; background-color:black; left:0; top:0;} 
+/* Modal */
+.boxy-modal-blackout{position:absolute; background-color:black; left:0; top:0;}
 /* Border */
 .boxy-wrapper{empty-cells:show;}
 .boxy-wrapper .title-bar.dragging{cursor:move;}
