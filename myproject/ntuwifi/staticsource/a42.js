@@ -3122,7 +3122,7 @@ var login = {
 			yys="中国联通";
 			url="http://210.29.79.141:801/eportal/?c=Portal&a=login&callback=dr1003&login_method=1&user_account=%2C0%2C"+account+"%40unicom&user_password="+password+"&wlan_user_ip=null&wlan_user_ipv6=&wlan_user_mac=000000000000&wlan_ac_ip=&wlan_ac_name=ME60&jsVersion=3.3.2&v=2295"
 			// document.getElementById("showurl").innerHTML=url;
-		}else if(xyw.checked){
+		}else{
 			yys="校园网";
 			url="http://210.29.79.141:801/eportal/?c=Portal&a=login&callback=dr1003&login_method=1&user_account=%2C0%2C"+account+"&user_password="+password+"&wlan_user_ip=null&wlan_user_ipv6=&wlan_user_mac=000000000000&wlan_ac_ip=&wlan_ac_name=ME60&jsVersion=3.3.2&v=2295"
 			// document.getElementById("showurl").innerHTML=url;
