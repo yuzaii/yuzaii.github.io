@@ -3107,7 +3107,7 @@ var login = {
 		var yd=document.getElementById("yd");
 		var dx=document.getElementById("dx");
 		var lt=document.getElementById("lt");
-		var xyw=document.getElementById("xyw");
+		//var xyw=document.getElementById("xyw");
 
 		if (yd.checked){
 			yys="中国移动";
