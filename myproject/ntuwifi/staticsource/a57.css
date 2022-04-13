@@ -1824,8 +1824,8 @@
 .c-pop .btn-wrap a{ margin-left:10px;}
 .c-pop .btn-delete{ display:inline-block; width:58px; height:24px; font:12px/2 SimSun; color:#ffffff; text-decoration:none; text-align:center; background:url(../img/index/btn-delete.png) no-repeat 0 0;}
 .c-pop .btn-confirm{ display:inline-block; width:58px; height:24px; font:12px/2 SimSun; color:#ffffff; text-decoration:none; text-align:center; background:url(../img/index/btn-confirm.png) no-repeat 0 0;}
-.c-pop .btn-confirm:hover{ background:url(../img/index/btn-confirm-hover.png) no-repeat 0 0;}
-.c-pop .all_reader_btn{ float:left; width:70px;height:20px;font:12px/1.5 Helvetica,â?Arial,â?å®ä½b8b\4f53, sans-serif; border:1px solid #738256; color:#738256; text-align:center; line-height:20px; text-decoration:none;}
+/*.c-pop .btn-confirm:hover{ background:url(../img/index/btn-confirm-hover.png) no-repeat 0 0;}*/
+/*.c-pop .all_reader_btn{ float:left; width:70px;height:20px;font:12px/1.5 Helvetica,â?Arial,â?å®ä½b8b\4f53, sans-serif; border:1px solid #738256; color:#738256; text-align:center; line-height:20px; text-decoration:none;}*/
 .c-pop .all_reader_btn:hover{ background-color:#738256; color:#e3cd86;}
 .c-pop .btn-cancel{ display:inline-block; width:58px; height:24px; font:12px/2 SimSun; color:#666666; text-decoration:none; text-align:center; background:url(../img/index/btn-cancel.png) no-repeat 0 0;}
 .c-pop .btn-app{ display:inline-block; width:78px; height:24px; font:12px/2 SimSun; color:#ffffff; text-decoration:none; text-align:center; background:url(../img/index/btn-app.png) no-repeat 0 0;}
@@ -1897,4 +1897,4 @@
 	color: #333333;
 	background-color: #ebebeb;
 	border-color: #adadad;
-};
+}
