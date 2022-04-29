@@ -9,12 +9,12 @@
 
 /* 鼠标样式 */
 body {
-    cursor: url(https://cdn.jsdelivr.net/gh/constown/HexoCustomFile/public/cursors/default.cur),
+    cursor: url(https://file-1305871479.cos.ap-nanjing.myqcloud.com/css/default.cur),
     default;
 }
 a,
 img {
-    cursor: url(https://cdn.jsdelivr.net/gh/constown/HexoCustomFile/public/cursors/pointer.cur),
+    cursor: url(https://file-1305871479.cos.ap-nanjing.myqcloud.com/css/pointer.cur),
     default;
 }
 
