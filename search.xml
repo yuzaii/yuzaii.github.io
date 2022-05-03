@@ -80,43 +80,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo不算子统计和live2d冲突</title>
-    <url>/archives/776b4b4f.html</url>
-    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
-<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292311181.png" alt="image-20220408011834700" style="zoom:50%;" />
-
-<p>我是一个有强迫症的人，必须跟他死磕。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
-<ul>
-<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
-<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
-<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
-<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
-</ul>
-<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
-<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292342141.png" alt="image-20220408013918659" style="zoom: 80%;" />
-
-<p>修改第三行的代码为</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>最后执行三部曲</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
-
-<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
-<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292342802.png" alt="image-20220408015006497" style="zoom:67%;" />
-
-<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDEA如何自动导入Spring依赖</title>
     <url>/archives/abcf8d7e.html</url>
     <content><![CDATA[<p><strong>在学习Spring开发的时候每次都要手动导入依赖包，很浪费时间，后来发现可以通过pom.xml文件自动导入</strong></p>
@@ -132,32 +95,6 @@
       <tags>
         <tag>spring</tag>
         <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java爬取南通大学教务系统信息</title>
-    <url>/archives/229e6b0a.html</url>
-    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
-<p>1、通过抓包获取学校的认证登录链接</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
-<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -194,6 +131,43 @@
       <tags>
         <tag>spring</tag>
         <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo不算子统计和live2d冲突</title>
+    <url>/archives/776b4b4f.html</url>
+    <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>​    最近用hexo搭建了个人博客，但是大大小小遇到了不少的问题，但是有些都能搜到解决办法，但是当我在使用了live2d插件后就会遇到不算子的统计失效了，如下图所示。</p>
+<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292311181.png" alt="image-20220408011834700" style="zoom:50%;" />
+
+<p>我是一个有强迫症的人，必须跟他死磕。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>​    起初我以为是我配置的问题，但是检查半天没有检查出来。后来我回滚到了以前的版本，发现不算子访客没有问题，所以我就一个插件一个插件的安装测试，终于在安装的live2d插件的时候就出现了这个问题，所以我确信就是这两者有了冲突了。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>​    我在网上搜索了一下，确实是有一个人跟我的问题一模一样，参照他的解决办法，我终于解决了这个困扰我一天的问题。</p>
+<ul>
+<li><h5 id="下载不算子的js文件"><a href="#下载不算子的js文件" class="headerlink" title="下载不算子的js文件"></a><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">下载不算子的js文件</a></h5></li>
+<li><h5 id="将下载好的文件里的b-style-display-quot-none-quot-中none去掉"><a href="#将下载好的文件里的b-style-display-quot-none-quot-中none去掉" class="headerlink" title="将下载好的文件里的b.style.display=&quot;none&quot;中none去掉"></a>将下载好的文件里的<code>b.style.display=&quot;none&quot;</code>中<code>none</code>去掉</h5></li>
+<li><h5 id="将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面"><a href="#将修改js文件放到网站的静态资源目录下，也就是主题目录下-source-js目录里面" class="headerlink" title="将修改js文件放到网站的静态资源目录下，也就是主题目录下/source/js目录里面"></a>将修改js文件放到网站的静态资源目录下，也就是主题目录下<code>/source/js</code>目录里面</h5></li>
+<li><h5 id="找到busuanzi的源文件并修改"><a href="#找到busuanzi的源文件并修改" class="headerlink" title="找到busuanzi的源文件并修改"></a>找到busuanzi的源文件并修改</h5></li>
+</ul>
+<p>可以用全局搜索busuanzi，找到一个文件内容与下图相符的文件</p>
+<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292342141.png" alt="image-20220408013918659" style="zoom: 80%;" />
+
+<p>修改第三行的代码为</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&#123;&#123; pjax &#125;&#125; <span class="keyword">async</span> src=<span class="string">&quot;/js/busuanzi.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>最后执行三部曲</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean&amp;&amp;hexo g&amp;&amp;hexo s</span><br></pre></td></tr></table></figure>
+
+<p>最后我们可爱的小狗终于可以和不算子共存啦</p>
+<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292342802.png" alt="image-20220408015006497" style="zoom:67%;" />
+
+<p>参考链接：<a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Bug</tag>
       </tags>
   </entry>
   <entry>
@@ -316,23 +290,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Python连接数据库操作后一定要记得关闭连接</title>
-    <url>/archives/e76e289b.html</url>
-    <content><![CDATA[<p>今天我们小组用python对数据库进行操作的时候，突然运行全部出问题了。</p>
-<p>最后才发现原来是我们用的是同一个数据库，并且在代码里面只关闭了游标对象，并未关闭连接对象，所以运行结束后并未能及时释放，造成了连接池的拥挤，相当于操作系统里的死锁。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect=pymysql.connect(host=<span class="string">&#x27;localhost&#x27;</span>,port=<span class="number">3306</span>,user=<span class="string">&#x27;root&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>,db=<span class="string">&#x27;student&#x27;</span>)</span><br><span class="line">cursor = connect.cursor() <span class="comment">#创建游标对象</span></span><br><span class="line">cursor.close()<span class="comment">#关闭游标对象</span></span><br><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br></pre></td></tr></table></figure>
+    <title>Java爬取南通大学教务系统信息</title>
+    <url>/archives/229e6b0a.html</url>
+    <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
+<p>1、通过抓包获取学校的认证登录链接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://authserver.ntu.edu.cn/authserver/login?service=http://tdjw.ntu.edu.cn/sso/jziotlogin</span><br></pre></td></tr></table></figure>
 
-<p>后来只能在程序退出的时候关闭连接对象。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br><span class="line">          sys.exit()</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<p>所以以后操作完数据库后一定要记得关闭连接！</p>
+<p>2、第一次发送get请求获取页面，并且解析，找到需要携带登录的参数，如lt 秘钥等等</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;execution=e1s1, password=+MwHdbut9wc6hIxuq3XG1lHcqFjyJOUBHfuXZFB7p/sJc6SSAp0V0eRJPRg8BWPiU+cEmP8qnlQfyH7HR6iJvxKexFDXTIpnsJ+J23cmWjI=, _eventId=submit, lt=LT-623944-hbUqGmrk6OuO0jPj6mBcmPWseDuCPq1641653523202-LqSD-cas, username=1930141729, dllt=userNamePasswordLogin, rmShown=1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、第二次发送请求，带着需要的参数如学号密码等 发送post请求 如果登录成功会跳转，先阻止跳转，查看请求码是否是302  如果都满足的话就获取他的重定向的链接 并且获取此次请求的cookie 这里很重要！</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;CASTGC=TGT-168457-amNCEJXhYIBJHAyI6T3rJCf4xh6l4m61UrbxCZajiIJj9kJYxG1641653717838-EIf3-cas, CASPRIVACY=, iPlanetDirectoryPro=xKdAcvwicaUnfNzcyTRg9e&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、带着第二次请求的cookie去请求成绩的接口就行 这里也有一些参数 需要自己去爬取</p>
+<p>成绩接口：<a href="http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005">http://tdjw.ntu.edu.cn/jwglxt/cjcx/cjcx_cxXsgrcj.html?doType=query&amp;gnmkdm=N305005</a></p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>JAVA</category>
       </categories>
       <tags>
-        <tag>python</tag>
-        <tag>数据库</tag>
+        <tag>爬虫</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -420,6 +400,134 @@
       </tags>
   </entry>
   <entry>
+    <title>idea如何创建spring的xml文件</title>
+    <url>/archives/5c7529e8.html</url>
+    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292311472.png" alt="img"></p>
+<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
+<ul>
+<li>点左上角的File，再点Project Structure</li>
+</ul>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312402.png" alt="img"></p>
+<ul>
+<li><p>先点加号再点java</p>
+</li>
+<li><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312118.png" alt="img"></p>
+</li>
+<li><p>导入spring的基本包</p>
+</li>
+</ul>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312726.png" alt="img"></p>
+<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312043.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python连接数据库操作后一定要记得关闭连接</title>
+    <url>/archives/e76e289b.html</url>
+    <content><![CDATA[<p>今天我们小组用python对数据库进行操作的时候，突然运行全部出问题了。</p>
+<p>最后才发现原来是我们用的是同一个数据库，并且在代码里面只关闭了游标对象，并未关闭连接对象，所以运行结束后并未能及时释放，造成了连接池的拥挤，相当于操作系统里的死锁。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect=pymysql.connect(host=<span class="string">&#x27;localhost&#x27;</span>,port=<span class="number">3306</span>,user=<span class="string">&#x27;root&#x27;</span>,password=<span class="string">&#x27;123456&#x27;</span>,db=<span class="string">&#x27;student&#x27;</span>)</span><br><span class="line">cursor = connect.cursor() <span class="comment">#创建游标对象</span></span><br><span class="line">cursor.close()<span class="comment">#关闭游标对象</span></span><br><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br></pre></td></tr></table></figure>
+
+<p>后来只能在程序退出的时候关闭连接对象。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">connect.close()<span class="comment">#关闭连接对象</span></span><br><span class="line">          sys.exit()</span><br></pre></td></tr></table></figure>
+
+<p>所以以后操作完数据库后一定要记得关闭连接！</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javaweb项目上传服务器时一定要使用与开发项目相同的JDK!!!</title>
+    <url>/archives/80b2f6fc.html</url>
+    <content><![CDATA[<h2 id="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"><a href="#javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。" class="headerlink" title="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"></a>javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。</h2><p>今天被坑惨了，我将刚刚在本地测试好的javaweb项目部署到linux服务器上，访问时却报404.</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312689.png" alt="img"></p>
+<p>我以为是服务器的问题，我又把项目部署到了Windows服务器上，却能成功访问。</p>
+<p>后来试了好多办法都没用，最后我找到了我服务器和本地主机的相同点——jdk版本都是jdk11。</p>
+<p>我又去linux服务器看了一下，发现jdk版本是jdk1.8。</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292313540.png" alt="img"></p>
+<p>我想修改linux服务器的jdk版本，不过很麻烦，无奈我只好将本地机的环境换成的jdk1.8。</p>
+<p>重新编译之后再部署到linux服务器，终于可以成功访问了！</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>JAVA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown插入视频</title>
+    <url>/archives/15626add.html</url>
+    <content><![CDATA[<h3 id="markdown如何插入视频"><a href="#markdown如何插入视频" class="headerlink" title="markdown如何插入视频"></a>markdown如何插入视频</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/output%28compress-video-online.com%29.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"  height="580" quality="high" > </iframe>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;视频链接&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;false&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span>  <span class="attr">height</span>=<span class="string">&quot;580&quot;</span> <span class="attr">quality</span>=<span class="string">&quot;high&quot;</span> &gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python自动生成小学四则运算</title>
+    <url>/archives/b8099ba9.html</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="built_in">sum</span> = <span class="built_in">input</span>(<span class="string">&quot;请输入需要的题数：&quot;</span>)</span><br><span class="line">number = <span class="built_in">int</span>(<span class="built_in">sum</span>)</span><br><span class="line">jifen = <span class="number">0</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= number:</span><br><span class="line">    number1 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    number2 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="built_in">type</span> = random.randint(<span class="number">1</span>, <span class="number">4</span>)  <span class="comment"># 1-4代表加减乘除</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">1</span>:  <span class="comment"># 加法</span></span><br><span class="line">        RS = number1 + number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;+&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">2</span>:  <span class="comment"># 减法</span></span><br><span class="line">        RS = number1 - number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;-&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">3</span>:  <span class="comment"># 乘法</span></span><br><span class="line">        RS = number1 * number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;×&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">4</span>:  <span class="comment"># 除法</span></span><br><span class="line">        RS = number1 / number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;÷&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------------------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序运行结束,您累计得分:&#x27;</span>+<span class="built_in">str</span>(jifen))</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>课程项目</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于C语言中scanf(&quot;%c&quot;，&amp;c)直接跳过的问题</title>
+    <url>/archives/518528d0.html</url>
+    <content><![CDATA[<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> b;</span><br><span class="line">	<span class="type">char</span> c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入a的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入b的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入运算符\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;运算结果&quot;</span>);</span><br><span class="line">	yunsuan(a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来是没有问题的，但是在运行的时候，运算符没有让我输入直接跳过了。</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292302785.png" alt="img"></p>
+<p>这到底怎么回事呢？</p>
+<p>首先我们了解一下scanf()是怎么接受数据的。</p>
+<p>当执行scanf这句的时候，系统并不是等待用户输入，而是判断输入缓冲区有没有符合格式的内容，如果有的话，则直接读取。</p>
+<p>所以scanf(“%c”,&amp;c);并不是没有读到数据，而是读到了我们不知道的数据。</p>
+<p>那么它到底读到了什么了？</p>
+<p>这就要说到行缓存了。</p>
+<p>我们用scanf()的时候都要按下enter键，那enter键按了之后去哪儿了？</p>
+<p>答案是enter键也进入了输入缓存区，我们都知道enter键是换行的，也就是’&#x2F;n’,所以也就是scanf(“%c”,&amp;ch);读到了’\n’;</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>很简单，既然缓存区有东西，那我们就清空它。</p>
+<p>在 scanf(“%c”,&amp;ch); 前面加上setbuf(stdin,NULL);(这个windows和linux下都可以)，</p>
+<p>或者fflush(stdin);(这个只能windows)；</p>
+<p>我们再运行一下程序</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292355843.png" alt="img"></p>
+<p>这样我们就可以轻松秒杀！</p>
+<p>参考链接：<a href="https://blog.csdn.net/zy799894671/article/details/7757764">https://blog.csdn.net/zy799894671/article/details/7757764</a></p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git回滚历史版本</title>
     <url>/archives/26265df3.html</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>前两天写了<a href="https://github.com/yuzaii/JsQndxx_Python">江苏省青年大学习自动学习的脚本</a>，但是在上传到github的时候忘记将个人信息删除了，还好一个老哥及时发现了，虽然我的个人信息并没什么用，转念一想，如果是我重要的个人信息的话，或者是用户的信息，泄露了可就麻烦了。</p>
@@ -458,84 +566,6 @@
       </categories>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>javaweb项目上传服务器时一定要使用与开发项目相同的JDK!!!</title>
-    <url>/archives/80b2f6fc.html</url>
-    <content><![CDATA[<h2 id="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"><a href="#javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。" class="headerlink" title="javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。"></a>javaweb项目上传服务器时一定要使用与开发项目相同的JDK，或者要把开发时的jdk和换成服务器一样的。</h2><p>今天被坑惨了，我将刚刚在本地测试好的javaweb项目部署到linux服务器上，访问时却报404.</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312689.png" alt="img"></p>
-<p>我以为是服务器的问题，我又把项目部署到了Windows服务器上，却能成功访问。</p>
-<p>后来试了好多办法都没用，最后我找到了我服务器和本地主机的相同点——jdk版本都是jdk11。</p>
-<p>我又去linux服务器看了一下，发现jdk版本是jdk1.8。</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292313540.png" alt="img"></p>
-<p>我想修改linux服务器的jdk版本，不过很麻烦，无奈我只好将本地机的环境换成的jdk1.8。</p>
-<p>重新编译之后再部署到linux服务器，终于可以成功访问了！</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>idea如何创建spring的xml文件</title>
-    <url>/archives/5c7529e8.html</url>
-    <content><![CDATA[<p><strong>刚开始学spring的时候需要创建xml配置文件，但是idea里面默认并没有spring类型的xml文件</strong></p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292311472.png" alt="img"></p>
-<p><strong>原因是因为没有导入spring包 我们将基本的spring包复制并且导入到项目文件，在新建xml文件时就有了。</strong></p>
-<ul>
-<li>点左上角的File，再点Project Structure</li>
-</ul>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312402.png" alt="img"></p>
-<ul>
-<li><p>先点加号再点java</p>
-</li>
-<li><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312118.png" alt="img"></p>
-</li>
-<li><p>导入spring的基本包</p>
-</li>
-</ul>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312726.png" alt="img"></p>
-<p><strong>在resources中新建文件的时候就有spring的xml文件了</strong></p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312043.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>idea</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown插入视频</title>
-    <url>/archives/15626add.html</url>
-    <content><![CDATA[<h3 id="markdown如何插入视频"><a href="#markdown如何插入视频" class="headerlink" title="markdown如何插入视频"></a>markdown如何插入视频</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/output%28compress-video-online.com%29.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"  height="580" quality="high" > </iframe>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;视频链接&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;false&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span>  <span class="attr">height</span>=<span class="string">&quot;580&quot;</span> <span class="attr">quality</span>=<span class="string">&quot;high&quot;</span> &gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python自动生成小学四则运算</title>
-    <url>/archives/b8099ba9.html</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="built_in">sum</span> = <span class="built_in">input</span>(<span class="string">&quot;请输入需要的题数：&quot;</span>)</span><br><span class="line">number = <span class="built_in">int</span>(<span class="built_in">sum</span>)</span><br><span class="line">jifen = <span class="number">0</span></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= number:</span><br><span class="line">    number1 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    number2 = random.randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="built_in">type</span> = random.randint(<span class="number">1</span>, <span class="number">4</span>)  <span class="comment"># 1-4代表加减乘除</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">1</span>:  <span class="comment"># 加法</span></span><br><span class="line">        RS = number1 + number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;+&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">2</span>:  <span class="comment"># 减法</span></span><br><span class="line">        RS = number1 - number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;-&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">3</span>:  <span class="comment"># 乘法</span></span><br><span class="line">        RS = number1 * number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;×&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">type</span> == <span class="number">4</span>:  <span class="comment"># 除法</span></span><br><span class="line">        RS = number1 / number2</span><br><span class="line">        <span class="built_in">print</span>(number1, <span class="string">&#x27;÷&#x27;</span>, number2, <span class="string">&#x27;=&#x27;</span>)</span><br><span class="line">        rs = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入运算结果:&#x27;</span>))</span><br><span class="line">        <span class="keyword">if</span> rs == RS:</span><br><span class="line">            jifen = <span class="built_in">int</span>(jifen) + <span class="number">10</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答正确，积分加10,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;回答错误，正确答案是&quot;</span> + <span class="built_in">str</span>(RS) + <span class="string">&quot;,积分加0,当前积分&quot;</span> + <span class="built_in">str</span>(jifen))</span><br><span class="line">    i = i + <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------------------&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;程序运行结束,您累计得分:&#x27;</span>+<span class="built_in">str</span>(jifen))</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>python</category>
-        <category>课程项目</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -579,54 +609,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用json返回数据的时候不要使用submit</title>
-    <url>/archives/cb8a5bbd.html</url>
-    <content><![CDATA[<h3 id="如题，当使用submit提交后，会直接跳转json值的页面如图"><a href="#如题，当使用submit提交后，会直接跳转json值的页面如图" class="headerlink" title="如题，当使用submit提交后，会直接跳转json值的页面如图"></a>如题，当使用submit提交后，会直接跳转json值的页面如图</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292309411.png" alt="img"></p>
-<p>昨晚因为这个原因，我被困了几个小时，后来把submit改成button就可以了。</p>
-<p>其实也符合逻辑因为我在这里默认返回的就是Map类型的ret</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292309883.png" alt="img"></p>
-<p>所以返回ret，不过使用了button就交给ajax来处理了。</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于C语言中scanf(&quot;%c&quot;，&amp;c)直接跳过的问题</title>
-    <url>/archives/518528d0.html</url>
-    <content><![CDATA[<h3 id="先上代码"><a href="#先上代码" class="headerlink" title="先上代码"></a>先上代码</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a;</span><br><span class="line">	<span class="type">int</span> b;</span><br><span class="line">	<span class="type">char</span> c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入a的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入b的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入运算符\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;c);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;运算结果&quot;</span>);</span><br><span class="line">	yunsuan(a, b, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看起来是没有问题的，但是在运行的时候，运算符没有让我输入直接跳过了。</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292302785.png" alt="img"></p>
-<p>这到底怎么回事呢？</p>
-<p>首先我们了解一下scanf()是怎么接受数据的。</p>
-<p>当执行scanf这句的时候，系统并不是等待用户输入，而是判断输入缓冲区有没有符合格式的内容，如果有的话，则直接读取。</p>
-<p>所以scanf(“%c”,&amp;c);并不是没有读到数据，而是读到了我们不知道的数据。</p>
-<p>那么它到底读到了什么了？</p>
-<p>这就要说到行缓存了。</p>
-<p>我们用scanf()的时候都要按下enter键，那enter键按了之后去哪儿了？</p>
-<p>答案是enter键也进入了输入缓存区，我们都知道enter键是换行的，也就是’&#x2F;n’,所以也就是scanf(“%c”,&amp;ch);读到了’\n’;</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>很简单，既然缓存区有东西，那我们就清空它。</p>
-<p>在 scanf(“%c”,&amp;ch); 前面加上setbuf(stdin,NULL);(这个windows和linux下都可以)，</p>
-<p>或者fflush(stdin);(这个只能windows)；</p>
-<p>我们再运行一下程序</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292355843.png" alt="img"></p>
-<p>这样我们就可以轻松秒杀！</p>
-<p>参考链接：<a href="https://blog.csdn.net/zy799894671/article/details/7757764">https://blog.csdn.net/zy799894671/article/details/7757764</a></p>
-]]></content>
-      <categories>
-        <category>c/c++</category>
-      </categories>
-      <tags>
-        <tag>c/c++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于Mybatis的@Param注解</title>
     <url>/archives/33a6a717.html</url>
     <content><![CDATA[<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>今天写了一个判断用户用户名密码是否正确的登录功能，在单元测试的时候发现报错，（org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter ‘user_name’ not found. Available parameters are [arg1, arg0, param1, param2]）</p>
@@ -650,36 +632,6 @@
         <tag>spring</tag>
         <tag>JAVA</tag>
         <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Spring MVC POJO类型参数详解</title>
-    <url>/archives/d3533fbe.html</url>
-    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
-<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
-<p>接下来用代码解释一下</p>
-<p>这是po类User</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这是jsp中的表单 属性名分别为username和password</p>
-<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-
-<p>这是一个接收用户注册信息的一个方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
-
-<p>这里的参数User user就是一个pojo类型</p>
-<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
-<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
-<p>运行一下程序</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292355915.png" alt="image-20220410181751392"></p>
-<p>这样就方便不同类型的参数传递了。</p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -752,6 +704,24 @@
       </tags>
   </entry>
   <entry>
+    <title>使用json返回数据的时候不要使用submit</title>
+    <url>/archives/cb8a5bbd.html</url>
+    <content><![CDATA[<h3 id="如题，当使用submit提交后，会直接跳转json值的页面如图"><a href="#如题，当使用submit提交后，会直接跳转json值的页面如图" class="headerlink" title="如题，当使用submit提交后，会直接跳转json值的页面如图"></a>如题，当使用submit提交后，会直接跳转json值的页面如图</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292309411.png" alt="img"></p>
+<p>昨晚因为这个原因，我被困了几个小时，后来把submit改成button就可以了。</p>
+<p>其实也符合逻辑因为我在这里默认返回的就是Map类型的ret</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292309883.png" alt="img"></p>
+<p>所以返回ret，不过使用了button就交给ajax来处理了。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>南通大学校园网自动登录路由器脚本</title>
     <url>/archives/76a6730e.html</url>
     <content><![CDATA[<h2 id="路由器脚本"><a href="#路由器脚本" class="headerlink" title="路由器脚本"></a>路由器脚本</h2><h4 id="点击此处生成自己的链接并复制"><a href="#点击此处生成自己的链接并复制" class="headerlink" title="点击此处生成自己的链接并复制"></a><a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h4><h4 id="cd到内置存储的目录中输入"><a href="#cd到内置存储的目录中输入" class="headerlink" title="cd到内置存储的目录中输入"></a>cd到内置存储的目录中输入</h4><p>最好将脚本储存存到路由器的内置存储上，而不是内存中，这样重启之后脚本还在。</p>
@@ -771,6 +741,36 @@
       </categories>
       <tags>
         <tag>校园网自动连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Spring MVC POJO类型参数详解</title>
+    <url>/archives/d3533fbe.html</url>
+    <content><![CDATA[<p>今天学习springmvc的时候，发现参数的类型是User的po类型,去了解了一下，原来是使用了pojo对象绑定参数值。</p>
+<p>POJO 类型的数据绑定就是将所有关联的请求参数封装在一个POJO 中，然后在方法中直接使用该POJO 作为形参来完成数据绑定。</p>
+<p>接下来用代码解释一下</p>
+<p>这是po类User</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.po;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户po类</span></span><br><span class="line"><span class="comment"> * 持久化对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;       <span class="comment">//用户id</span></span><br><span class="line">    <span class="keyword">private</span> String username; <span class="comment">//用户</span></span><br><span class="line">    <span class="keyword">private</span> Integer password;<span class="comment">//用户密码</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(Integer id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getUsername</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUsername</span><span class="params">(String username)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getPassword</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPassword</span><span class="params">(Integer password)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是jsp中的表单 属性名分别为username和password</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/registerUser&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">		用户名：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		密&amp;nbsp&amp;nbsp&amp;nbsp码：&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;password&quot;</span> /&gt;&lt;br /&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>/&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个接收用户注册信息的一个方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 接收用户注册信息</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/registerUser&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">registerUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> user.getUsername();</span><br><span class="line">    <span class="type">Integer</span> <span class="variable">password</span> <span class="operator">=</span> user.getPassword();</span><br><span class="line">    System.out.println(<span class="string">&quot;username=&quot;</span>+username);</span><br><span class="line">    System.out.println(<span class="string">&quot;password=&quot;</span>+password);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125;<span class="comment">/**</span></span><br></pre></td></tr></table></figure>
+
+<p>这里的参数User user就是一个pojo类型</p>
+<p>Spring MVC 会按请求参数属性名和 POJ0 属性名进行自动匹配，自动为该对象填充属性值。并支持级联属性。</p>
+<p>这里的参数属性名就是表单的参数属性名，也就是 username和password ，SpringMVC 会自动的获取User类属性名与之相同的属性，并附上传递的参数，所以表单中的参数属性名必须得和po层的属性名一样。</p>
+<p>运行一下程序</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292355915.png" alt="image-20220410181751392"></p>
+<p>这样就方便不同类型的参数传递了。</p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -856,12 +856,86 @@
       </tags>
   </entry>
   <entry>
+    <title>在Mac上安装hexo</title>
+    <url>/archives/b3adc85a.html</url>
+    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<ul>
+<li>安装node.js</li>
+<li>安装git</li>
+<li>安装hexo</li>
+</ul>
+<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
+<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292310587.png" alt="image-20220403030104476" style="zoom:50%;" />
+
+<ul>
+<li>Hexo安装完成后 输入hexo -v 出现问题</li>
+</ul>
+<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292310279.png" alt="image-20220403030201321" style="zoom:50%;" />
+
+<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>更新文件</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>就好啦</p>
+<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292310122.png" alt="image-20220403030505555" style="zoom:50%;" />
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>南通大学校园网自动连接WIN教程</title>
+    <url>/archives/58cf9c43.html</url>
+    <content><![CDATA[<h3 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h3><p><strong>版本1.0：只能在程序中添加配置信息。<br>版本2.0：增加配置文件，从配置文件中获取信息<br>版本3.0：自动获取本机ip地址，无需手动输入<br>版本4.0：更新优化自动获取ip内网真实地址</strong></p>
+<h2 id="WIN使用教程（4-0）"><a href="#WIN使用教程（4-0）" class="headerlink" title="WIN使用教程（4.0）"></a>WIN使用教程（4.0）</h2><h2 id="一、点击此处下载软件"><a href="#一、点击此处下载软件" class="headerlink" title="一、点击此处下载软件"></a>一、<a href="https://file-1305871479.cos.ap-nanjing.myqcloud.com/file/ntuwifi.rar">点击此处下载软件</a></h2><h2 id="二、下载软件后解压"><a href="#二、下载软件后解压" class="headerlink" title="二、下载软件后解压"></a>二、下载软件后解压</h2><h2 id="三、填写配置文件信息"><a href="#三、填写配置文件信息" class="headerlink" title="三、填写配置文件信息"></a>三、填写配置文件信息</h2><p>右击config.ini—-编辑<br><strong>[config]</strong><br><strong>yys&#x3D;</strong><br><strong>user_account&#x3D;</strong><br><strong>user_password&#x3D;</strong><br>你需要填写以上这3个信息 依次要填写的是运营商、登录校园网账户、密码<br>运营商填法：移动填cmcc 电信填telecom 联通填unicom 校园网yys那里什么都什么不填<br>举例：假如我的运营商是移动，账户是193888888，密码是123456 就按照以下的方法填写 其他不要动<br><strong>[config]</strong><br><strong>yys&#x3D;cmcc</strong><br><strong>user_account&#x3D;193888888</strong><br><strong>user_password&#x3D;123456</strong><br>修改完保存 将已登录的校园网注销 点击exe文件测试一下能不能上网 如果不能上网程序会输出原因</p>
+<h3 id="四、创建快捷方式并放入启动文件夹"><a href="#四、创建快捷方式并放入启动文件夹" class="headerlink" title="四、创建快捷方式并放入启动文件夹"></a>四、创建快捷方式并放入启动文件夹</h3><p>注：这步也可以不做，也可以直接将快捷方式放到桌面，当你电脑启动的时候需要点击一下才能成功连接并使用校园网。如果将快捷方式放在启动文件夹中，将不需要你自己点击，在系统启动的时候自行加载<br>1、右击wifi.exe创建快捷方式</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306312.png" alt="img"></p>
+<p>2.Win+r打开运行输入shell:startup按回车 打开启动文件夹 并将wifi.exe快捷方式移动到启动文件夹里</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306095.png" alt="img"></p>
+<p> 这样就设置完成了以后开机就可以自动连接校园网了</p>
+<p>注：电脑wifi不要关闭，不然会一直连接失败</p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>校园网自动连接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>南通大学校园网自动连接MAC教程</title>
     <url>/archives/e82a709e.html</url>
     <content><![CDATA[<h3 id="一、点击此处生成自己的链接并复制"><a href="#一、点击此处生成自己的链接并复制" class="headerlink" title="一、点击此处生成自己的链接并复制"></a>一、<a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h3><h3 id="二、打开safri浏览器"><a href="#二、打开safri浏览器" class="headerlink" title="二、打开safri浏览器"></a>二、打开safri浏览器</h3><h3 id="三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。"><a href="#三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。" class="headerlink" title="三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。"></a>三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306038.jpeg" alt="img"></p>
 <h3 id="三、将上面的页面添加到书签"><a href="#三、将上面的页面添加到书签" class="headerlink" title="三、将上面的页面添加到书签"></a>三、将上面的页面添加到书签</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306011.png" alt="img"  />
 
 <h3 id="四、返回主页，将此页面拖到桌面，下次要连接的时候只需要连接NTU，点击桌面上的连接，如果没用就刷新一下，只要有返回的代码，就说明成功了"><a href="#四、返回主页，将此页面拖到桌面，下次要连接的时候只需要连接NTU，点击桌面上的连接，如果没用就刷新一下，只要有返回的代码，就说明成功了" class="headerlink" title="四、返回主页，将此页面拖到桌面，下次要连接的时候只需要连接NTU，点击桌面上的连接，如果没用就刷新一下，只要有返回的代码，就说明成功了"></a>四、返回主页，将此页面拖到桌面，下次要连接的时候只需要连接NTU，点击桌面上的连接，如果没用就刷新一下，只要有返回的代码，就说明成功了</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306068.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>校园网自动连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>南通大学校园网自动连接安卓教程</title>
+    <url>/archives/13c08f92.html</url>
+    <content><![CDATA[<h3 id="一、点击此处生成自己的链接并复制"><a href="#一、点击此处生成自己的链接并复制" class="headerlink" title="一、点击此处生成自己的链接并复制"></a>一、<a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h3><h3 id="二、打开浏览器"><a href="#二、打开浏览器" class="headerlink" title="二、打开浏览器"></a>二、打开浏览器</h3><h3 id="三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，"><a href="#三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，" class="headerlink" title="三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，"></a>三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，</h3><h3 id="也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）"><a href="#也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）" class="headerlink" title="也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）"></a>也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）</h3><h3 id="测试一下如果有网就成功了"><a href="#测试一下如果有网就成功了" class="headerlink" title="测试一下如果有网就成功了"></a>测试一下如果有网就成功了</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304845.jpeg" alt="img" style="zoom: 150%;" />
+
+<h3 id="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接"><a href="#四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接" class="headerlink" title="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)"></a>四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292341400.jpeg" alt="img" style="zoom:50%;" />
+
+<h3 id="设置好之后，连接过程如下面的视频所示"><a href="#设置好之后，连接过程如下面的视频所示" class="headerlink" title="设置好之后，连接过程如下面的视频所示"></a>设置好之后，连接过程如下面的视频所示</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/anzhuowifi.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" width="100%"  height="580" quality="high" > </iframe>
+
 ]]></content>
       <categories>
         <category>项目</category>
@@ -899,25 +973,6 @@
       </categories>
       <tags>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>南通大学校园网自动连接WIN教程</title>
-    <url>/archives/58cf9c43.html</url>
-    <content><![CDATA[<h3 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h3><p><strong>版本1.0：只能在程序中添加配置信息。<br>版本2.0：增加配置文件，从配置文件中获取信息<br>版本3.0：自动获取本机ip地址，无需手动输入<br>版本4.0：更新优化自动获取ip内网真实地址</strong></p>
-<h2 id="WIN使用教程（4-0）"><a href="#WIN使用教程（4-0）" class="headerlink" title="WIN使用教程（4.0）"></a>WIN使用教程（4.0）</h2><h2 id="一、点击此处下载软件"><a href="#一、点击此处下载软件" class="headerlink" title="一、点击此处下载软件"></a>一、<a href="https://file-1305871479.cos.ap-nanjing.myqcloud.com/file/ntuwifi.rar">点击此处下载软件</a></h2><h2 id="二、下载软件后解压"><a href="#二、下载软件后解压" class="headerlink" title="二、下载软件后解压"></a>二、下载软件后解压</h2><h2 id="三、填写配置文件信息"><a href="#三、填写配置文件信息" class="headerlink" title="三、填写配置文件信息"></a>三、填写配置文件信息</h2><p>右击config.ini—-编辑<br><strong>[config]</strong><br><strong>yys&#x3D;</strong><br><strong>user_account&#x3D;</strong><br><strong>user_password&#x3D;</strong><br>你需要填写以上这3个信息 依次要填写的是运营商、登录校园网账户、密码<br>运营商填法：移动填cmcc 电信填telecom 联通填unicom 校园网yys那里什么都什么不填<br>举例：假如我的运营商是移动，账户是193888888，密码是123456 就按照以下的方法填写 其他不要动<br><strong>[config]</strong><br><strong>yys&#x3D;cmcc</strong><br><strong>user_account&#x3D;193888888</strong><br><strong>user_password&#x3D;123456</strong><br>修改完保存 将已登录的校园网注销 点击exe文件测试一下能不能上网 如果不能上网程序会输出原因</p>
-<h3 id="四、创建快捷方式并放入启动文件夹"><a href="#四、创建快捷方式并放入启动文件夹" class="headerlink" title="四、创建快捷方式并放入启动文件夹"></a>四、创建快捷方式并放入启动文件夹</h3><p>注：这步也可以不做，也可以直接将快捷方式放到桌面，当你电脑启动的时候需要点击一下才能成功连接并使用校园网。如果将快捷方式放在启动文件夹中，将不需要你自己点击，在系统启动的时候自行加载<br>1、右击wifi.exe创建快捷方式</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306312.png" alt="img"></p>
-<p>2.Win+r打开运行输入shell:startup按回车 打开启动文件夹 并将wifi.exe快捷方式移动到启动文件夹里</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306095.png" alt="img"></p>
-<p> 这样就设置完成了以后开机就可以自动连接校园网了</p>
-<p>注：电脑wifi不要关闭，不然会一直连接失败</p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>校园网自动连接</tag>
       </tags>
   </entry>
   <entry>
@@ -964,109 +1019,21 @@
       </tags>
   </entry>
   <entry>
-    <title>实现域名解析到服务器端tomcat根目录</title>
-    <url>/archives/d2715adc.html</url>
-    <content><![CDATA[<p>上个学期学了jspweb开发，用到了tomcat服务器，一直都是在本地测试，所以就想把他上传到服务器，正好自己有一个域名，并且已经解析到服务器的IP了，所以做了一些尝试。<br>  一开始是用的win服务器自家 的IIS(Internet Information Services)，通过在IIS的站点属性中有一个对ISAPI 过滤器的配置来运行*.jsp文件。但无论怎么搞，都以失败告终。<br>  正当我一筹莫展之际，无意间测试了域名(没有域名的用ip代替）加端口来访问服务器端的tomcat，竟然成功了。虽然成功了，但是只能通过域名：8080（tomcat默认端口）访问，无法实现输入www.域名直接访问，这样很麻烦，又因为域名是默认解析到80端口，所以我大胆猜测只要将tomcat服务器的8080端口改成域名解析默认的80端口就可以了，然后将tomcat自带的默认更目录改成自己的项目就行了。</p>
-<h3 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h3><p>因为你要将tomcat改成端口80，所以80端口不能被占用</p>
-<p>win+r 输入cmd 控制台输入netstat -ano</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308465.png" alt="img"></p>
-<p>如果没有出现80端口，说明端口没有被占用</p>
-<p>如果出现了说明端口已经被占用了，那么我们将占用他的程序停止就可以了，记住后面的pid码，</p>
-<p>我这里是10828，去任务管理器找到pid为10828的进程并将他停止就行了。</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308412.png" alt="img"></p>
-<h3 id="将tomcat的默认端口8080改成80"><a href="#将tomcat的默认端口8080改成80" class="headerlink" title="将tomcat的默认端口8080改成80"></a>将tomcat的默认端口8080改成80</h3><p>编辑tomcat目录下conf文件里的server.xml文件</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308227.png" alt="img"></p>
-<p> 将圈起来的8080改成80就可以了 记得保存（只要该第一个就行，当时对配置还不是很理解）<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308534.png" alt="img"></p>
-<p> 这时候我们测试一下输入www.域名（或ip）如果是tomcat默认页面就说明成功了</p>
-<p> <img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308570.png" alt="img"></p>
-<h3 id="将自己的项目替换掉tomcat默认的根目录root"><a href="#将自己的项目替换掉tomcat默认的根目录root" class="headerlink" title="将自己的项目替换掉tomcat默认的根目录root"></a>将自己的项目替换掉tomcat默认的<a href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020">根目录</a>root</h3><p>教大家应该很简单的方法，只需要将你的项目文件夹名称改成ROOT放到服务器tomcat目录下替换掉默认ROOT文件就行了。</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308176.png" alt="img"></p>
-<p>还有一种方法是通过server.xml配置文件来修改默认根目录的位置，比较麻烦，所以在这不推荐使用。</p>
-<p>最后测试一下</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308986.png" alt="img"></p>
+    <title>带有路径问题的项目从win系统转移到mac系统需要注意</title>
+    <url>/archives/3b9e33e6.html</url>
+    <content><![CDATA[<p>前两天把win系统里面的网站项目源代码转移到mac电脑后发现，上传图片的功能用不了，一直报错，研究了一下才发现，win系统和mac系统的目录路径不同导致的。在win上是”\“，而在mac上确是”&#x2F;“。</p>
+<p>这是win系统上的代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">100</span>&lt;size || !fileType.equals(<span class="string">&quot;jpg&quot;</span>))&#123;</span><br><span class="line"> out.print(<span class="string">&quot;&lt;script language=&#x27;javascript&#x27;&gt;alert(&#x27;上传的图片文件必须小于100KB,且为jpg格式&#x27;);window.location.href=&#x27;javascript:history.go(-1)&#x27;;&lt;/script&gt;&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;\\&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line">    <span class="type">String</span> <span class="variable">ctxpath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;\\&quot;</span>))+<span class="string">&quot;\\touxiang&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>一开始转到mac系统中时，报错。</p>
+<p>将”\“改成”&quot;</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;/&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line"><span class="type">String</span> <span class="variable">ctxipath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;/&quot;</span>))+<span class="string">&quot;/touxiang&quot;</span>;</span><br><span class="line"> <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>测试成功上传文件</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292300325.png" alt="img"></p>
 ]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
       <tags>
-        <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>南通大学校园网自动连接安卓教程</title>
-    <url>/archives/13c08f92.html</url>
-    <content><![CDATA[<h3 id="一、点击此处生成自己的链接并复制"><a href="#一、点击此处生成自己的链接并复制" class="headerlink" title="一、点击此处生成自己的链接并复制"></a>一、<a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h3><h3 id="二、打开浏览器"><a href="#二、打开浏览器" class="headerlink" title="二、打开浏览器"></a>二、打开浏览器</h3><h3 id="三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，"><a href="#三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，" class="headerlink" title="三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，"></a>三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，</h3><h3 id="也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）"><a href="#也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）" class="headerlink" title="也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）"></a>也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）</h3><h3 id="测试一下如果有网就成功了"><a href="#测试一下如果有网就成功了" class="headerlink" title="测试一下如果有网就成功了"></a>测试一下如果有网就成功了</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304845.jpeg" alt="img" style="zoom: 150%;" />
-
-<h3 id="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接"><a href="#四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接" class="headerlink" title="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)"></a>四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292341400.jpeg" alt="img" style="zoom:50%;" />
-
-<h3 id="设置好之后，连接过程如下面的视频所示"><a href="#设置好之后，连接过程如下面的视频所示" class="headerlink" title="设置好之后，连接过程如下面的视频所示"></a>设置好之后，连接过程如下面的视频所示</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/anzhuoqndxxzb.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" width="100%"  height="580" quality="high" > </iframe>
-
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>校园网自动连接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>运用servlet+js防止用户未登录访问主要页面</title>
-    <url>/archives/73696d6.html</url>
-    <content><![CDATA[<p>在做网站主页的时候想起来可以通过主页的地址直接进入，跳过了登录界面，所以用了servlet和js实现了一个过滤器来处理这个漏洞<br>大概的模式就是先在servlet将表单的数据存到session中，然后在主页中写一个js来获取session里的数据，如果获取不到，就说明是非法登录，转到非法登录提示界面就行了。<br>下面是具体步骤。</p>
-<h3 id="使用可以先在servlet获取表单中用户的数据"><a href="#使用可以先在servlet获取表单中用户的数据" class="headerlink" title="使用可以先在servlet获取表单中用户的数据"></a>使用可以先在servlet获取表单中用户的数据</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;password&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="将获取的数据存在session中"><a href="#将获取的数据存在session中" class="headerlink" title="将获取的数据存在session中"></a>将获取的数据存在<a href="https://so.csdn.net/so/search?q=session&spm=1001.2101.3001.7020">session</a>中</h3><p>先创建HttpSession接口对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span>req.getSession();</span><br></pre></td></tr></table></figure>
-
-<p>存到session中</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">session.setAttribute(<span class="string">&quot;username&quot;</span>,name);</span><br></pre></td></tr></table></figure>
-
-<h3 id="在主页中写一个js来获取session里的数据"><a href="#在主页中写一个js来获取session里的数据" class="headerlink" title="在主页中写一个js来获取session里的数据"></a>在主页中写一个js来获取session里的数据</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">checkuser</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> user= &lt;%=session.<span class="title function_">getAttribute</span>(<span class="string">&quot;username&quot;</span>)%&gt;;</span><br><span class="line">    <span class="keyword">if</span>(user==<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>=<span class="string">&quot;illegal.html&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>这个js一定要在页面加载完成前就开始运行，所以一定要在<body>这里加</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">&quot;checkuser()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>οnlοad&#x3D;”checkuser()”意思就是在body加载的时候执行上面的js</p>
-<p><strong>最后测试运行，如果是直接输入地址来访问主页，就会跳转404界面</strong></p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292309597.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-        <tag>servlet</tag>
-        <tag>jsp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决数据mysqll数据库删除自增字段后跳号</title>
-    <url>/archives/a66d674d.html</url>
-    <content><![CDATA[<h3 id="命令行输入"><a href="#命令行输入" class="headerlink" title="命令行输入"></a>命令行输入</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table 表名 auto_increment=你想要的id;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>青年大学习抓包教程</title>
-    <url>/archives/c59a0c1a.html</url>
-    <content><![CDATA[<p>自己做了一个<a href="https://github.com/yuzaii/JsQndxx_Python">青年大学习的每周自动学习的脚本</a>，但是需要自己的一个信息（cookie）才能使用，，下面教大家如何获取。</p>
-<h2 id="苹果手机教程"><a href="#苹果手机教程" class="headerlink" title="苹果手机教程"></a>苹果手机教程</h2><p>先去苹果商店下载stream，然后按照下面的这个来就行。</p>
-<p><video controls="" src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/iosqndxx.mp4" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px; font: inherit; display: inline-block; vertical-align: baseline; width: 300px;"></video></p>
-<h2 id="安卓教程"><a href="#安卓教程" class="headerlink" title="安卓教程"></a>安卓教程</h2><p><a href="https://file-1305871479.cos.ap-nanjing.myqcloud.com/file/HttpCanary.apk">点击下载抓包软件httpcanary</a></p>
-<p><video controls="" src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/anzhuowifi.mp4" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px; font: inherit; display: inline-block; vertical-align: baseline; width: 300px;"></video></p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>项目</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -1102,59 +1069,92 @@
       </tags>
   </entry>
   <entry>
-    <title>带有路径问题的项目从win系统转移到mac系统需要注意</title>
-    <url>/archives/3b9e33e6.html</url>
-    <content><![CDATA[<p>前两天把win系统里面的网站项目源代码转移到mac电脑后发现，上传图片的功能用不了，一直报错，研究了一下才发现，win系统和mac系统的目录路径不同导致的。在win上是”\“，而在mac上确是”&#x2F;“。</p>
-<p>这是win系统上的代码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">100</span>&lt;size || !fileType.equals(<span class="string">&quot;jpg&quot;</span>))&#123;</span><br><span class="line"> out.print(<span class="string">&quot;&lt;script language=&#x27;javascript&#x27;&gt;alert(&#x27;上传的图片文件必须小于100KB,且为jpg格式&#x27;);window.location.href=&#x27;javascript:history.go(-1)&#x27;;&lt;/script&gt;&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;\\&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line">    <span class="type">String</span> <span class="variable">ctxpath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;\\&quot;</span>))+<span class="string">&quot;\\touxiang&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>一开始转到mac系统中时，报错。</p>
-<p>将”\“改成”&quot;</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> name.substring(name.lastIndexOf(<span class="string">&#x27;/&#x27;</span>)+<span class="number">1</span>,name.length());</span><br><span class="line"><span class="type">String</span> <span class="variable">ctxipath</span> <span class="operator">=</span><span class="built_in">this</span>.getServletContext().getRealPath(<span class="string">&quot;&quot;</span>);<span class="comment">//项目的物理路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">photopath</span> <span class="operator">=</span> ctxpath.substring(<span class="number">0</span>,ctxpath.lastIndexOf(<span class="string">&quot;/&quot;</span>))+<span class="string">&quot;/touxiang&quot;</span>;</span><br><span class="line"> <span class="type">File</span> <span class="variable">uploadedFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(photopath,user+<span class="string">&quot;.jpg&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>测试成功上传文件</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292300325.png" alt="img"></p>
+    <title>青年大学习抓包教程</title>
+    <url>/archives/c59a0c1a.html</url>
+    <content><![CDATA[<p>自己做了一个<a href="https://github.com/yuzaii/JsQndxx_Python">青年大学习的每周自动学习的脚本</a>，但是需要自己的一个信息（cookie）才能使用，，下面教大家如何获取。</p>
+<h2 id="苹果手机教程"><a href="#苹果手机教程" class="headerlink" title="苹果手机教程"></a>苹果手机教程</h2><p>先去苹果商店下载stream，然后按照下面的这个来就行。</p>
+<p><video controls="" src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/iosqndxx.mp4" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px; font: inherit; display: inline-block; vertical-align: baseline; width: 300px;"></video></p>
+<h2 id="安卓教程"><a href="#安卓教程" class="headerlink" title="安卓教程"></a>安卓教程</h2><p><a href="https://file-1305871479.cos.ap-nanjing.myqcloud.com/file/HttpCanary.apk">点击下载抓包软件httpcanary</a></p>
+<p><video controls="" src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/anzhuoqndxxzb.mp4" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px; font: inherit; display: inline-block; vertical-align: baseline; width: 300px;"></video></p>
 ]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
       <tags>
-        <tag>Mac</tag>
+        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
-    <title>在Mac上安装hexo</title>
-    <url>/archives/b3adc85a.html</url>
-    <content><![CDATA[<p>按照官网的来<a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-<ul>
-<li>安装node.js</li>
-<li>安装git</li>
-<li>安装hexo</li>
-</ul>
-<p>出现了EACCES问题 安装官网的推挤问题办法解决了</p>
-<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292310587.png" alt="image-20220403030104476" style="zoom:50%;" />
-
-<ul>
-<li>Hexo安装完成后 输入hexo -v 出现问题</li>
-</ul>
-<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292310279.png" alt="image-20220403030201321" style="zoom:50%;" />
-
-<p>解决办法，在.&#x2F;base_profile里面添加路径</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">export</span> <span class="string">PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>更新文件</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">source</span> <span class="string">~/.base_profile</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>就好啦</p>
-<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292310122.png" alt="image-20220403030505555" style="zoom:50%;" />
+    <title>实现域名解析到服务器端tomcat根目录</title>
+    <url>/archives/d2715adc.html</url>
+    <content><![CDATA[<p>上个学期学了jspweb开发，用到了tomcat服务器，一直都是在本地测试，所以就想把他上传到服务器，正好自己有一个域名，并且已经解析到服务器的IP了，所以做了一些尝试。<br>  一开始是用的win服务器自家 的IIS(Internet Information Services)，通过在IIS的站点属性中有一个对ISAPI 过滤器的配置来运行*.jsp文件。但无论怎么搞，都以失败告终。<br>  正当我一筹莫展之际，无意间测试了域名(没有域名的用ip代替）加端口来访问服务器端的tomcat，竟然成功了。虽然成功了，但是只能通过域名：8080（tomcat默认端口）访问，无法实现输入www.域名直接访问，这样很麻烦，又因为域名是默认解析到80端口，所以我大胆猜测只要将tomcat服务器的8080端口改成域名解析默认的80端口就可以了，然后将tomcat自带的默认更目录改成自己的项目就行了。</p>
+<h3 id="检查端口是否被占用"><a href="#检查端口是否被占用" class="headerlink" title="检查端口是否被占用"></a>检查端口是否被占用</h3><p>因为你要将tomcat改成端口80，所以80端口不能被占用</p>
+<p>win+r 输入cmd 控制台输入netstat -ano</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308465.png" alt="img"></p>
+<p>如果没有出现80端口，说明端口没有被占用</p>
+<p>如果出现了说明端口已经被占用了，那么我们将占用他的程序停止就可以了，记住后面的pid码，</p>
+<p>我这里是10828，去任务管理器找到pid为10828的进程并将他停止就行了。</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308412.png" alt="img"></p>
+<h3 id="将tomcat的默认端口8080改成80"><a href="#将tomcat的默认端口8080改成80" class="headerlink" title="将tomcat的默认端口8080改成80"></a>将tomcat的默认端口8080改成80</h3><p>编辑tomcat目录下conf文件里的server.xml文件</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308227.png" alt="img"></p>
+<p> 将圈起来的8080改成80就可以了 记得保存（只要该第一个就行，当时对配置还不是很理解）<img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308534.png" alt="img"></p>
+<p> 这时候我们测试一下输入www.域名（或ip）如果是tomcat默认页面就说明成功了</p>
+<p> <img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308570.png" alt="img"></p>
+<h3 id="将自己的项目替换掉tomcat默认的根目录root"><a href="#将自己的项目替换掉tomcat默认的根目录root" class="headerlink" title="将自己的项目替换掉tomcat默认的根目录root"></a>将自己的项目替换掉tomcat默认的<a href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020">根目录</a>root</h3><p>教大家应该很简单的方法，只需要将你的项目文件夹名称改成ROOT放到服务器tomcat目录下替换掉默认ROOT文件就行了。</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308176.png" alt="img"></p>
+<p>还有一种方法是通过server.xml配置文件来修改默认根目录的位置，比较麻烦，所以在这不推荐使用。</p>
+<p>最后测试一下</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308986.png" alt="img"></p>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>服务器</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>Mac</tag>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决数据mysqll数据库删除自增字段后跳号</title>
+    <url>/archives/a66d674d.html</url>
+    <content><![CDATA[<h3 id="命令行输入"><a href="#命令行输入" class="headerlink" title="命令行输入"></a>命令行输入</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table 表名 auto_increment=你想要的id;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运用servlet+js防止用户未登录访问主要页面</title>
+    <url>/archives/73696d6.html</url>
+    <content><![CDATA[<p>在做网站主页的时候想起来可以通过主页的地址直接进入，跳过了登录界面，所以用了servlet和js实现了一个过滤器来处理这个漏洞<br>大概的模式就是先在servlet将表单的数据存到session中，然后在主页中写一个js来获取session里的数据，如果获取不到，就说明是非法登录，转到非法登录提示界面就行了。<br>下面是具体步骤。</p>
+<h3 id="使用可以先在servlet获取表单中用户的数据"><a href="#使用可以先在servlet获取表单中用户的数据" class="headerlink" title="使用可以先在servlet获取表单中用户的数据"></a>使用可以先在servlet获取表单中用户的数据</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;username&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;password&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="将获取的数据存在session中"><a href="#将获取的数据存在session中" class="headerlink" title="将获取的数据存在session中"></a>将获取的数据存在<a href="https://so.csdn.net/so/search?q=session&spm=1001.2101.3001.7020">session</a>中</h3><p>先创建HttpSession接口对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span>req.getSession();</span><br></pre></td></tr></table></figure>
+
+<p>存到session中</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">session.setAttribute(<span class="string">&quot;username&quot;</span>,name);</span><br></pre></td></tr></table></figure>
+
+<h3 id="在主页中写一个js来获取session里的数据"><a href="#在主页中写一个js来获取session里的数据" class="headerlink" title="在主页中写一个js来获取session里的数据"></a>在主页中写一个js来获取session里的数据</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">checkuser</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> user= &lt;%=session.<span class="title function_">getAttribute</span>(<span class="string">&quot;username&quot;</span>)%&gt;;</span><br><span class="line">    <span class="keyword">if</span>(user==<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>=<span class="string">&quot;illegal.html&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这个js一定要在页面加载完成前就开始运行，所以一定要在<body>这里加</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">&quot;checkuser()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>οnlοad&#x3D;”checkuser()”意思就是在body加载的时候执行上面的js</p>
+<p><strong>最后测试运行，如果是直接输入地址来访问主页，就会跳转404界面</strong></p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292309597.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+        <tag>servlet</tag>
+        <tag>jsp</tag>
       </tags>
   </entry>
 </search>
