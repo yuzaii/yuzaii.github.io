@@ -1,0 +1,84 @@
+/*底部透明*/
+#footer{
+    background: transparent;
+}
+/*底部字体颜色*/
+#footer-wrap{
+    color: black;
+}
+
+/* 鼠标样式 */
+body {
+    cursor: url(https://file-1305871479.cos.ap-nanjing.myqcloud.com/css/default.cur),
+    default;
+}
+a,
+img {
+    cursor: url(https://file-1305871479.cos.ap-nanjing.myqcloud.com/css/pointer.cur),
+    default;
+}
+
+/*跳动的心脏*/
+.with-love {
+    color: #ff0000;
+    display: inline-block;
+    margin: 0 5px;
+    animation: iconAnimate 1.33s ease-in-out infinite;
+}
+@keyframes iconAnimate {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    10%, 30% {
+        transform: scale(.9);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: scale(1.1);
+    }
+
+    50%, 70% {
+        transform: scale(1.1);
+    }
+}
+
+#page-header{
+    background-color: transparent;
+}
+
+/*!*链接*!*/
+/*#article-container .flink .flink-list > .flink-list-item {*/
+/*    position: relative;*/
+/*    float: left;*/
+/*    overflow: hidden;*/
+/*    margin: 15px 7px;*/
+/*    width: calc(100% / 3 - 50px);*/
+/*    height: 90px;*/
+/*    border-radius: 8px;*/
+/*    line-height: 17px;*/
+/*    -webkit-transform: translateZ(0);*/
+/*}*/
+/*@media screen and (max-width: 1024px) {*/
+/*    #article-container .flink .flink-list > .flink-list-item {*/
+/*        width: calc(50% - 50px) !important;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 600px) {*/
+/*    #article-container .flink .flink-list > .flink-list-item {*/
+/*        width: calc(100% - 50px) !important;*/
+/*    }*/
+/*}*/
+/*网站名称字体*/
+#article-container .flink .flink-item-name {
+    padding: 16px 10px 0 0;
+    height: 40px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+/*!*简介字体*!*/
+/*#article-container .flink .flink-item-desc {*/
+/*    padding: 12px 10px 16px 0px;*/
+/*    height: 50px;*/
+/*    font-size: 0.93em;*/
+/*}*/

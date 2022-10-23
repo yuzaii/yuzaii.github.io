@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0032)http://210.29.79.141/?isReback=1 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="target-densitydpi=device-dpi,width=640px,user-scalable=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <title>上网登录页</title>
+    <!--Dr.COMWebLoginID_0.htm-->
+
+    <script type="text/javascript">
+        sv = 0;
+        sv1 = 0;
+        v6 = 'http://[::]:9002/v6                                     ';
+        myv6ip = '                                       ';
+        v4serip = '210.29.79.141';
+        m46 = 0;
+        v46ip = '10.6.189.87';
+        vid = 0;
+        mip = 0100061
+        89087;
+        Gno = 0000;
+        vlanid = "0";
+        AC = "";
+        ipm = "d21d4f8d";
+        ss1 = "000d484e7900";
+        ss2 = "0000";
+        ss3 = "0a06bd57";
+        ss4 = "000000000000";
+        ss5 = "10.6.189.87";
+        ss6 = "210.29.79.141";
+        timet = 1649748244;
+        osele = 0;//1=不弹窗
+        domain = '[::]';// ////////////////////////////////////////
+        zxopt = 0;//1为普通，8为直通(需201606后的内核)
+        hidm = 0, hidn = 0;/////
+        aolno = 41435;//////
+        wopt = 0;
+        eport = -1, eclass = 1;//
+    </script>
+
+    <script type="text/javascript">
+        /** 哆点参数 start */
+//1.基本参数
+        portalid = '';//门户ID
+        portalname = '';//门户名称
+        //2.可选参数
+        portalver = '';//门户版本
+        serialno = '';//序列号
+        logourl = '';//门户logo
+        bannerurl = '';//横幅广告
+        welcome = '';//欢迎词
+        businessurl = '';//业务接口
+        //3.旁路参数
+        authexenable = '0';//是否启用旁路扩展模式
+        authtype = 1;//登录协议
+        authloginIP = '';//登录IP
+        authloginport = 801;//登录端口
+        authloginpath = '/eportal/?c=ACSetting&a=Login';//登录路径
+        authloginparam = ''; //登录参数
+        authuserfield = 'DDDDD';//账号节点
+        authpassfield = 'upass';//密码节点
+        terminalidentity = 1;//终端识别标识 先配置成填写
+        authlogouttype = 1;//注销协议
+        authlogoutIP = '';//注销IP
+        authlogoutport = 80;//注销端口
+        authlogoutpath = '/eportal/?c=ACSetting&a=Logout&ver=1.0';//注销路径
+        authlogoutparam = '';//注销参数
+        authlogoutpost = '';//注销post参数
+        querydelay = 0;//登录后延时查询网络状态
+        querytype = 1;//状态查询协议
+        queryIP = '';//状态查询IP
+        queryport = 80;//状态查询端口
+        querypost = '';//状态查询post参数
+        querypath = '/eportal/?c=ACSetting&a=Query';//状态查询路径
+        queryparam = '';//状态查询参数
+        authsuccess = 'Dr.COMWebLoginID_3.htm';//登录成功标志
+        authfail = 'Dr.COMWebLoginID_2.htm';//登录失败标志
+        isquery = 0;
+        authhost = '';
+        authoffpost = '';
+        charset = 'gb2312';//页面编码
+        exparam = 0;//扩展标志位
+        //4.运营商选择
+        carrier = '{"yys":{"title":"服务类型","mode":"radiobutton","data":[{"id":"1","name":"校园用户","suffix":"@xyw"},{"id":"2","name":"校园电信","suffix":"@dx"},{"id":"3","name":"校园联通","suffix":"@lt"},{"id":"4","name":"校园其他","suffix":""}],"defaultID":"1"}}';//运营商选择
+        //5.限制非哆点客户端登陆
+        //把原先Dr.COMWebLoginID_ 改成: Dr.COM1.0WebLoginID_
+        /** 哆点参数 end */
+    </script>
+
+    <!-- 基本样式 -->
+    <link rel="stylesheet" type="text/css" href="./staticsource/b80.css">
+    <script>
+        var fileVersion = "1620813285402";
+        /* 基本处理 */
+    </script>
+    <script src="./staticsource/a41.js"></script>
+
+    <style type="text/css">#_copy {
+        align-items: center;
+        background: #4494d5;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-size: 13px;
+        height: 30px;
+        justify-content: center;
+        position: absolute;
+        width: 60px;
+        z-index: 1000
+    }
+
+    #select-tooltip, #sfModal, .modal-backdrop, div[id^=reader-helper] {
+        display: none !important
+    }
+
+    .modal-open {
+        overflow: auto !important
+    }
+
+    ._sf_adjust_body {
+        padding-right: 0 !important
+    }
+
+    .super_copy_btns_div {
+        position: fixed;
+        width: 154px;
+        left: 10px;
+        top: 45%;
+        background: #e7f1ff;
+        border: 2px solid #4595d5;
+        font-weight: 600;
+        border-radius: 2px;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        z-index: 5000
+    }
+
+    .super_copy_btns_logo {
+        width: 100%;
+        background: #4595d5;
+        text-align: center;
+        font-size: 12px;
+        color: #e7f1ff;
+        line-height: 30px;
+        height: 30px
+    }
+
+    .super_copy_btns_btn {
+        display: block;
+        width: 128px;
+        height: 28px;
+        background: #7f5711;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 12px;
+        border: 0;
+        outline: 0;
+        margin: 8px auto;
+        font-weight: 700;
+        cursor: pointer;
+        opacity: .9
+    }
+
+    .super_copy_btns_btn:hover {
+        opacity: .8
+    }
+
+    .super_copy_btns_btn:active {
+        opacity: 1
+    }</style>
+    <script type="text/javascript" src="./staticsource/config.js"></script>
+    <script type="text/javascript" src="./staticsource/loginbox.js"></script>
+    <script type="text/javascript" src="./staticsource/mobile.js"></script>
+    <link rel="stylesheet" type="text/css" href="./staticsource/b82.css">
+    <link rel="stylesheet" type="text/css" href="./staticsource/a52.css">
+    <link rel="stylesheet" type="text/css" href="./staticsource/a57.css">
+    <script type="text/javascript" src="staticsource/a43.js"></script>
+    <script type="text/javascript" src="./staticsource/a44.js"></script>
+    <script type="text/javascript" src="./staticsource/a51.js"></script>
+    <script type="text/javascript" src="./staticsource/a54.js"></script>
+    <script type="text/javascript" src="./staticsource/a58.js"></script>
+    <script type="text/javascript" src="./staticsource/a77.js"></script>
+    <script type="text/javascript" src="./staticsource/a78.js"></script>
+    <script type="text/javascript" src="./staticsource/a45.js"></script>
+    <script type="text/javascript" src="./staticsource/a76.js"></script>
+    <script type="text/javascript" src="./staticsource/a42.js"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+<div id="center">
+    <div id="edit_body" class="" style="width:640px;">
+        <div class="edit_row ui-resizable-autohide"
+             style="height: 925px; width: 1200px; position: relative; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); left: 1px;">
+            <div class="edit_cell edit_image ui-resizable-autohide"
+                 style="top: 0px; left: 186.5px; height: 270px; width: 267px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto;">
+                <a target="_blank"><img src="./staticsource/4c96a18ef8e0f8ed572b80490a4c8155.jpg" style="width: 100%;"
+                                        imgmd5="1aee6bbef3c18fbd01666674ef17ef51"></a></div>
+            <div class="edit_cell edit_image ui-resizable-autohide"
+                 style="top: 267px; left: 89px; height: 135px; width: 461px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto;">
+                <a target="_blank"><img src="./staticsource/a62ec317be178f125736a793f2e03487.png"
+                                        imgmd5="46190fff37645022a6a0f259933d6146"></a></div>
+            <div class="edit_cell edit_moreTabs ui-resizable-autohide"
+                 style="top: 460px; left: 20px; width: 600px; height: 436px; background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto; border-radius: 6px; box-shadow: rgb(50, 47, 47) 0px 0px 3px; font-size: 20px; border-color: rgb(51, 51, 51);">
+                <div style="height:100%;width:100%;">
+                    <div class="mt_head" style="height: 40px; color: rgb(51, 51, 51);"><span
+                            style="width: 50%; display: inline-block;" data-localize="mobile.15694814817082"
+                            class="active">普通认证</span><span style="width: 50%; display: inline-block;"
+                                                            data-localize="mobile.15694814817083"
+                                                            class="">二维码访客</span><span
+                            style="display: none; width: 33.333%;" data-localize="mobile.15694814817084"
+                            class=""></span></div>
+                    <div class="mt_body" style="top:40px;">
+                        <div style="display: block;">
+                            <div class="edit_loginBox random loginuse loginuse_mobile ui-resizable-autohide"
+                                 style="height: 456px; width: 620px; position: absolute; top: 1px; left: 0px; right: auto; bottom: auto; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); font-size: 20px;">
+                                <form name="f1" method="post" action="http://210.29.79.141/?isReback=1"
+                                      style="height:100%"><input class="edit_lobo_cell" type="button" name="0MKKey" value="生成链接" style="top: 253px; left: 119px; width: 384px; height: 45px; color: rgb(255, 255, 255); border-radius: 2px; text-align: center; padding: 6px; position: absolute; background-color: rgb(84, 141, 212); right: auto; bottom: auto;" data-localize="mobile.15694814817085"
+                                                                 onclick="ee &amp;&amp; ee(1)">
+                                    <div class="edit_cell edit_image codediv ui-resizable-autohide"
+                                         style="display: none; top: 381px; left: 343px; height: 45px; width: 160px; right: auto; bottom: auto; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0);">
+                                        <a target="_blank"><img id="captcha_img" style="width: 100%;"></a></div>
+                                    <input id="account" class="edit_lobo_cell" type="text" name="DDDDD" maxlength="30"
+                                           placeholder="账号" autocomplete="off"
+                                           style="top: 67px; left: 119px; width: 384px; height: 45px; border-radius: 2px; border: 1px solid rgb(159, 154, 154); text-align: left; color: rgb(84, 141, 212); padding-left: 54px; position: absolute; background-color: rgb(255, 255, 255); background-image: url(https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204130109148.png); right: auto; bottom: auto;"
+                                           data-localize="mobile.15694814817086">
+                                    <input id="password" class="edit_lobo_cell" type="password" name="upass"
+                                           maxlength="30" placeholder="密码"
+                                           autocomplete="off"
+                                           style="top: 133px; left: 119px; width: 384px; height: 45px; color: rgb(84, 141, 212); border-radius: 2px; border: 1px solid rgb(159, 154, 154); text-align: left; background-color: rgb(255, 255, 255); padding-left: 54px; position: absolute; background-image: url(https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204130109320.png); right: auto; bottom: auto;"
+                                           data-localize="mobile.15694814817087">
+                                    <input class="edit_lobo_cell captcha" type="text" name="captcha" maxlength="30"
+                                           placeholder="随机验证码" autocomplete="off"
+                                           style="display: none; top: 381px; left: 118px; width: 224px; height: 45px; color: rgb(127, 127, 127); border-radius: 2px; border: 1px solid rgb(159, 154, 154); text-align: left; background-color: rgb(255, 255, 255); padding-left: 54px; position: absolute; right: auto; bottom: auto;"
+                                           data-localize="mobile.15694814817088"></form>
+                                <div class="edit_cell edit_image ui-resizable-autohide"
+                                     style="top: 18px; left: 119px; height: 34px; width: 37px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto;">
+                                    <a target="_blank"><img src="./staticsource/9b9463109af82a704f91392dd17766f1.png"
+                                                            imgmd5="8d73149d9bcc97bc3d5e53d0bafe8398"></a></div>
+                                <div class="edit_cell edit_prog ui-resizable-autohide"
+                                     style="top: 19px; left: 169px; height: 37px; width: 240px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto;"
+                                     data-localize="mobile.15694814817089"><p><span style="color: rgb(65, 140, 175);">身份认证</span>
+                                </p></div>
+                                <div class="edit_cell edit_image user_close ui-resizable-autohide"
+                                     style="inset: 78px auto auto 484px; height: 20px; width: 17px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); display: none;">
+                                    <a target="_blank"><img src="./staticsource/close.png"
+                                                            imgmd5="6266871fb0d0a718ff5d1285b4013089"></a></div>
+                                <div class="edit_cell edit_image pass_close ui-resizable-autohide"
+                                     style="inset: 146px auto auto 453px; height: 20px; width: 17px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); display: none;">
+                                    <a target="_blank"><img src="./staticsource/close.png"
+                                                            imgmd5="6266871fb0d0a718ff5d1285b4013089"></a></div>
+
+                                <div class="edit_cell edit_hyperlink ui-resizable-autohide"
+                                     style="top: 334px; left: 119px; width: 106px; height: 38px; right: auto; bottom: auto; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); font-size: 24px;">
+                                    <a href="http://210.29.64.71/Self/sso_login" target="_blank"
+                                       data-localize="mobile.156948148170811"><p>自助服务</p></a></div>
+                                <div class="edit_cell edit_hyperlink ui-resizable-autohide"
+                                     style="top: 198.042px; left: 232.5px; width: 147px; height: 40px; right: auto; bottom: auto; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); font-size: 24px;">
+                                    <a href="http://210.29.64.71/sysc.htm" target="_blank"
+                                       data-localize="mobile.156948148170812"><p>用户使用帮助</p></a></div>
+                                <div class="edit_cell edit_hyperlink ui-resizable-autohide"
+                                     style="top: 333px; left: 402px; width: 108px; height: 36px; right: auto; bottom: auto; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); font-size: 24px;">
+                                    <a href="http://authserver.ntu.edu.cn/authserver/getBackPasswordMainPage.do"
+                                       target="_blank" data-localize="mobile.156948148170813"><p>忘记密码</p></a></div>
+                            </div>
+                        </div>
+                        <div style="display: none;">
+                            <div class="edit_loginBox ui-resizable-autohide"
+                                 style="z-index: 100; height: 456px; width: 620px; left: 0px; top: 1px; display: block; position: absolute; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto;">
+                                <div class="edit_cell edit_image ui-resizable-autohide"
+                                     style="top: 91px; left: 210px; height: 200px; width: 200px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto;"
+                                     id="loading"><img style="width:100%;height:100%;" src="./staticsource/a74.png">
+                                </div>
+                                <div class="edit_cell edit_prog ui-resizable-autohide"
+                                     style="top: 14px; left: 1px; height: 54px; width: 619px; font-size: 26px; color: rgb(63, 63, 63); background-color: rgba(0, 0, 0, 0); text-align: center;"
+                                     data-localize="mobile.156948148170814"><p><span style="color: rgb(65, 140, 175);">使 用 扫 码 登 录</span>
+                                </p></div>
+                            </div>
+                        </div>
+                        <div style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="edit_lobo_cell edit_radio" name="ISP_radio"
+                 style="top: 412px; left: 20px; width: 600px; height: 46px; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); right: auto; bottom: auto; font-size: 28px;">
+                <span><input id="xyw" name="network" type="radio" value="-1" style="display:none;" checked=""><font></font>&nbsp;&nbsp;</span><span><input
+                    name="network" type="radio" value="" style="null"><font
+                    data-localize="mobile.15706725886680">校园网</font>&nbsp;&nbsp;</span><span>
+
+                <input id="yd" name="network" type="radio" value="@cmcc" style="null"><font
+                    data-localize="mobile.15706725886681">中国移动</font>&nbsp;&nbsp;</span><span>
+
+                <input id="dx" name="network" type="radio" value="@telecom" style="null"><font
+                    data-localize="mobile.15706725886683">中国电信</font>&nbsp;&nbsp;</span><span>
+
+                <input id="lt" name="network" type="radio" value="@unicom" style="null"><font
+                    data-localize="mobile.15706725886682">中国联通</font>&nbsp;&nbsp;</span></div>
+        </div>
+        <div style="display: none;" class="">
+            <form name="f0" method="post" action="http://210.29.79.141/?isReback=1"><input type="hidden" name="DDDDD"
+                                                                                           value="" style="null"> <input
+                    type="hidden" name="upass" value="" style="null"> <input type="hidden" name="R1" value="0"
+                                                                             style="null"> <input type="hidden"
+                                                                                                  name="R2" value="0"
+                                                                                                  style="null"> <input
+                    type="hidden" name="R3" value="0" style="null"> <input type="hidden" name="R6" value="1"
+                                                                           style="null"> <input type="hidden"
+                                                                                                name="para" value="00"
+                                                                                                style="null"> <input
+                    type="hidden" name="0MKKey" value="123456" style="null"> <input type="hidden" name="buttonClicked"
+                                                                                    value="" style="null"> <input
+                    type="hidden" name="redirect_url" value="" style="null"> <input type="hidden" name="err_flag"
+                                                                                    value="" style="null"> <input
+                    type="hidden" name="username" value="" style="null"> <input type="hidden" name="password" value=""
+                                                                                style="null"> <input type="hidden"
+                                                                                                     name="user"
+                                                                                                     value=""
+                                                                                                     style="null">
+                <input type="hidden" name="cmd" value="" style="null"> <input type="hidden" name="Login" value=""
+                                                                              style="null"> <input type="hidden"
+                                                                                                   name="v6ip" value=""
+                                                                                                   style="null"></form>
+        </div>
+    </div>
+    <iframe width="0" height="0" id="c" name="c" src="./staticsource/saved_resource.html"></iframe>
+    <form name="form1"><input type="hidden" name="v6ip" value="" style="null"></form>
+</div>
+<!--<script type="text/javascript">-->
+<!--    function copyText(text, callback){ // text: 要复制的内容， callback: 回调-->
+<!--   var tag = document.createElement('input');-->
+<!--        tag.setAttribute('id', 'cp_hgz_input');-->
+<!--        tag.value = text;-->
+<!--        document.getElementsByTagName('body')[0].appendChild(tag);-->
+<!--        document.getElementById('cp_hgz_input').select();-->
+<!--        document.execCommand('copy');-->
+<!--        document.getElementById('cp_hgz_input').remove();-->
+<!--        if(callback) {callback(text)}-->
+<!--    }-->
+<!--    document.getElementById('copy').onclick = function (){-->
+<!--        var url=123;-->
+<!--        copyText(url, function(){alert('复制成功')})}-->
+<!--</script>-->
+</body>
+
+</html>
