@@ -117,24 +117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>IDEA如何自动导入Spring依赖</title>
-    <url>/archives/abcf8d7e.html</url>
-    <content><![CDATA[<p><strong>在学习Spring开发的时候每次都要手动导入依赖包，很浪费时间，后来发现可以通过pom.xml文件自动导入</strong></p>
-<h3 id="首先打开pom-xml文件"><a href="#首先打开pom-xml文件" class="headerlink" title="首先打开pom.xml文件"></a>首先打开pom.xml文件</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312228.png" alt="img"></p>
-<h3 id="在代码中间添加以下代码"><a href="#在代码中间添加以下代码" class="headerlink" title="在代码中间添加以下代码"></a>在<dependencies></dependencies>代码中间添加以下代码</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"><a href="#一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包" class="headerlink" title="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"></a>一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312573.png" alt="img"></p>
-<h2 id="等进度条读取完就导入成功了"><a href="#等进度条读取完就导入成功了" class="headerlink" title="等进度条读取完就导入成功了"></a>等进度条读取完就导入成功了</h2>]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>idea</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDAE开发SSM项目步骤</title>
     <url>/archives/c9201f7e.html</url>
     <content><![CDATA[<h2 id="创建maven项目"><a href="#创建maven项目" class="headerlink" title="创建maven项目"></a><a href="/archives/ac31337f.html">创建maven项目</a></h2><h2 id="导入依赖（版本可以自己换）"><a href="#导入依赖（版本可以自己换）" class="headerlink" title="导入依赖（版本可以自己换）"></a>导入依赖（版本可以自己换）</h2><p>模板</p>
@@ -171,6 +153,24 @@
       </tags>
   </entry>
   <entry>
+    <title>IDEA如何自动导入Spring依赖</title>
+    <url>/archives/abcf8d7e.html</url>
+    <content><![CDATA[<p><strong>在学习Spring开发的时候每次都要手动导入依赖包，很浪费时间，后来发现可以通过pom.xml文件自动导入</strong></p>
+<h3 id="首先打开pom-xml文件"><a href="#首先打开pom-xml文件" class="headerlink" title="首先打开pom.xml文件"></a>首先打开pom.xml文件</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312228.png" alt="img"></p>
+<h3 id="在代码中间添加以下代码"><a href="#在代码中间添加以下代码" class="headerlink" title="在代码中间添加以下代码"></a>在<dependencies></dependencies>代码中间添加以下代码</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"><a href="#一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包" class="headerlink" title="一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包"></a>一开始会报错，因为你的依赖库里没有这个依赖，这个时候点右上角的m标志他会自动导入你需要的依赖包</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292312573.png" alt="img"></p>
+<h2 id="等进度条读取完就导入成功了"><a href="#等进度条读取完就导入成功了" class="headerlink" title="等进度条读取完就导入成功了"></a>等进度条读取完就导入成功了</h2>]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java爬取南通大学教务系统信息</title>
     <url>/archives/229e6b0a.html</url>
     <content><![CDATA[<h3 id="Java爬取南通大学教务系统信息"><a href="#Java爬取南通大学教务系统信息" class="headerlink" title="Java爬取南通大学教务系统信息"></a>Java爬取南通大学教务系统信息</h3><p>注意：useragent等响应头（爬教务系统好像不需要）</p>
@@ -192,8 +192,8 @@
         <category>JAVA</category>
       </categories>
       <tags>
-        <tag>JAVA</tag>
         <tag>爬虫</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -336,43 +336,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring创建对象与传统创建对象的区别</title>
-    <url>/archives/7ad5699f.html</url>
-    <content><![CDATA[<p><strong>这两天学习了Spring的相关知识，一直没有弄懂控制反转（ioc）是什么意思，今天在做测试的时候突然茅塞顿开，以下是我在写代码时候的心得，通俗易懂，详细的解释了Spring创建对象与传统创建对象的区别。</strong></p>
-<ul>
-<li>Spring的<a href="https://so.csdn.net/so/search?q=xml&spm=1001.2101.3001.7020">xml</a>配置文件的含义</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">&lt;!--  告诉spring创建对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    声明bean ，就是告诉spring要创建某个类的对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    id:对象的自定义名称，唯一值。spring通过这个名称找到对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    Class：类的全限定名称 也就是你需要实例化的类（不能是接口，因为spring是反射机制创建对象，必须使用类）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userdao&quot;</span> <span class="attr">class</span>=<span class="string">&quot;spring.Userdaoimpl&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>定义一个名为Userdao的接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Userdao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dosome</span><span class="params">()</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>再定义一个名为Userdaoimpl的接口实现类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Userdao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dosome</span><span class="params">()</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在测试代码中详细的解释了Spring创建对象与传统创建对象的区别。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//        传统的new对象</span></span><br><span class="line">        Userdao us=<span class="keyword">new</span> <span class="title class_">Userdaoimpl</span>();<span class="comment">//多态 上转型</span></span><br><span class="line">        us.dosome();</span><br><span class="line"> </span><br><span class="line"><span class="comment">//        spring创建对象的过程</span></span><br><span class="line"><span class="comment">//        定义配置文件路径</span></span><br><span class="line">        String xmlpath=<span class="string">&quot;bean.xml&quot;</span>;</span><br><span class="line"><span class="comment">//        初始化spring容器 加载配置文件时</span></span><br><span class="line">        ApplicationContext ac=<span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(xmlpath);</span><br><span class="line"><span class="comment">//        通过容器获取userdao实例（也叫对象）并转换成接口类型</span></span><br><span class="line">        Userdao userdao=(Userdao) ac.getBean(<span class="string">&quot;userdao&quot;</span>);</span><br><span class="line">        <span class="comment">//因为bean创建的对象是object类型的 而且userdaoimpl是实现了接口 所以是接口类型的 要强制转换成接口的类型才可以调用</span></span><br><span class="line">        <span class="comment">//这里的userdao是新建的对象名,Userdao是接口,(Userdao)是强制转换符</span></span><br><span class="line">        <span class="comment">//ac.getBean(&quot;userdao&quot;)是从容器中获取对象 这里的对象是在spring容器中创建的 而不是你自己new出来的</span></span><br><span class="line">        <span class="comment">//ac.getBean(&quot;userdao&quot;) 括号里的userdao就是你在spring的xml文件中创建一个实例名字叫userdao 他的具体实现类是Userdaoimpl</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">//调用实例中的dosome()方法</span></span><br><span class="line">        userdao.dosome();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>结果</li>
-</ul>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292313142.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>JAVA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WIN挂载webdav</title>
     <url>/archives/83577c33.html</url>
     <content><![CDATA[<h1 id="Windows下WebDAV映射网络驱动器若干问题"><a href="#Windows下WebDAV映射网络驱动器若干问题" class="headerlink" title="Windows下WebDAV映射网络驱动器若干问题"></a>Windows下WebDAV映射网络驱动器若干问题</h1><p>转载：<a href="https://skylens.github.io/2017/12/14/win10_webdav.html">https://skylens.github.io/2017/12/14/win10_webdav.html</a></p>
@@ -417,6 +380,43 @@
       </categories>
       <tags>
         <tag>webdav</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring创建对象与传统创建对象的区别</title>
+    <url>/archives/7ad5699f.html</url>
+    <content><![CDATA[<p><strong>这两天学习了Spring的相关知识，一直没有弄懂控制反转（ioc）是什么意思，今天在做测试的时候突然茅塞顿开，以下是我在写代码时候的心得，通俗易懂，详细的解释了Spring创建对象与传统创建对象的区别。</strong></p>
+<ul>
+<li>Spring的<a href="https://so.csdn.net/so/search?q=xml&spm=1001.2101.3001.7020">xml</a>配置文件的含义</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">&lt;!--  告诉spring创建对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    声明bean ，就是告诉spring要创建某个类的对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    id:对象的自定义名称，唯一值。spring通过这个名称找到对象--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    Class：类的全限定名称 也就是你需要实例化的类（不能是接口，因为spring是反射机制创建对象，必须使用类）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userdao&quot;</span> <span class="attr">class</span>=<span class="string">&quot;spring.Userdaoimpl&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义一个名为Userdao的接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Userdao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dosome</span><span class="params">()</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>再定义一个名为Userdaoimpl的接口实现类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Userdao</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">dosome</span><span class="params">()</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在测试代码中详细的解释了Spring创建对象与传统创建对象的区别。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//        传统的new对象</span></span><br><span class="line">        Userdao us=<span class="keyword">new</span> <span class="title class_">Userdaoimpl</span>();<span class="comment">//多态 上转型</span></span><br><span class="line">        us.dosome();</span><br><span class="line"> </span><br><span class="line"><span class="comment">//        spring创建对象的过程</span></span><br><span class="line"><span class="comment">//        定义配置文件路径</span></span><br><span class="line">        String xmlpath=<span class="string">&quot;bean.xml&quot;</span>;</span><br><span class="line"><span class="comment">//        初始化spring容器 加载配置文件时</span></span><br><span class="line">        ApplicationContext ac=<span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(xmlpath);</span><br><span class="line"><span class="comment">//        通过容器获取userdao实例（也叫对象）并转换成接口类型</span></span><br><span class="line">        Userdao userdao=(Userdao) ac.getBean(<span class="string">&quot;userdao&quot;</span>);</span><br><span class="line">        <span class="comment">//因为bean创建的对象是object类型的 而且userdaoimpl是实现了接口 所以是接口类型的 要强制转换成接口的类型才可以调用</span></span><br><span class="line">        <span class="comment">//这里的userdao是新建的对象名,Userdao是接口,(Userdao)是强制转换符</span></span><br><span class="line">        <span class="comment">//ac.getBean(&quot;userdao&quot;)是从容器中获取对象 这里的对象是在spring容器中创建的 而不是你自己new出来的</span></span><br><span class="line">        <span class="comment">//ac.getBean(&quot;userdao&quot;) 括号里的userdao就是你在spring的xml文件中创建一个实例名字叫userdao 他的具体实现类是Userdaoimpl</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">//调用实例中的dosome()方法</span></span><br><span class="line">        userdao.dosome();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>结果</li>
+</ul>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292313142.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>JAVA</tag>
       </tags>
   </entry>
   <entry>
@@ -750,38 +750,6 @@
       </tags>
   </entry>
   <entry>
-    <title>利用python实现词频统计</title>
-    <url>/archives/5dc3259f.html</url>
-    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
-<ul>
-<li>从文本中读入数据（文件的输入输出）</li>
-<li>不区分大小写,去除特殊字符。</li>
-<li>统计单词 例如：about ：10 并统计总共多少单词</li>
-<li>对单词排序（出现次数 ）</li>
-<li>输出词频最高的10个单词和次数</li>
-<li>把统计结果存入文本</li>
-</ul>
-<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292302930.png" alt="img">运行程序</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292302476.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>python</category>
-        <category>课程项目</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利用python实现南通大学校园网自动连接</title>
     <url>/archives/216f350c.html</url>
     <content><![CDATA[<p><strong>在学校登录校园网的时候都需要访问登录页面如下图</strong></p>
@@ -819,17 +787,35 @@
       </tags>
   </entry>
   <entry>
-    <title>南通大学今日校园每日自动签到教程</title>
-    <url>/archives/2ee0a663.html</url>
-    <content><![CDATA[<h5 id="1-首先进入网站注册并登录。"><a href="#1-首先进入网站注册并登录。" class="headerlink" title="1.首先进入网站注册并登录。"></a>1.首先进入<a href="http://ntutools.cn/">网站</a>注册并登录。</h5><h5 id="2-点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。"><a href="#2-点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。" class="headerlink" title="2.点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。"></a>2.点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。</h5><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304525.png" alt="img"></p>
-<h5 id="3-进入今日校园信息收集页面"><a href="#3-进入今日校园信息收集页面" class="headerlink" title="3.进入今日校园信息收集页面"></a>3.进入今日校园信息收集页面</h5><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304241.png" alt="img"></p>
-<h5 id="4-填写自己的相关信息，测试成功后保存！！！"><a href="#4-填写自己的相关信息，测试成功后保存！！！" class="headerlink" title="4.填写自己的相关信息，测试成功后保存！！！"></a>4.填写自己的相关信息，测试成功后保存！！！</h5><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304882.png" alt="img"></p>
-<h2 id="这样就可以解放双手，每天自动签到啦！"><a href="#这样就可以解放双手，每天自动签到啦！" class="headerlink" title="这样就可以解放双手，每天自动签到啦！"></a>这样就可以解放双手，每天自动签到啦！</h2>]]></content>
+    <title>利用python实现词频统计</title>
+    <url>/archives/5dc3259f.html</url>
+    <content><![CDATA[<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>词频统计软件： </p>
+<ul>
+<li>从文本中读入数据（文件的输入输出）</li>
+<li>不区分大小写,去除特殊字符。</li>
+<li>统计单词 例如：about ：10 并统计总共多少单词</li>
+<li>对单词排序（出现次数 ）</li>
+<li>输出词频最高的10个单词和次数</li>
+<li>把统计结果存入文本</li>
+</ul>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="文件的读取，区分大小写，去除特殊字符"><a href="#文件的读取，区分大小写，去除特殊字符" class="headerlink" title="文件的读取，区分大小写，去除特殊字符"></a>文件的读取，区分大小写，去除特殊字符</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getword</span>():</span><br><span class="line">     <span class="comment"># 读取文件</span></span><br><span class="line">     f=<span class="built_in">open</span>(<span class="string">&#x27;read.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">     <span class="comment"># 将大写转化成小写</span></span><br><span class="line">     word=f.read().lower()</span><br><span class="line">     <span class="comment"># 关闭文件</span></span><br><span class="line">     f.close()</span><br><span class="line">     <span class="comment">#利用正则除去特殊字符   |\符+</span></span><br><span class="line">     <span class="built_in">list</span>=re.split(<span class="string">&#x27;\s+|\,+|\.+|\!+|\:+|\?+|\;+|\(+|\)+|\-+|\_+|\=+|\++|\“+|\、+|\/+|\&#123;+|\&#125;+|\”+|\：+|\。+|\“+|\[+|\]+|\【+|\】+|\—+|\%+|\&quot;+&#x27;</span>,word)</span><br><span class="line">     <span class="comment"># 遍历列表 去除列表中的空格</span></span><br><span class="line">     i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i] == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">               <span class="built_in">list</span>.remove(<span class="built_in">list</span>[i])</span><br><span class="line">               i -= <span class="number">1</span></span><br><span class="line">          i += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">     <span class="comment"># for a in list:</span></span><br><span class="line">     <span class="comment">#      if a == &quot;&quot;:</span></span><br><span class="line">     <span class="comment">#         list.remove(a)</span></span><br><span class="line">    <span class="comment">#用for循环的话如果存在多个空字符串 其列表会随时发生变化，导致无法正常删除空字符串 所以在使用for…in循环遍历列表时，最好不要对元素进行增删操作</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#  对于others&#x27;优化 如果最后一个字符是‘就将’其去掉</span></span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)):</span><br><span class="line">          l=<span class="built_in">list</span>[i]</span><br><span class="line">          <span class="keyword">if</span> <span class="built_in">list</span>[i][-<span class="number">1</span>] == <span class="string">&quot;&#x27;&quot;</span>:</span><br><span class="line">               <span class="built_in">list</span>[i] = <span class="built_in">list</span>[i][:-<span class="number">1</span>]</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="统计，排序"><a href="#统计，排序" class="headerlink" title="统计，排序"></a>统计，排序</h4><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> getfilewords <span class="keyword">import</span> getword</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">statistics</span>():</span><br><span class="line">    <span class="built_in">dict</span>=&#123;&#125;  <span class="comment">#定义一个空的字典，在后面的运算中逐步添加数据</span></span><br><span class="line">    words=getword()</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words: <span class="comment">#遍历整个列表</span></span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> <span class="built_in">dict</span>.keys():  <span class="comment">#判断当前单词是否已经存在 dict.keys()是已存进字典中的单词</span></span><br><span class="line">            <span class="comment"># 补充：keys() 方法用于返回字典中的所有键；</span></span><br><span class="line">            <span class="comment"># values() 方法用于返回字典中所有键对应的值；</span></span><br><span class="line">            <span class="comment">#详情见Test1</span></span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="built_in">dict</span>[word]+<span class="number">1</span>  <span class="comment">#在当前单词的个数上加 1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">dict</span>[word]=<span class="number">1</span>  <span class="comment">#当前单词第一次出现时 会把单词写入dict字典里 格式为 ‘单词’=1</span></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line">    w_order=<span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># print(dict.items())</span></span><br><span class="line"><span class="comment"># dict.items()返回的是列表</span></span><br><span class="line"><span class="comment"># 按字典集合中，每一个元组的第二个元素排列。</span></span><br><span class="line"><span class="comment"># sorted会对dict.items()这个list进行遍历，把list中的每一个元素，也就是每一个tuple()当做x传入匿名函数lambda x：x[1],函数返回值为x[1]</span></span><br><span class="line"><span class="comment"># reverse属性True为降序 False为升序</span></span><br><span class="line">    <span class="keyword">return</span> w_order <span class="comment">#返回排序后的列表</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="结果写入文本"><a href="#结果写入文本" class="headerlink" title="结果写入文本"></a>结果写入文本</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> WordStatistics <span class="keyword">import</span> statistics</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">writefile</span>():</span><br><span class="line">    w_order=statistics()</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;result.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>,+<span class="built_in">len</span>(getword()),file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文章单词总个数:&quot;</span>, +<span class="built_in">len</span>(getword()))</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>,file=f)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;词频最高的10个单词和次数&quot;</span>)</span><br><span class="line"> </span><br><span class="line">    w_order10=w_order[:<span class="number">10</span>]<span class="comment">#将列表的前十位提取并且遍历 输出key(单词)和values(次数)</span></span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order10:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">        <span class="built_in">print</span>(key, <span class="string">&#x27;:&#x27;</span>, values)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#遍历列表中的所有数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;统计结果&quot;</span>,file=f)</span><br><span class="line">    <span class="keyword">for</span> key,values <span class="keyword">in</span> w_order:</span><br><span class="line">        <span class="built_in">print</span>(key,<span class="string">&#x27;:&#x27;</span>,values,file=f)</span><br><span class="line">    f.close()<span class="comment">#关闭文件</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="keyword">from</span> writefile <span class="keyword">import</span> writefile</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;词频统计软件&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;正在统计中。。。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;统计成功，结果保存到result.txt&quot;</span>)</span><br><span class="line">writefile()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;程序运行结束&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;pause&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p>这是需要统计的文本</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292302930.png" alt="img">运行程序</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292302476.png" alt="img"></p>
+]]></content>
       <categories>
-        <category>项目</category>
+        <category>python</category>
+        <category>课程项目</category>
       </categories>
       <tags>
-        <tag>NTUTOOLS</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -852,6 +838,20 @@
       </categories>
       <tags>
         <tag>校园网自动连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>南通大学今日校园每日自动签到教程</title>
+    <url>/archives/2ee0a663.html</url>
+    <content><![CDATA[<h5 id="1-首先进入网站注册并登录。"><a href="#1-首先进入网站注册并登录。" class="headerlink" title="1.首先进入网站注册并登录。"></a>1.首先进入<a href="http://ntutools.cn/">网站</a>注册并登录。</h5><h5 id="2-点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。"><a href="#2-点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。" class="headerlink" title="2.点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。"></a>2.点击右上角用户名，找到基本资料。填写自己的信息，测试成功后保存！！！。</h5><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304525.png" alt="img"></p>
+<h5 id="3-进入今日校园信息收集页面"><a href="#3-进入今日校园信息收集页面" class="headerlink" title="3.进入今日校园信息收集页面"></a>3.进入今日校园信息收集页面</h5><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304241.png" alt="img"></p>
+<h5 id="4-填写自己的相关信息，测试成功后保存！！！"><a href="#4-填写自己的相关信息，测试成功后保存！！！" class="headerlink" title="4.填写自己的相关信息，测试成功后保存！！！"></a>4.填写自己的相关信息，测试成功后保存！！！</h5><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304882.png" alt="img"></p>
+<h2 id="这样就可以解放双手，每天自动签到啦！"><a href="#这样就可以解放双手，每天自动签到啦！" class="headerlink" title="这样就可以解放双手，每天自动签到啦！"></a>这样就可以解放双手，每天自动签到啦！</h2>]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>NTUTOOLS</tag>
       </tags>
   </entry>
   <entry>
@@ -879,25 +879,6 @@
       </tags>
   </entry>
   <entry>
-    <title>南通大学校园网自动连接WIN教程</title>
-    <url>/archives/58cf9c43.html</url>
-    <content><![CDATA[<h3 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h3><p><strong>版本1.0：只能在程序中添加配置信息。<br>版本2.0：增加配置文件，从配置文件中获取信息<br>版本3.0：自动获取本机ip地址，无需手动输入<br>版本4.0：更新优化自动获取ip内网真实地址</strong></p>
-<h2 id="WIN使用教程（4-0）"><a href="#WIN使用教程（4-0）" class="headerlink" title="WIN使用教程（4.0）"></a>WIN使用教程（4.0）</h2><h2 id="一、点击此处下载软件"><a href="#一、点击此处下载软件" class="headerlink" title="一、点击此处下载软件"></a>一、<a href="https://file-1305871479.cos.ap-nanjing.myqcloud.com/file/ntuwifi.rar">点击此处下载软件</a></h2><h2 id="二、下载软件后解压"><a href="#二、下载软件后解压" class="headerlink" title="二、下载软件后解压"></a>二、下载软件后解压</h2><h2 id="三、填写配置文件信息"><a href="#三、填写配置文件信息" class="headerlink" title="三、填写配置文件信息"></a>三、填写配置文件信息</h2><p>右击config.ini—-编辑<br><strong>[config]</strong><br><strong>yys&#x3D;</strong><br><strong>user_account&#x3D;</strong><br><strong>user_password&#x3D;</strong><br>你需要填写以上这3个信息 依次要填写的是运营商、登录校园网账户、密码<br>运营商填法：移动填cmcc 电信填telecom 联通填unicom 校园网yys那里什么都什么不填<br>举例：假如我的运营商是移动，账户是193888888，密码是123456 就按照以下的方法填写 其他不要动<br><strong>[config]</strong><br><strong>yys&#x3D;cmcc</strong><br><strong>user_account&#x3D;193888888</strong><br><strong>user_password&#x3D;123456</strong><br>修改完保存 将已登录的校园网注销 点击exe文件测试一下能不能上网 如果不能上网程序会输出原因</p>
-<h3 id="四、创建快捷方式并放入启动文件夹"><a href="#四、创建快捷方式并放入启动文件夹" class="headerlink" title="四、创建快捷方式并放入启动文件夹"></a>四、创建快捷方式并放入启动文件夹</h3><p>注：这步也可以不做，也可以直接将快捷方式放到桌面，当你电脑启动的时候需要点击一下才能成功连接并使用校园网。如果将快捷方式放在启动文件夹中，将不需要你自己点击，在系统启动的时候自行加载<br>1、右击wifi.exe创建快捷方式</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306312.png" alt="img"></p>
-<p>2.Win+r打开运行输入shell:startup按回车 打开启动文件夹 并将wifi.exe快捷方式移动到启动文件夹里</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306095.png" alt="img"></p>
-<p> 这样就设置完成了以后开机就可以自动连接校园网了</p>
-<p>注：电脑wifi不要关闭，不然会一直连接失败</p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>校园网自动连接</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>南通大学校园网自动连接MAC教程</title>
     <url>/archives/e82a709e.html</url>
     <content><![CDATA[<h3 id="一、点击此处生成自己的链接并复制"><a href="#一、点击此处生成自己的链接并复制" class="headerlink" title="一、点击此处生成自己的链接并复制"></a>一、<a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h3><h3 id="二、打开safri浏览器"><a href="#二、打开safri浏览器" class="headerlink" title="二、打开safri浏览器"></a>二、打开safri浏览器</h3><h3 id="三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。"><a href="#三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。" class="headerlink" title="三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。"></a>三、地址栏中粘贴复制好的地址并访问，会出现一串返回值，测试一下如果有网就成功了。</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306038.jpeg" alt="img"></p>
@@ -913,14 +894,16 @@
       </tags>
   </entry>
   <entry>
-    <title>南通大学校园网自动连接安卓教程</title>
-    <url>/archives/13c08f92.html</url>
-    <content><![CDATA[<h3 id="一、点击此处生成自己的链接并复制"><a href="#一、点击此处生成自己的链接并复制" class="headerlink" title="一、点击此处生成自己的链接并复制"></a>一、<a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h3><h3 id="二、打开浏览器"><a href="#二、打开浏览器" class="headerlink" title="二、打开浏览器"></a>二、打开浏览器</h3><h3 id="三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，"><a href="#三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，" class="headerlink" title="三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，"></a>三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，</h3><h3 id="也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）"><a href="#也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）" class="headerlink" title="也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）"></a>也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）</h3><h3 id="测试一下如果有网就成功了"><a href="#测试一下如果有网就成功了" class="headerlink" title="测试一下如果有网就成功了"></a>测试一下如果有网就成功了</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304845.jpeg" alt="img" style="zoom: 150%;" />
-
-<h3 id="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接"><a href="#四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接" class="headerlink" title="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)"></a>四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292341400.jpeg" alt="img" style="zoom:50%;" />
-
-<h3 id="设置好之后，连接过程如下面的视频所示"><a href="#设置好之后，连接过程如下面的视频所示" class="headerlink" title="设置好之后，连接过程如下面的视频所示"></a>设置好之后，连接过程如下面的视频所示</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/anzhuowifi.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" width="100%"  height="580" quality="high" > </iframe>
-
+    <title>南通大学校园网自动连接WIN教程</title>
+    <url>/archives/58cf9c43.html</url>
+    <content><![CDATA[<h3 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h3><p><strong>版本1.0：只能在程序中添加配置信息。<br>版本2.0：增加配置文件，从配置文件中获取信息<br>版本3.0：自动获取本机ip地址，无需手动输入<br>版本4.0：更新优化自动获取ip内网真实地址</strong></p>
+<h2 id="WIN使用教程（4-0）"><a href="#WIN使用教程（4-0）" class="headerlink" title="WIN使用教程（4.0）"></a>WIN使用教程（4.0）</h2><h2 id="一、点击此处下载软件"><a href="#一、点击此处下载软件" class="headerlink" title="一、点击此处下载软件"></a>一、<a href="https://file-1305871479.cos.ap-nanjing.myqcloud.com/file/ntuwifi.rar">点击此处下载软件</a></h2><h2 id="二、下载软件后解压"><a href="#二、下载软件后解压" class="headerlink" title="二、下载软件后解压"></a>二、下载软件后解压</h2><h2 id="三、填写配置文件信息"><a href="#三、填写配置文件信息" class="headerlink" title="三、填写配置文件信息"></a>三、填写配置文件信息</h2><p>右击config.ini—-编辑<br><strong>[config]</strong><br><strong>yys&#x3D;</strong><br><strong>user_account&#x3D;</strong><br><strong>user_password&#x3D;</strong><br>你需要填写以上这3个信息 依次要填写的是运营商、登录校园网账户、密码<br>运营商填法：移动填cmcc 电信填telecom 联通填unicom 校园网yys那里什么都什么不填<br>举例：假如我的运营商是移动，账户是193888888，密码是123456 就按照以下的方法填写 其他不要动<br><strong>[config]</strong><br><strong>yys&#x3D;cmcc</strong><br><strong>user_account&#x3D;193888888</strong><br><strong>user_password&#x3D;123456</strong><br>修改完保存 将已登录的校园网注销 点击exe文件测试一下能不能上网 如果不能上网程序会输出原因</p>
+<h3 id="四、创建快捷方式并放入启动文件夹"><a href="#四、创建快捷方式并放入启动文件夹" class="headerlink" title="四、创建快捷方式并放入启动文件夹"></a>四、创建快捷方式并放入启动文件夹</h3><p>注：这步也可以不做，也可以直接将快捷方式放到桌面，当你电脑启动的时候需要点击一下才能成功连接并使用校园网。如果将快捷方式放在启动文件夹中，将不需要你自己点击，在系统启动的时候自行加载<br>1、右击wifi.exe创建快捷方式</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306312.png" alt="img"></p>
+<p>2.Win+r打开运行输入shell:startup按回车 打开启动文件夹 并将wifi.exe快捷方式移动到启动文件夹里</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292306095.png" alt="img"></p>
+<p> 这样就设置完成了以后开机就可以自动连接校园网了</p>
+<p>注：电脑wifi不要关闭，不然会一直连接失败</p>
 ]]></content>
       <categories>
         <category>项目</category>
@@ -965,6 +948,23 @@
 <img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292305388.png" alt="img" style="zoom:50%;" />
 
 <h3 id="这样我们就设置好了，成功之后当连接到NTU时就可以自动连接了，如下面的视频所示"><a href="#这样我们就设置好了，成功之后当连接到NTU时就可以自动连接了，如下面的视频所示" class="headerlink" title="这样我们就设置好了，成功之后当连接到NTU时就可以自动连接了，如下面的视频所示"></a>这样我们就设置好了，成功之后当连接到NTU时就可以自动连接了，如下面的视频所示</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/ioswifi.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" width="100%"  height="580" quality="high" > </iframe>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>校园网自动连接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>南通大学校园网自动连接安卓教程</title>
+    <url>/archives/13c08f92.html</url>
+    <content><![CDATA[<h3 id="一、点击此处生成自己的链接并复制"><a href="#一、点击此处生成自己的链接并复制" class="headerlink" title="一、点击此处生成自己的链接并复制"></a>一、<a href="/myproject/ntuwifi/%E4%B8%8A%E7%BD%91%E7%99%BB%E5%BD%95%E9%A1%B5.html">点击此处生成自己的链接</a>并复制</h3><h3 id="二、打开浏览器"><a href="#二、打开浏览器" class="headerlink" title="二、打开浏览器"></a>二、打开浏览器</h3><h3 id="三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，"><a href="#三、-先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003-“result”-”1″-”msg”-”-u8ba4-u8bc1-u6210-u529f”-，" class="headerlink" title="三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，"></a>三、 先连接NTU校园网，再访问粘贴的地址，会出现一串返回值（可能返回下面的样子，也可能是dr1003({“result”:”1″,”msg”:”\u8ba4\u8bc1\u6210\u529f”})，</h3><h3 id="也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）"><a href="#也可能是dr1003-“result”-”0″-”msg”-””-”ret-code”-2-出现这两个都说明连接成功了）" class="headerlink" title="也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）"></a>也可能是dr1003({“result”:”0″,”msg”:””,”ret_code”:2})出现这两个都说明连接成功了）</h3><h3 id="测试一下如果有网就成功了"><a href="#测试一下如果有网就成功了" class="headerlink" title="测试一下如果有网就成功了"></a>测试一下如果有网就成功了</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292304845.jpeg" alt="img" style="zoom: 150%;" />
+
+<h3 id="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接"><a href="#四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行-打开之后最好刷新一下链接" class="headerlink" title="四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)"></a>四、将连接添加到桌面，以后连接到NTU只需要运行一下桌面上的快捷方式就行(打开之后最好刷新一下链接)</h3><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292341400.jpeg" alt="img" style="zoom:50%;" />
+
+<h3 id="设置好之后，连接过程如下面的视频所示"><a href="#设置好之后，连接过程如下面的视频所示" class="headerlink" title="设置好之后，连接过程如下面的视频所示"></a>设置好之后，连接过程如下面的视频所示</h3><iframe src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/video/anzhuowifi.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="false" width="100%"  height="580" quality="high" > </iframe>
+
 ]]></content>
       <categories>
         <category>项目</category>
@@ -1058,34 +1058,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何使用IDEA创建SpringMVC项目</title>
-    <url>/archives/ac31337f.html</url>
-    <content><![CDATA[<h2 id="新建一个maven项目。直接点击next"><a href="#新建一个maven项目。直接点击next" class="headerlink" title="新建一个maven项目。直接点击next"></a>新建一个maven项目。直接点击next</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307790.png" alt="img"></p>
-<h2 id="输入你的项目名称"><a href="#输入你的项目名称" class="headerlink" title="输入你的项目名称"></a>输入你的项目名称</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307559.png" alt="img"></p>
-<h2 id="点击项目文件底下的pom-xml-并添加依赖"><a href="#点击项目文件底下的pom-xml-并添加依赖" class="headerlink" title="点击项目文件底下的pom.xml,并添加依赖"></a>点击项目文件底下的pom.xml,并添加依赖</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307791.png" alt="img"></p>
-<h3 id="在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。"><a href="#在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。" class="headerlink" title="在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。"></a>在<version>底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zly<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>SpringMVC04<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307002.png" alt="img"></p>
-<h3 id="添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。"><a href="#添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。" class="headerlink" title="添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。"></a>添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="点击导入按钮后，maven就自动引入依赖"><a href="#点击导入按钮后，maven就自动引入依赖" class="headerlink" title="点击导入按钮后，maven就自动引入依赖"></a>点击导入按钮后，maven就自动引入依赖</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307322.png" alt="img"></p>
-<h2 id="在src-x2F-main下新建一个webapp文件夹"><a href="#在src-x2F-main下新建一个webapp文件夹" class="headerlink" title="在src&#x2F;main下新建一个webapp文件夹"></a>在src&#x2F;main下新建一个webapp文件夹</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307159.png" alt="img"></p>
-<h2 id="打开project-structure-添加web-xml"><a href="#打开project-structure-添加web-xml" class="headerlink" title="打开project structure 添加web.xml"></a>打开project structure 添加web.xml</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307222.png" alt="img"></p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308809.png" alt="img">注意路径</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308203.png" alt="img"></p>
-<p>这样设置后webapp里面就有WEB-INF文件夹和web.xml文件了</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308357.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>JAVA</category>
-        <category>idea</category>
-      </categories>
-      <tags>
-        <tag>spring</tag>
-        <tag>idea</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实现域名解析到服务器端tomcat根目录</title>
     <url>/archives/d2715adc.html</url>
     <content><![CDATA[<p>上个学期学了jspweb开发，用到了tomcat服务器，一直都是在本地测试，所以就想把他上传到服务器，正好自己有一个域名，并且已经解析到服务器的IP了，所以做了一些尝试。<br>  一开始是用的win服务器自家 的IIS(Internet Information Services)，通过在IIS的站点属性中有一个对ISAPI 过滤器的配置来运行*.jsp文件。但无论怎么搞，都以失败告终。<br>  正当我一筹莫展之际，无意间测试了域名(没有域名的用ip代替）加端口来访问服务器端的tomcat，竟然成功了。虽然成功了，但是只能通过域名：8080（tomcat默认端口）访问，无法实现输入www.域名直接访问，这样很麻烦，又因为域名是默认解析到80端口，所以我大胆猜测只要将tomcat服务器的8080端口改成域名解析默认的80端口就可以了，然后将tomcat自带的默认更目录改成自己的项目就行了。</p>
@@ -1112,6 +1084,34 @@
       </categories>
       <tags>
         <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何使用IDEA创建SpringMVC项目</title>
+    <url>/archives/ac31337f.html</url>
+    <content><![CDATA[<h2 id="新建一个maven项目。直接点击next"><a href="#新建一个maven项目。直接点击next" class="headerlink" title="新建一个maven项目。直接点击next"></a>新建一个maven项目。直接点击next</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307790.png" alt="img"></p>
+<h2 id="输入你的项目名称"><a href="#输入你的项目名称" class="headerlink" title="输入你的项目名称"></a>输入你的项目名称</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307559.png" alt="img"></p>
+<h2 id="点击项目文件底下的pom-xml-并添加依赖"><a href="#点击项目文件底下的pom-xml-并添加依赖" class="headerlink" title="点击项目文件底下的pom.xml,并添加依赖"></a>点击项目文件底下的pom.xml,并添加依赖</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307791.png" alt="img"></p>
+<h3 id="在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。"><a href="#在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。" class="headerlink" title="在底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。"></a>在<version>底下添加打包方式为war方便在Tomcat服务器下运行，如下图所示。</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zly<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>SpringMVC04<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307002.png" alt="img"></p>
+<h3 id="添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。"><a href="#添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。" class="headerlink" title="添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。"></a>添加SpringMVC的依赖，spring-webmvc和servlet-api。如下图所示。</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="点击导入按钮后，maven就自动引入依赖"><a href="#点击导入按钮后，maven就自动引入依赖" class="headerlink" title="点击导入按钮后，maven就自动引入依赖"></a>点击导入按钮后，maven就自动引入依赖</h3><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307322.png" alt="img"></p>
+<h2 id="在src-x2F-main下新建一个webapp文件夹"><a href="#在src-x2F-main下新建一个webapp文件夹" class="headerlink" title="在src&#x2F;main下新建一个webapp文件夹"></a>在src&#x2F;main下新建一个webapp文件夹</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307159.png" alt="img"></p>
+<h2 id="打开project-structure-添加web-xml"><a href="#打开project-structure-添加web-xml" class="headerlink" title="打开project structure 添加web.xml"></a>打开project structure 添加web.xml</h2><p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292307222.png" alt="img"></p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308809.png" alt="img">注意路径</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308203.png" alt="img"></p>
+<p>这样设置后webapp里面就有WEB-INF文件夹和web.xml文件了</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202204292308357.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>JAVA</category>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>idea</tag>
       </tags>
   </entry>
   <entry>
@@ -1165,6 +1165,34 @@
       </tags>
   </entry>
   <entry>
+    <title>树莓派使用Crontab定时任务</title>
+    <url>/archives/2e7e1912.html</url>
+    <content><![CDATA[<p>树莓派使用Crontab定时任务</p>
+<p>因为树莓派是基于Ubuntu的，所以我们按照Ubuntu的操作来就好了。</p>
+<p>树莓派默认是安装了cron服务的，并且是开机自启的，所以这里就跳过了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service cron status –查看cron的状态</span><br><span class="line">service cron restart –重启crontab服务</span><br><span class="line">crontab -l –查看当前的定时任务列表</span><br><span class="line">crontab -e –打开当前用户的定时文件，无则会新建 文件位置在 /var /spool/cron/crontabs 下</span><br></pre></td></tr></table></figure>
+
+<p>计划任务的格式就是 CRON表达式+你要运行的脚本或者命令</p>
+<p>CRON表达式可以看这个网站<a href="https://tool.lu/crontab/">https://tool.lu/crontab/</a></p>
+<p>但是我上面都设置好了，但是却不执行，我就查询了一下状态</p>
+<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202206291300516.png" alt="img"></p>
+<p>查了一下，因为cron可以按配置多久时间运行一次。当cron执行此操作时，它通常作为root用户运行，这样做会为所述用户创建一个会话。</p>
+<p>修改过程：</p>
+<p>1，进入&#x2F;etc&#x2F;pam.d目录</p>
+<p>2，打开文件 common-session-noninteractive</p>
+<p>3，查找pam_unix.so 内容（一般在最后）</p>
+<p>4，在这一行上方添加</p>
+<p>session [success&#x3D;1 default&#x3D;ignore] pam_succeed_if.so service in cron quiet use_uid</p>
+<p>5，保存并退出</p>
+<p>6，重启crond服务(Ubuntu为cron) service cron restart</p>
+<p><a href="https://blog.csdn.net/FuJinlong94/article/details/120428955">
+</a></p>
+]]></content>
+      <categories>
+        <category>树莓派</category>
+      </categories>
+  </entry>
+  <entry>
     <title>运用servlet+js防止用户未登录访问主要页面</title>
     <url>/archives/73696d6.html</url>
     <content><![CDATA[<p>在做网站主页的时候想起来可以通过主页的地址直接进入，跳过了登录界面，所以用了servlet和js实现了一个过滤器来处理这个漏洞<br>大概的模式就是先在servlet将表单的数据存到session中，然后在主页中写一个js来获取session里的数据，如果获取不到，就说明是非法登录，转到非法登录提示界面就行了。<br>下面是具体步骤。</p>
@@ -1195,6 +1223,20 @@
       </tags>
   </entry>
   <entry>
+    <title>解决数据mysqll数据库删除自增字段后跳号</title>
+    <url>/archives/a66d674d.html</url>
+    <content><![CDATA[<h3 id="命令行输入"><a href="#命令行输入" class="headerlink" title="命令行输入"></a>命令行输入</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table 表名 auto_increment=你想要的id;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>青年大学习抓包教程</title>
     <url>/archives/c59a0c1a.html</url>
     <content><![CDATA[<p>自己做了一个<a href="https://github.com/yuzaii/JsQndxx_Python">青年大学习的每周自动学习的脚本</a>，但是需要自己的一个信息（cookie）才能使用，，下面教大家如何获取。</p>
@@ -1208,48 +1250,6 @@
       </categories>
       <tags>
         <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树莓派使用Crontab定时任务</title>
-    <url>/archives/2e7e1912.html</url>
-    <content><![CDATA[<p>树莓派使用Crontab定时任务</p>
-<p>因为树莓派是基于Ubuntu的，所以我们按照Ubuntu的操作来就好了。</p>
-<p>树莓派默认是安装了cron服务的，并且是开机自启的，所以这里就跳过了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service cron status –查看cron的状态</span><br><span class="line">service cron restart –重启crontab服务</span><br><span class="line">crontab -l –查看当前的定时任务列表</span><br><span class="line">crontab -e –打开当前用户的定时文件，无则会新建 文件位置在 /var /spool/cron/crontabs 下</span><br></pre></td></tr></table></figure>
-
-<p>计划任务的格式就是 CRON表达式+你要运行的脚本或者命令</p>
-<p>CRON表达式可以看这个网站<a href="https://tool.lu/crontab/">https://tool.lu/crontab/</a></p>
-<p>但是我上面都设置好了，但是却不执行，我就查询了一下状态</p>
-<p><img src="https://file-1305871479.cos.ap-nanjing.myqcloud.com/img/202206291300516.png" alt="img"></p>
-<p>查了一下，因为cron可以按配置多久时间运行一次。当cron执行此操作时，它通常作为root用户运行，这样做会为所述用户创建一个会话。</p>
-<p>修改过程：</p>
-<p>1，进入&#x2F;etc&#x2F;pam.d目录</p>
-<p>2，打开文件 common-session-noninteractive</p>
-<p>3，查找pam_unix.so 内容（一般在最后）</p>
-<p>4，在这一行上方添加</p>
-<p>session [success&#x3D;1 default&#x3D;ignore] pam_succeed_if.so service in cron quiet use_uid</p>
-<p>5，保存并退出</p>
-<p>6，重启crond服务(Ubuntu为cron) service cron restart</p>
-<p><a href="https://blog.csdn.net/FuJinlong94/article/details/120428955">
-</a></p>
-]]></content>
-      <categories>
-        <category>树莓派</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>解决数据mysqll数据库删除自增字段后跳号</title>
-    <url>/archives/a66d674d.html</url>
-    <content><![CDATA[<h3 id="命令行输入"><a href="#命令行输入" class="headerlink" title="命令行输入"></a>命令行输入</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alter table 表名 auto_increment=你想要的id;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>mysql</tag>
       </tags>
   </entry>
 </search>
